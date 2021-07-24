@@ -3,13 +3,16 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"path"
 	"strconv"
 	"strings"
 	"time"
+
 	"github.com/gocolly/colly"
+	"github.com/gorilla/mux"
 )
 
 type Manga struct {
@@ -17,9 +20,10 @@ type Manga struct {
 	Image string
 	Link  string
 }
+
 var year, month, day = time.Now().Date()
 
-func collectYenPressReleases() {
+func collectYenPressReleases() []Manga {
 	var allYenReleases []Manga
 
 	collector := colly.NewCollector()
@@ -42,19 +46,20 @@ func collectYenPressReleases() {
 	})
 
 	pwd, _ := os.Getwd()
-	collector.Visit("file://" + path.Join(pwd, "pages/yen.html"))
+	s := fmt.Sprintf("pages/yenpress-%d-%d-%d.html", int(year), int(month), int(day))
+	collector.Visit("file://" + path.Join(pwd, s))
 
-	enc := json.NewEncoder(os.Stdout)
-	enc.SetIndent("", " ")
-	enc.Encode(allYenReleases)
+	return allYenReleases
 }
 
-func collectSevenSeasReleases() {
+func collectSevenSeasReleases() []Manga {
 	var allSevenSeasReleases []Manga
 
-	collector := colly.NewCollector(
-		colly.AllowedDomains("sevenseasentertainment.com", "www.sevenseasentertainment.com"),
-	)
+	t := &http.Transport{}
+	t.RegisterProtocol("file", http.NewFileTransport(http.Dir("/")))
+
+	collector := colly.NewCollector()
+	collector.WithTransport(t)
 
 	collector.OnHTML("div[style='float: left; margin: 0 3px 10px 6px; width: 134px; height: 189px; background: #CECECE;']", func(element *colly.HTMLElement) {
 		temp := Manga{}
@@ -68,20 +73,22 @@ func collectSevenSeasReleases() {
 		fmt.Println("Visiting", request.URL.String())
 	})
 
-	collector.Visit("https://sevenseasentertainment.com/release-dates/")
+	pwd, _ := os.Getwd()
+	s := fmt.Sprintf("pages/sevenseas-%d-%d-%d.html", int(year), int(month), int(day))
+	collector.Visit("file://" + path.Join(pwd, s))
 
-	enc := json.NewEncoder(os.Stdout)
-	enc.SetIndent("", " ")
-	enc.Encode(allSevenSeasReleases)
+	return allSevenSeasReleases
 }
 
-func collectDarkHorseReleases() {
+func collectDarkHorseReleases() []Manga {
 	var allDarkHorseReleases []Manga
 	year, month, _ := time.Now().Date()
 
-	collector := colly.NewCollector(
-		colly.AllowedDomains("www.darkhorse.com", "darkhorse.com"),
-	)
+	t := &http.Transport{}
+	t.RegisterProtocol("file", http.NewFileTransport(http.Dir("/")))
+
+	collector := colly.NewCollector()
+	collector.WithTransport(t)
 
 	collector.OnHTML(".list_item", func(element *colly.HTMLElement) {
 		temp := Manga{}
@@ -95,22 +102,22 @@ func collectDarkHorseReleases() {
 		fmt.Println("Visiting", request.URL.String())
 	})
 
-	darkHorseUrl := fmt.Sprintf("https://www.darkhorse.com/Books/Browse/Manga---%s+%d-%s+%d/P9wdwkt8", month, int(year), month, int(year))
-	collector.Visit(darkHorseUrl)
+	pwd, _ := os.Getwd()
+	s := fmt.Sprintf("pages/darkhorse-%d-%d-%d.html", int(year), int(month), int(day))
+	collector.Visit("file://" + path.Join(pwd, s))
 
-	enc := json.NewEncoder(os.Stdout)
-	enc.SetIndent("", " ")
-	enc.Encode(allDarkHorseReleases)
-
+	return allDarkHorseReleases
 }
 
-func collectKodanshaReleases() {
+func collectKodanshaReleases() []Manga {
 	var allKodanshaReleases []Manga
 	_, month, _ := time.Now().Date()
 
-	collector := colly.NewCollector(
-		colly.AllowedDomains("www.kodansha.us", "kodansha.us"),
-	)
+	t := &http.Transport{}
+	t.RegisterProtocol("file", http.NewFileTransport(http.Dir("/")))
+
+	collector := colly.NewCollector()
+	collector.WithTransport(t)
 
 	collector.OnHTML(".calendar__day", func(element *colly.HTMLElement) {
 		releaseDate := element.ChildText("h3.title.title--discovery")
@@ -139,15 +146,14 @@ func collectKodanshaReleases() {
 		fmt.Println("Visiting", request.URL.String())
 	})
 
-	kodUrl := fmt.Sprintf("https://kodansha.us/manga/calendar")
-	collector.Visit(kodUrl)
+	pwd, _ := os.Getwd()
+	s := fmt.Sprintf("pages/kodansha-%d-%d-%d.html", int(year), int(month), int(day))
+	collector.Visit("file://" + path.Join(pwd, s))
 
-	enc := json.NewEncoder(os.Stdout)
-	enc.SetIndent("", " ")
-	enc.Encode(allKodanshaReleases)
+	return allKodanshaReleases
 }
 
-func collectVizReleases() {
+func collectVizReleases() []Manga {
 	var allVizReleases []Manga
 
 	t := &http.Transport{}
@@ -169,19 +175,40 @@ func collectVizReleases() {
 	})
 
 	pwd, _ := os.Getwd()
-	s := fmt.Sprintf("pages/viz-%d-%d-%d", int(year), int(month), int(day))
-	fmt.Println(s)
+	s := fmt.Sprintf("pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
 	collector.Visit("file://" + path.Join(pwd, s))
 
-	enc := json.NewEncoder(os.Stdout)
-	enc.SetIndent("", " ")
-	enc.Encode(allVizReleases)
+	return allVizReleases
+}
+
+func vizHandler(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(collectVizReleases())
+}
+
+func yenHandler(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(collectYenPressReleases())
+}
+
+func sevenSeasHandler(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(collectSevenSeasReleases())
+}
+
+func darkHorseHandler(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(collectDarkHorseReleases())
+}
+
+func kodanshaHandler(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(collectKodanshaReleases())
 }
 
 func main() {
-	collectVizReleases()
-	//collectYenPressReleases()
-	//collectSevenSeasReleases()
-	//collectDarkHorseReleases()
-	//collectKodanshaReleases()
+	r := mux.NewRouter()
+	r.HandleFunc("/releases/viz", vizHandler)
+	r.HandleFunc("/releases/yenpress", yenHandler)
+	r.HandleFunc("/releases/sevenseas", sevenSeasHandler)
+	r.HandleFunc("/releases/darkhorse", darkHorseHandler)
+	r.HandleFunc("/releases/kodansha", kodanshaHandler)
+
+	log.Println("Listening on :8000")
+	log.Fatal(http.ListenAndServe(":8000", r))
 }

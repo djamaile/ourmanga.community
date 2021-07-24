@@ -1,6 +1,6 @@
 #!/usr/bin/env zx
 
-$`rm *`
+$`rm -r pages/*`
 
 const date = new Date();
 const year = date.getUTCFullYear();
