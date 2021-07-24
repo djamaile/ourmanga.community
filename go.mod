@@ -1,4 +1,4 @@
-module github.com/djamaile/mangago
+module github.com/djamaile/mango
 
 go 1.16
 

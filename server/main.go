@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/gorilla/mux"
 	"encoding/json"
-	"github.com/djamaile/mangago/pkg/releases"
+	"github.com/djamaile/mango/pkg/releases"
 	"log"
 	"net/http"
 )

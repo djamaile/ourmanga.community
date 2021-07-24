@@ -1,0 +1,29 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "lib",
+    srcs = ["main.go"],
+    importpath = "github.com/djamaile/mango/server",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//pkg/releases",
+        "@com_github_gorilla_mux//:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "server",
+    embed = [":server_lib"],
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "server_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/djamaile/mango/server",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//pkg/releases",
+        "@com_github_gorilla_mux//:mux",
+    ],
+)

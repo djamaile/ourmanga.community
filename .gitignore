@@ -24,3 +24,7 @@
 .vscode
 .iml
 .idea
+
+# bazel
+/bazel-*
+
