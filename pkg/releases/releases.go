@@ -1,9 +1,7 @@
-package main
+package releases
 
 import (
-	"encoding/json"
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 	"path"
@@ -12,7 +10,6 @@ import (
 	"time"
 
 	"github.com/gocolly/colly"
-	"github.com/gorilla/mux"
 )
 
 type Manga struct {
@@ -23,7 +20,7 @@ type Manga struct {
 
 var year, month, day = time.Now().Date()
 
-func collectYenPressReleases() []Manga {
+func CollectYenPressReleases() []Manga {
 	var allYenReleases []Manga
 
 	collector := colly.NewCollector()
@@ -52,7 +49,7 @@ func collectYenPressReleases() []Manga {
 	return allYenReleases
 }
 
-func collectSevenSeasReleases() []Manga {
+func CollectSevenSeasReleases() []Manga {
 	var allSevenSeasReleases []Manga
 
 	t := &http.Transport{}
@@ -80,7 +77,7 @@ func collectSevenSeasReleases() []Manga {
 	return allSevenSeasReleases
 }
 
-func collectDarkHorseReleases() []Manga {
+func CollectDarkHorseReleases() []Manga {
 	var allDarkHorseReleases []Manga
 	year, month, _ := time.Now().Date()
 
@@ -109,7 +106,7 @@ func collectDarkHorseReleases() []Manga {
 	return allDarkHorseReleases
 }
 
-func collectKodanshaReleases() []Manga {
+func CollectKodanshaReleases() []Manga {
 	var allKodanshaReleases []Manga
 	_, month, _ := time.Now().Date()
 
@@ -153,7 +150,7 @@ func collectKodanshaReleases() []Manga {
 	return allKodanshaReleases
 }
 
-func collectVizReleases() []Manga {
+func CollectVizReleases() []Manga {
 	var allVizReleases []Manga
 
 	t := &http.Transport{}
@@ -179,36 +176,4 @@ func collectVizReleases() []Manga {
 	collector.Visit("file://" + path.Join(pwd, s))
 
 	return allVizReleases
-}
-
-func vizHandler(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(collectVizReleases())
-}
-
-func yenHandler(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(collectYenPressReleases())
-}
-
-func sevenSeasHandler(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(collectSevenSeasReleases())
-}
-
-func darkHorseHandler(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(collectDarkHorseReleases())
-}
-
-func kodanshaHandler(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(collectKodanshaReleases())
-}
-
-func main() {
-	r := mux.NewRouter()
-	r.HandleFunc("/releases/viz", vizHandler)
-	r.HandleFunc("/releases/yenpress", yenHandler)
-	r.HandleFunc("/releases/sevenseas", sevenSeasHandler)
-	r.HandleFunc("/releases/darkhorse", darkHorseHandler)
-	r.HandleFunc("/releases/kodansha", kodanshaHandler)
-
-	log.Println("Listening on :8000")
-	log.Fatal(http.ListenAndServe(":8000", r))
 }
