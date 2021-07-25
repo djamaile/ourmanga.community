@@ -1,6 +1,6 @@
 #!/usr/bin/env zx
 
-$`rm -r pages/*`
+await $`cd pages && find . -type f ! -name 'BUILD.bazel' -delete`
 
 const date = new Date();
 const year = date.getUTCFullYear();

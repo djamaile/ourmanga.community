@@ -2,14 +2,14 @@ package releases
 
 import (
 	"fmt"
+	"github.com/gocolly/colly"
+	"log"
 	"net/http"
 	"os"
 	"path"
 	"strconv"
 	"strings"
 	"time"
-
-	"github.com/gocolly/colly"
 )
 
 type Manga struct {
@@ -18,7 +18,8 @@ type Manga struct {
 	Link  string
 }
 
-var year, month, day = time.Now().Date()
+var location, _ = time.LoadLocation("UTC")
+var year, month, day = time.Now().In(location).Date()
 
 func CollectYenPressReleases() []Manga {
 	var allYenReleases []Manga
@@ -44,7 +45,15 @@ func CollectYenPressReleases() []Manga {
 
 	pwd, _ := os.Getwd()
 	s := fmt.Sprintf("pages/yenpress-%d-%d-%d.html", int(year), int(month), int(day))
-	collector.Visit("file://" + path.Join(pwd, s))
+	files, err := os.ReadDir("../")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, file := range files {
+		fmt.Println(file.Name())
+	}
+	collector.Visit("file://" + path.Join(pwd,s))
 
 	return allYenReleases
 }
