@@ -27,4 +27,4 @@
 
 # bazel
 /bazel-*
-
+.bazelrc

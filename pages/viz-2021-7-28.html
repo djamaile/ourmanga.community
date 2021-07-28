@@ -1,0 +1,3011 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]>    <html dir="ltr" lang="en-US" class="ie9"> <![endif]-->
+<!--[if (gte IE 10)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html dir="ltr" lang="en-US"><!--<![endif]-->
+  <head>
+<!-- application -->
+    <!-- Google Tag Manager -->
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=ZarF2Qyfj6o5KCl8wozoZA&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NL4KN8G');
+</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Optimize Anti-flicker snippet -->
+<style>.async-hide { opacity: 0 !important} </style>
+
+<script>
+  (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+  h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+  (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+  })(window,document.documentElement,'async-hide','dataLayer',4000,
+  {'GTM-WDFZS8D':true});
+</script>
+<!-- End Google Optimize Anti-flicker snippet -->
+
+<!-- Google Analytics w Optimize and Enhanced Ecommerce  -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-136373-5', 'auto');
+  ga('require', 'GTM-WDFZS8D');  // Optimize
+  ga('require', 'ec');           // Enhanced Ecommerce
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+    <meta charset="UTF-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"22494915","transactionName":"cFkNREpaWA9dF0pSVl9TDVRZRxsQUAoSblRSVQtVXA==","queueTime":0,"applicationTime":194,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"22494915"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport"         content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="description" content="The world’s most popular anime, manga and more!">
+
+    <title>VIZ | New Manga &amp; Anime Releases</title>
+
+<script type="text/javascript">
+function cl() {
+}
+</script>
+
+
+
+
+    
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=47MPqANpyj">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=47MPqANpyj">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=47MPqANpyj">
+<link rel="manifest" href="/favicon/manifest.json?v=47MPqANpyj" crossorigin="use-credentials">
+<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=47MPqANpyj" color="#ff0000">
+<link rel="shortcut icon" href="/favicon/favicon.ico?v=47MPqANpyj">
+<meta name="msapplication-config" content="/favicon/browserconfig.xml?v=47MPqANpyj">
+<meta name="theme-color" content="#ff0000">
+
+
+
+
+<link rel="stylesheet" media="all" href="https://assets.viz.com/assets/manifest-viz-ui-cd6f09ba5c626dce5ee64840c5377c7eca5b3ae0f3bbe765e12294f4b1db5d2d.css" />
+
+<script type="text/javascript">
+</script>
+
+<script type="text/javascript" src="/search/series_titles.js"></script>
+
+<script src="https://assets.viz.com/assets/manifest-picturefill-251915c1c5c28dce5fe695c7b06042b06148adf01b169726c36bf677baebd29a.js" async="async"></script>
+<script src="https://assets.viz.com/assets/manifest-viz-common-9207e78a2d3a069aac0ad156182cb94b7cbadca2caed5bdd7baf881af0f17ec4.js"></script>
+<script src="https://assets.viz.com/assets/manifest-viz-ui-18876815361f90b6e50a677397edba77ae2bf35260638fe3215c01031911076a.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+
+<script type="text/javascript">
+// TODO: Maybe we should not assume that even the root "firebase" obj will exist in any given browser?
+
+// Initialize Firebase
+firebase.initializeApp({
+  apiKey:            "AIzaSyC_HAHLGDNEpcJJdjC99E7KadiA1Q4IJIg",
+  authDomain:        "vizmule.firebaseapp.com",
+  databaseURL:       "https://vizmule.firebaseio.com",
+  projectId:         "vizmule",
+  storageBucket:     "vizmule.appspot.com",
+  messagingSenderId: "381084636812",
+  appId:             "1:381084636812:web:9ab6280f71b5137ad90da9",
+  measurementId:     "G-41C9NY052Q"
+});
+
+var fsDataEnv = "production";
+// Used in VizFirebase.wrap to dis-allow initalization for any unrecognized collections (don't create garbage entries by typos)
+var firestoreCollections = {
+  users:  ['manga', 'series'],
+  nouser: ['dataModelVersions']
+};
+
+var FSW = {};
+var FSWDef = {};
+</script>
+
+<script src="https://assets.viz.com/assets/manifest-viz-firebase-9615b8af3b0c0b9942ef2a804be1496c8a8afd6ae49f1838dc815303e1d989f6.js"></script>
+
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1691826154417019');
+fbq('track', "PageView");</script>
+<noscript>
+<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1691826154417019&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- Pinterest Pixel Base Code -->
+<script type="text/javascript">
+  !function(e){if(!window.pintrk){window.pintrk=function(){
+  window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+    n=window.pintrk;n.queue=[],n.version="3.0";var
+    t=document.createElement("script");t.async=!0,t.src=e;var
+    r=document.getElementsByTagName("script")[0];
+    r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+  pintrk('load', '2613740785131' );
+  pintrk('page');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none;" alt="" 
+    src="https://ct.pinterest.com/v3/?tid=2613740785131&noscript=1" />
+</noscript>
+<!-- End Pinterest Pixel Base Code -->
+
+<!-- Iterable Javascript SDK code -->
+<script type="text/javascript">
+  (function () {
+    var b = document.createElement('script'); b.type = 'text/javascript'; b.async = true;
+    b.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'js.iterable.com/analytics.js';
+    var a = document.getElementsByTagName('script')[0]; a.parentNode.insertBefore(b, a);
+  })();
+
+  // Iterable Action Queue
+  var iterable_js_api_key = '1bb7754ea14c4df0a7def312ba8b4808';
+  var _iaq = _iaq || [];
+ 
+  Tracking.userVisits();
+</script>
+<!-- End Iterable Javascript SDK code -->
+
+
+
+
+  </head>
+
+  <body >
+      <header id="site-header" role="banner" class="o_site-header bg-trans-white">
+
+  <div id="fan-favorites" class="o_fan-favorites bg-off-black type-sm disp-n--nl">
+    <div class="o_fan-favorites-row row nowrap">
+      <h2 class="disp-ib mar-r-md color-mid-gray">Manga &amp; Anime Favorites</h2>
+      <ul class="disp-ib">
+          <li class="disp-ib mar-r-md"><a href="/boruto">Boruto</a></li>
+          <li class="disp-ib mar-r-md"><a href="/my-hero-academia">My Hero Academia</a></li>
+          <li class="disp-ib mar-r-md"><a href="/naruto">Naruto</a></li>
+          <li class="disp-ib mar-r-md"><a href="/one-punch-man">One-Punch Man</a></li>
+          <li class="disp-ib mar-r-md"><a href="/demon-slayer-kimetsu-no-yaiba">Demon Slayer</a></li>
+          <li class="disp-ib mar-r-md"><a href="/pokemon">Pokémon</a></li>
+          <li class="disp-ib mar-r-md"><a href="https://www.viz.com/events">Virtual Events!</a></li>
+          <li class="disp-ib mar-r-md"><a href="/products/gomi-no-sensei" rel="nofollow" style="display: none" aria-hidden="true">Gomi</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div id="header-container" class="row flex flex-justify">
+
+    <h1 class="o_logo-top bg-red flex g-3--lg g-omega--lg">
+      <span class="color-white type-sm--md type-bs weight-bold pos-r">
+        <a href="/" class="o_logo-img"><img alt="VIZ Media: The world’s most popular anime, manga and more!" src="https://assets.viz.com/assets/logo@2x-b76f649f933ea15f45147ff5445a2501c85c7f863ba0aba5ea7bec93c3272cc6.png" />
+
+</a>
+      </span>
+    </h1>
+
+    <a href="javascript:void(0)" data-nav-open class="nav-btn nav-btn--center color-off-black"><i class="icon-menu"></i><span>Menu</span></a>
+
+    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+      <a href="javascript:void(0)" data-nav-close class="nav-btn color-white pad-y-sm mar-y-rg"><i class="icon-close"></i><span>Dismiss</span></a>
+
+      <ul id="primary-nav" class="o_primary-nav type-md style-caps weight-bold mar-y-md mar-y-0--lg">
+          <li class="o_primary-nav-item disp-ib--lg mar-r-md">
+            <a class="o_primary-nav-link" href="/read">Read</a>
+          </li>
+          <li class="o_primary-nav-item disp-ib--lg mar-r-md">
+            <a class="o_primary-nav-link" href="/watch">Watch</a>
+          </li>
+          <li class="o_primary-nav-item disp-ib--lg mar-r-md">
+            <a class="o_primary-nav-link" href="/shonenjump">Shonen Jump</a>
+          </li>
+          <li class="o_primary-nav-item disp-ib--lg mar-r-md">
+            <a class="o_primary-nav-link" href="/community">Community</a>
+          </li>
+          <li class="o_primary-nav-item active disp-ib--lg">
+            <a class="o_primary-nav-link" href="/calendar">Calendar</a>
+          </li>
+      </ul>
+
+      <div id="site-search" class="o_site-search float-r--lg">
+        <!-- header search bar -->
+        <form action="/search" method="GET">
+          <input name="search" type="search" class="o_search-ac o_site-search-field" placeholder="Find a title or a character…" autocomplete="off">
+          <button type="submit" title="submit search" class="o_site-search-btn"><i class="icon-search"></i></button>
+        </form>
+      </div>
+
+      <div id="fan-favorites-small" class="o_fan-favorites-small disp-n--lg type-sm mar-y-md mar-y-0--lg">
+          <div class="mar-b-rg"><a href="https://www.viz.com/events">Virtual Events!</a></div>
+        <ul class="list-unmarked line-tight">
+            <li class="mar-b-rg"><a href="/naruto">Naruto</a></li>
+            <li class="mar-b-rg"><a href="/demon-slayer-kimetsu-no-yaiba">Demon Slayer</a></li>
+            <li class="mar-b-rg"><a href="/pokemon">Pokémon</a></li>
+            <li class="mar-b-rg"><a href="/one-punch-man">One-Punch Man</a></li>
+            <li class="mar-b-rg"><a href="/boruto">Boruto</a></li>
+            <li class="mar-b-rg"><a href="/my-hero-academia">My Hero Academia</a></li>
+        </ul>
+      </div>
+
+      <ul id="utility-nav" class="o_utility-nav type-rg mar-t-rg mar-b-xl mar-t-md mar-t-sm--lg">
+        <li class="o_account-links disp-bl disp-ib--lg mar-b-md mar-b-0--lg">
+        </li>
+      </ul>
+
+    </nav>
+  </div>
+
+</header>
+
+
+    <script type="text/javascript">
+  function getHash() {
+    var hash = document.location.hash.substr(1);
+    if (hash == 'dvd-bluray' || hash == 'manga-books') { return hash; }
+    // TODO: add more options if we care
+
+    return false;
+  }
+
+  // NOTE: getCookie/setCookie from utils.js
+  $(document).ready(function() {
+
+    var $prodContainer      = $(".row.products"),
+        $filterNavContainer = $(".row.product-nav"),
+        $viewNavContainer   = $(".view-nav");
+
+    // filter manga/anime
+    $filterNavContainer.on("click", "li a.filter-link", function(e) {
+      e.preventDefault();
+      var $this  = $(this),
+          filter = $this.attr("data-filter");
+
+      if ($this.attr("data-filter-state") == "off") {
+
+        $prodContainer.find("section").hide(); // Hide everything
+        $prodContainer.find("section." + $this.attr("data-filter")).show();
+        setCookie("calendar_filter", filter);
+
+        $filterNavContainer.find(".filter-link") // remove from all
+             .removeClass("color-red")
+             .addClass("color-mid-gray hover-dark-red")
+             .attr("data-filter-state", "off");
+        $this.removeClass("color-mid-gray hover-dark-red") // turn on for 1
+             .addClass("color-red")
+             .attr("data-filter-state", "on");
+
+        // trigger scroll event to force lazyLoad update
+        $(document).trigger('scroll');
+      }
+    });
+
+    // layout shelf/table
+    $viewNavContainer.on("click", "a.view-link", function(e) {
+      e.preventDefault();
+      var $this = $(this),
+          view  = $this.attr("data-view");
+
+      if ($this.attr("data-view-state") == "off") {
+
+        $prodContainer.find(".shelf, .product-table").hide(); // Hide everything
+        $prodContainer.find("." +  view).show();
+        setCookie("calendar_view", view);
+
+        // update the menu item coloring
+        $viewNavContainer.find(".view-link") // remove from all
+             .removeClass("color-red")
+             .addClass("color-mid-gray hover-dark-red")
+             .attr("data-view-state", "off");
+        $this.removeClass("color-mid-gray hover-dark-red") // turn on for 1
+             .addClass("color-red")
+             .attr("data-view-state", "on");
+
+        // trigger scroll event to force lazyLoad update
+        $(document).trigger('scroll');
+      }
+    });
+
+    // mobile view dropdown for selecting the month
+    $(".category-nav-select select").change(function() {
+      window.location.href = "/calendar" + $(this).val();
+    });
+
+    // SET initial view state according to preferences (cookie)
+    if (getCookie("calendar_view") == "product-table") {
+      $("#view-link-table").click();
+    } else {
+      $("#view-link-shelf").click();
+    }
+
+    // SET initial filter state according to preferences (hash > cookie)
+    var hash_filter = getHash(),
+        filter      = ( hash_filter ? hash_filter : getCookie("calendar_filter") );
+    if (filter) {
+      $('.filter-link[data-filter=' + filter + ']').click(); // NOTE: if invalid or empty option, this will still be fine, it'll just go to failsafe below
+    }
+ 
+    // edge-case failsafe -- if the desired filter is not available (because there were NO entries of that type, and thus it was skipped)
+    if ( $('.filter-link[data-filter-state=on]').length == 0 ) {
+      $('.filter-link').first().click(); // click on the first available filter as a "default"
+    }
+    // NOTE: any of these filter-link FORCED clicks will overwrite any previously saved cookie-preference
+    //       so if a month in the middle is missing a choice, it won't toggle back and forth
+    //       example: Jan has M & A. Feb has only M. Mar has M & A
+    //                user views Jan -> clicks Anime -> clicks Feb -> page loads Manga because no Anime -> clicks Mar -> page loads Manga
+  }); //document.ready
+
+</script>
+<div class="row mar-y-lg mar-t-xl--lg">
+  <h2 id="page_title" class="type-lg type-xl--md type-xxl--lg line-solid weight-bold style-caps">Release Calendar</h2>
+</div>
+
+
+<div class="row mar-y-lg">
+  <div class="category-nav-container flex">
+    <ul class="category-nav-list list-unmarked flex-width-1 h-scroll">
+      <li class=''><a href='/calendar/2021/06'>Jun 2021</a></li>
+<li class=''><a href='/calendar/2021/07'>Jul 2021</a></li>
+<li class=''><a href='/calendar/2021/08'>Aug 2021</a></li>
+<li class=''><a href='/calendar/2021/09'>Sep 2021</a></li>
+<li class=''><a href='/calendar/2021/10'>Oct 2021</a></li>
+    </ul>
+    <span class="category-nav-select select-wrapper flex-width-1">
+      <select>
+        <option  value='/2021/06'>Jun 2021</option>
+<option  value='/2021/07'>Jul 2021</option>
+<option  value='/2021/08'>Aug 2021</option>
+<option  value='/2021/09'>Sep 2021</option>
+<option  value='/2021/10'>Oct 2021</option>
+      </select>
+    </span>
+    <div class="type-md pad-l-rg pad-t-sm pad-b-rg view-nav">
+      <a id="view-link-table" data-view="product-table" data-view-state="off" class="view-link color-mid-gray hover-dark-red mar-r-rg" href="javascript:void('Table View')"><i class="icon-list"></i></a>
+      <a id="view-link-shelf" data-view="shelf"         data-view-state="off" class="view-link color-mid-gray hover-dark-red mar-r-rg" href="javascript:void('Card View')"><i class="icon-grid"></i></a>
+    </div>
+  </div>
+</div>
+<div class="row mar-y-lg mar-b-lg product-nav">
+  <div class="clearfix mar-t-md mar-b-0">
+    <h3 class="type-md type-lg--lg line-solid float-l--lg">July 2021</h3>
+    <ul data-filter-group="format" data-filter="all" class="list-unmarked list-inline list-divided h-scroll line-caption mar-t-md float-r--lg color-mid-gray type-sm type-rg--lg">
+        <li><a data-filter="manga-books" data-filter-state="off" class="filter-link color-mid-gray hover-dark-red" href="javascript:void('Manga & Books')">Manga &amp; Books</a></li>
+        <li><a data-filter="dvd-bluray"  data-filter-state="off" class="filter-link color-mid-gray hover-dark-red" href="javascript:void('DVD & Blu-ray')">Blu-ray, DVD &amp; Digital</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row last-row mar-y-lg mar-b-lg products">
+    <section class="manga-books" style="display:none;">
+      <div class="shelf flex flex-wrap type-rg line-caption">
+          <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/dgray-man-volume-27/product/6725/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="D.Gray-man, Vol. 27" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722791.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/dgray-man-volume-27/product/6725/paperback">D.Gray-man, Vol. 27</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/dr-stone-volume-17/product/6729/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Dr. STONE, Vol. 17" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722805.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/dr-stone-volume-17/product/6729/paperback">Dr. STONE, Vol. 17</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/idol-dreams-volume-7/product/6722/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Idol Dreams, Vol. 7" data-original="https://dw9to29mmj727.cloudfront.net/products/1974715434.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/idol-dreams-volume-7/product/6722/paperback">Idol Dreams, Vol. 7</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/love-me-love-me-not-volume-9/product/6721/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Love Me, Love Me Not, Vol. 9" data-original="https://dw9to29mmj727.cloudfront.net/products/1974713172.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/love-me-love-me-not-volume-9/product/6721/paperback">Love Me, Love Me Not, Vol. 9</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/moriarty-the-patriot-volume-4/product/6727/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Moriarty the Patriot, Vol. 4" data-original="https://dw9to29mmj727.cloudfront.net/products/1974710505.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/moriarty-the-patriot-volume-4/product/6727/paperback">Moriarty the Patriot, Vol. 4</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/my-hero-academia-vigilantes-volume-10/product/6728/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="My Hero Academia: Vigilantes, Vol. 10" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722937.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/my-hero-academia-vigilantes-volume-10/product/6728/paperback">My Hero Academia: Vigilantes, Vol. 10</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Final Volume!</span>
+    <a href="/read/manga/oresama-teacher-volume-29/product/6723/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Oresama Teacher, Vol. 29" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722260.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/oresama-teacher-volume-29/product/6723/paperback">Oresama Teacher, Vol. 29</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/platinum-end-volume-13/product/6737/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Platinum End, Vol. 13" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722910.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/platinum-end-volume-13/product/6737/paperback">Platinum End, Vol. 13</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/queens-quality-volume-12/product/6724/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Queen’s Quality, Vol. 12" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723062.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/queens-quality-volume-12/product/6724/paperback">Queen’s Quality, Vol. 12</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/snow-white-with-the-red-hair-volume-14/product/6726/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Snow White with the Red Hair, Vol. 14" data-original="https://dw9to29mmj727.cloudfront.net/products/1974707326.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/snow-white-with-the-red-hair-volume-14/product/6726/paperback">Snow White with the Red Hair, Vol. 14</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/undead-unluck-volume-2/product/6738/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Undead Unluck, Vol. 2" data-original="https://dw9to29mmj727.cloudfront.net/products/197472350X.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/undead-unluck-volume-2/product/6738/paperback">Undead Unluck, Vol. 2</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/case-closed-volume-79/product/6732/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Case Closed, Vol. 79" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721140.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/case-closed-volume-79/product/6732/paperback">Case Closed, Vol. 79</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Series Debut!</span>
+    <a href="/read/manga/devil-s-candy-volume-1/product/6747/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Devil’s Candy, Vol. 1" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723526.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/devil-s-candy-volume-1/product/6747/paperback">Devil’s Candy, Vol. 1</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/activity-book/disney-bento-easy-recipes-for-delicious-sushi/product/6745/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Disney Bento: Fun Recipes for Bento Boxes!" data-original="https://dw9to29mmj727.cloudfront.net/products/1974717712.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Activity Book</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/activity-book/disney-bento-easy-recipes-for-delicious-sushi/product/6745/paperback">Disney Bento: Fun Recipes for Bento Boxes!</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/fly-me-to-the-moon-volume-6/product/6730/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Fly Me to the Moon, Vol. 6" data-original="https://dw9to29mmj727.cloudfront.net/products/1974719243.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/fly-me-to-the-moon-volume-6/product/6730/paperback">Fly Me to the Moon, Vol. 6</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Final Volume!</span>
+    <a href="/read/manga/rin-ne-volume-40/product/6735/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="RIN-NE, Vol. 40" data-original="https://dw9to29mmj727.cloudfront.net/products/197472221X.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/rin-ne-volume-40/product/6735/paperback">RIN-NE, Vol. 40</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/splatoon-squid-kids-comedy-show-volume-4/product/6733/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Splatoon: Squid Kids Comedy Show, Vol. 4" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721744.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/splatoon-squid-kids-comedy-show-volume-4/product/6733/paperback">Splatoon: Squid Kids Comedy Show, Vol. 4</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/beastars-volume-13/product/6740/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="BEASTARS, Vol. 13" data-original="https://dw9to29mmj727.cloudfront.net/products/1974712532.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/beastars-volume-13/product/6740/paperback">BEASTARS, Vol. 13</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/children-of-the-whales-volume-17/product/6742/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Children of the Whales, Vol. 17" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721116.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/children-of-the-whales-volume-17/product/6742/paperback">Children of the Whales, Vol. 17</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/hell-s-paradise-jigokuraku-volume-9/product/6741/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Hell’s Paradise: Jigokuraku, Vol. 9" data-original="https://dw9to29mmj727.cloudfront.net/products/1974715302.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/hell-s-paradise-jigokuraku-volume-9/product/6741/paperback">Hell’s Paradise: Jigokuraku, Vol. 9</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Series Debut!</span>
+    <a href="/read/manga/mashle-magic-and-muscles-volume-1/product/6744/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Mashle: Magic and Muscles, Vol. 1" data-original="https://dw9to29mmj727.cloudfront.net/products/1974719294.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/mashle-magic-and-muscles-volume-1/product/6744/paperback">Mashle: Magic and Muscles, Vol. 1</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Series Debut!</span>
+    <a href="/read/manga/no-5-volume-1/product/6746/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="No. 5, Vol. 1" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720764.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/no-5-volume-1/product/6746/paperback">No. 5, Vol. 1</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/rwby-official-manga-anthology-volume-5/product/6743/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="RWBY: Official Manga Anthology, Vol. 5" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723690.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/rwby-official-manga-anthology-volume-5/product/6743/paperback">RWBY: Official Manga Anthology, Vol. 5</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Digital Only</span>
+    <a href="/read/manga/agravity-boys-volume-3/product/6840/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Agravity Boys, Vol. 3" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-90136-AgravityBoys_DigitalGN03_C1_Website-3-CcfKLgtHX15jMVhzMLSzOg.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/agravity-boys-volume-3/product/6840/digital">Agravity Boys, Vol. 3</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Series Debut!</span>
+    <a href="/read/manga/ayakashi-triangle-volume-1/product/6841/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ayakashi Triangle, Vol. 1" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-83924-AyakashieTriangle_DigitalGN01_C1_Website-3-VnNS1PDUCS8q6U_FNAnJ5A.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ayakashi-triangle-volume-1/product/6841/digital">Ayakashi Triangle, Vol. 1</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Series Debut!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-1/product/3395/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 1" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-10741-RANOB_01_web.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-1/product/3395/digital">Ranma 1/2 (2-in-1 Edition), Vol. 1</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-10/product/3404/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 10" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89024-Ranma_DigitalGN10_C1_Website-3-sEMZs0mSiTbf6pkSc2zq8g.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-10/product/3404/digital">Ranma 1/2 (2-in-1 Edition), Vol. 10</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-11/product/3405/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 11" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89032-Ranma_DigitalGN11_C1_Website-3-WRrCch-i-9EpskdIxrLrCA.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-11/product/3405/digital">Ranma 1/2 (2-in-1 Edition), Vol. 11</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-12/product/3406/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 12" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89048-Ranma_DigitalGN12_C1_Website-3-emMu4K-CZwiNLnyTSoyOBg.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-12/product/3406/digital">Ranma 1/2 (2-in-1 Edition), Vol. 12</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-13/product/3407/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 13" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89056-Ranma_DigitalGN13_C1_Website-3-tBf34q1rFRaQ4dc5C9mzQQ.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-13/product/3407/digital">Ranma 1/2 (2-in-1 Edition), Vol. 13</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-14/product/3408/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 14" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89060-Ranma_DigitalGN14_C1_Web-3-M-32zvDUICU9syTbJqMCDw.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-14/product/3408/digital">Ranma 1/2 (2-in-1 Edition), Vol. 14</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-15/product/4825/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 15" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89064-Ranma_DigitalGN15_C1_Website-3-l5eX8wd3jo_jtoOwk6IZDQ.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-15/product/4825/digital">Ranma 1/2 (2-in-1 Edition), Vol. 15</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-16/product/4886/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 16" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89068-Ranma_DigitalGN16_C1_Website-3-quHSaRevQJIJ62-6AUFAhg.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-16/product/4886/digital">Ranma 1/2 (2-in-1 Edition), Vol. 16</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-17/product/4954/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 17" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89076-Ranma_DigitalGN17_C1_Website-3-X5vKPo3E-tLGiJQ2AP6h2w.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-17/product/4954/digital">Ranma 1/2 (2-in-1 Edition), Vol. 17</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-18/product/5012/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 18" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89080-Ranma_DigitalGN18_C1_Website-3-DbNYtWlfljLF1t0RbLAFiA.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-18/product/5012/digital">Ranma 1/2 (2-in-1 Edition), Vol. 18</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Final Volume!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-19/product/5066/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 19" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89092-Ranma_DigitalGN19_C1_Website-3-lo9TQ9PtqL9iOBgAz7GhUg.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-19/product/5066/digital">Ranma 1/2 (2-in-1 Edition), Vol. 19</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-2/product/3396/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 2" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88952-Ranma_DigitalGN02_C1_Web-3-JP61z2rdXiPoNctIGRHI0A.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-2/product/3396/digital">Ranma 1/2 (2-in-1 Edition), Vol. 2</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-3/product/3397/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 3" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88960-Ranma_DigitalGN03_C1_Web-3-2FEDIZ1S7SUu00LX0dF0Kw.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-3/product/3397/digital">Ranma 1/2 (2-in-1 Edition), Vol. 3</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-4/product/3398/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 4" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88964-Ranma_DigitalGN04_C1_Web-3-db_j_x01I5ilq9Mrqcl3ww.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-4/product/3398/digital">Ranma 1/2 (2-in-1 Edition), Vol. 4</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-5/product/3399/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 5" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88976-Ranma_DigitalGN05_C1_Web-3-n4vMuQCcpXSBYViS2s5T1w.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-5/product/3399/digital">Ranma 1/2 (2-in-1 Edition), Vol. 5</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-6/product/3400/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 6" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88980-Ranma_DigitalGN06_C1_Web-3-xm6cx_n0ybs9bmyhDOt4tg.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-6/product/3400/digital">Ranma 1/2 (2-in-1 Edition), Vol. 6</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-7/product/3401/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 7" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88988-Ranma_DigitalGN07_C1_Web-3-1mDJg52mI0sPQDeC8-Gb6A.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-7/product/3401/digital">Ranma 1/2 (2-in-1 Edition), Vol. 7</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-8/product/3402/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 8" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89004-Ranma_DigitalGN08_C1_Web-3-4dleS2OiwulaIA909bPS2A.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-8/product/3402/digital">Ranma 1/2 (2-in-1 Edition), Vol. 8</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Now Digital!</span>
+    <a href="/read/manga/ranma-12-2-in-1-edition-volume-9/product/3403/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Ranma 1/2 (2-in-1 Edition), Vol. 9" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89012-Ranma_DigitalGN09_C1_Website-3-8eZMNw1Ys9soJL-6cbBzkQ.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-9/product/3403/digital">Ranma 1/2 (2-in-1 Edition), Vol. 9</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Series Debut!</span>
+    <a href="/read/manga/time-paradox-ghostwriter-volume-1/product/6842/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Time Paradox Ghostwriter, Vol. 1" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-85144-TimeParadoxGhostwriter_DigitalGN01_C1_Website-3-CCpJusUDqGzG_JYcGC-1NQ.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/time-paradox-ghostwriter-volume-1/product/6842/digital">Time Paradox Ghostwriter, Vol. 1</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Digital Only</span>
+    <a href="/read/manga/time-paradox-ghostwriter-volume-2/product/6843/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Time Paradox Ghostwriter, Vol. 2" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-90128-TimeParadoxGhostwriter_DigitalGN02_C1_Website-3-S7-f0bKwNY4vlx_V6tOe8Q.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/time-paradox-ghostwriter-volume-2/product/6843/digital">Time Paradox Ghostwriter, Vol. 2</a>
+    </h4>
+  </div>
+</article>
+
+
+
+      </div>
+      <table class="product-table type-sm type-rg--lg line-caption" style="display: none; table-layout: fixed;">
+  <tbody>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/dgray-man-volume-27/product/6725/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722791.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/dgray-man-volume-27/product/6725/paperback">D.Gray-man, Vol. 27</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 06
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/dr-stone-volume-17/product/6729/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722805.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/dr-stone-volume-17/product/6729/paperback">Dr. STONE, Vol. 17</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 06
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/idol-dreams-volume-7/product/6722/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974715434.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/idol-dreams-volume-7/product/6722/paperback">Idol Dreams, Vol. 7</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 06
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/love-me-love-me-not-volume-9/product/6721/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974713172.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/love-me-love-me-not-volume-9/product/6721/paperback">Love Me, Love Me Not, Vol. 9</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 06
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/moriarty-the-patriot-volume-4/product/6727/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974710505.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/moriarty-the-patriot-volume-4/product/6727/paperback">Moriarty the Patriot, Vol. 4</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 06
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/my-hero-academia-vigilantes-volume-10/product/6728/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722937.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/my-hero-academia-vigilantes-volume-10/product/6728/paperback">My Hero Academia: Vigilantes, Vol. 10</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 06
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/oresama-teacher-volume-29/product/6723/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722260.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/oresama-teacher-volume-29/product/6723/paperback">Oresama Teacher, Vol. 29</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 06
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/platinum-end-volume-13/product/6737/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722910.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/platinum-end-volume-13/product/6737/paperback">Platinum End, Vol. 13</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 06
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/queens-quality-volume-12/product/6724/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723062.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/queens-quality-volume-12/product/6724/paperback">Queen’s Quality, Vol. 12</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 06
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/snow-white-with-the-red-hair-volume-14/product/6726/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974707326.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/snow-white-with-the-red-hair-volume-14/product/6726/paperback">Snow White with the Red Hair, Vol. 14</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 06
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/undead-unluck-volume-2/product/6738/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/197472350X.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/undead-unluck-volume-2/product/6738/paperback">Undead Unluck, Vol. 2</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 06
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/case-closed-volume-79/product/6732/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721140.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/case-closed-volume-79/product/6732/paperback">Case Closed, Vol. 79</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 13
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/devil-s-candy-volume-1/product/6747/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723526.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/devil-s-candy-volume-1/product/6747/paperback">Devil’s Candy, Vol. 1</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 13
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/activity-book/disney-bento-easy-recipes-for-delicious-sushi/product/6745/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974717712.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Activity Book</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/activity-book/disney-bento-easy-recipes-for-delicious-sushi/product/6745/paperback">Disney Bento: Fun Recipes for Bento Boxes!</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 13
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/fly-me-to-the-moon-volume-6/product/6730/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974719243.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/fly-me-to-the-moon-volume-6/product/6730/paperback">Fly Me to the Moon, Vol. 6</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 13
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/rin-ne-volume-40/product/6735/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/197472221X.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/rin-ne-volume-40/product/6735/paperback">RIN-NE, Vol. 40</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 13
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/splatoon-squid-kids-comedy-show-volume-4/product/6733/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721744.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/splatoon-squid-kids-comedy-show-volume-4/product/6733/paperback">Splatoon: Squid Kids Comedy Show, Vol. 4</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 13
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/beastars-volume-13/product/6740/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974712532.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/beastars-volume-13/product/6740/paperback">BEASTARS, Vol. 13</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 20
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/children-of-the-whales-volume-17/product/6742/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721116.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/children-of-the-whales-volume-17/product/6742/paperback">Children of the Whales, Vol. 17</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 20
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/hell-s-paradise-jigokuraku-volume-9/product/6741/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974715302.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/hell-s-paradise-jigokuraku-volume-9/product/6741/paperback">Hell’s Paradise: Jigokuraku, Vol. 9</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 20
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/mashle-magic-and-muscles-volume-1/product/6744/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974719294.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/mashle-magic-and-muscles-volume-1/product/6744/paperback">Mashle: Magic and Muscles, Vol. 1</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 20
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/no-5-volume-1/product/6746/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720764.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/no-5-volume-1/product/6746/paperback">No. 5, Vol. 1</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 20
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/rwby-official-manga-anthology-volume-5/product/6743/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723690.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/rwby-official-manga-anthology-volume-5/product/6743/paperback">RWBY: Official Manga Anthology, Vol. 5</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 20
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/agravity-boys-volume-3/product/6840/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-90136-AgravityBoys_DigitalGN03_C1_Website-3-CcfKLgtHX15jMVhzMLSzOg.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/agravity-boys-volume-3/product/6840/digital">Agravity Boys, Vol. 3</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ayakashi-triangle-volume-1/product/6841/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-83924-AyakashieTriangle_DigitalGN01_C1_Website-3-VnNS1PDUCS8q6U_FNAnJ5A.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ayakashi-triangle-volume-1/product/6841/digital">Ayakashi Triangle, Vol. 1</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-1/product/3395/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-10741-RANOB_01_web.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-1/product/3395/digital">Ranma 1/2 (2-in-1 Edition), Vol. 1</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-10/product/3404/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89024-Ranma_DigitalGN10_C1_Website-3-sEMZs0mSiTbf6pkSc2zq8g.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-10/product/3404/digital">Ranma 1/2 (2-in-1 Edition), Vol. 10</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-11/product/3405/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89032-Ranma_DigitalGN11_C1_Website-3-WRrCch-i-9EpskdIxrLrCA.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-11/product/3405/digital">Ranma 1/2 (2-in-1 Edition), Vol. 11</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-12/product/3406/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89048-Ranma_DigitalGN12_C1_Website-3-emMu4K-CZwiNLnyTSoyOBg.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-12/product/3406/digital">Ranma 1/2 (2-in-1 Edition), Vol. 12</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-13/product/3407/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89056-Ranma_DigitalGN13_C1_Website-3-tBf34q1rFRaQ4dc5C9mzQQ.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-13/product/3407/digital">Ranma 1/2 (2-in-1 Edition), Vol. 13</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-14/product/3408/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89060-Ranma_DigitalGN14_C1_Web-3-M-32zvDUICU9syTbJqMCDw.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-14/product/3408/digital">Ranma 1/2 (2-in-1 Edition), Vol. 14</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-15/product/4825/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89064-Ranma_DigitalGN15_C1_Website-3-l5eX8wd3jo_jtoOwk6IZDQ.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-15/product/4825/digital">Ranma 1/2 (2-in-1 Edition), Vol. 15</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-16/product/4886/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89068-Ranma_DigitalGN16_C1_Website-3-quHSaRevQJIJ62-6AUFAhg.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-16/product/4886/digital">Ranma 1/2 (2-in-1 Edition), Vol. 16</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-17/product/4954/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89076-Ranma_DigitalGN17_C1_Website-3-X5vKPo3E-tLGiJQ2AP6h2w.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-17/product/4954/digital">Ranma 1/2 (2-in-1 Edition), Vol. 17</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-18/product/5012/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89080-Ranma_DigitalGN18_C1_Website-3-DbNYtWlfljLF1t0RbLAFiA.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-18/product/5012/digital">Ranma 1/2 (2-in-1 Edition), Vol. 18</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-19/product/5066/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89092-Ranma_DigitalGN19_C1_Website-3-lo9TQ9PtqL9iOBgAz7GhUg.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-19/product/5066/digital">Ranma 1/2 (2-in-1 Edition), Vol. 19</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-2/product/3396/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88952-Ranma_DigitalGN02_C1_Web-3-JP61z2rdXiPoNctIGRHI0A.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-2/product/3396/digital">Ranma 1/2 (2-in-1 Edition), Vol. 2</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-3/product/3397/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88960-Ranma_DigitalGN03_C1_Web-3-2FEDIZ1S7SUu00LX0dF0Kw.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-3/product/3397/digital">Ranma 1/2 (2-in-1 Edition), Vol. 3</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-4/product/3398/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88964-Ranma_DigitalGN04_C1_Web-3-db_j_x01I5ilq9Mrqcl3ww.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-4/product/3398/digital">Ranma 1/2 (2-in-1 Edition), Vol. 4</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-5/product/3399/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88976-Ranma_DigitalGN05_C1_Web-3-n4vMuQCcpXSBYViS2s5T1w.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-5/product/3399/digital">Ranma 1/2 (2-in-1 Edition), Vol. 5</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-6/product/3400/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88980-Ranma_DigitalGN06_C1_Web-3-xm6cx_n0ybs9bmyhDOt4tg.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-6/product/3400/digital">Ranma 1/2 (2-in-1 Edition), Vol. 6</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-7/product/3401/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88988-Ranma_DigitalGN07_C1_Web-3-1mDJg52mI0sPQDeC8-Gb6A.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-7/product/3401/digital">Ranma 1/2 (2-in-1 Edition), Vol. 7</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-8/product/3402/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89004-Ranma_DigitalGN08_C1_Web-3-4dleS2OiwulaIA909bPS2A.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-8/product/3402/digital">Ranma 1/2 (2-in-1 Edition), Vol. 8</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/ranma-12-2-in-1-edition-volume-9/product/3403/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-89012-Ranma_DigitalGN09_C1_Website-3-8eZMNw1Ys9soJL-6cbBzkQ.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/ranma-12-2-in-1-edition-volume-9/product/3403/digital">Ranma 1/2 (2-in-1 Edition), Vol. 9</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/time-paradox-ghostwriter-volume-1/product/6842/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-85144-TimeParadoxGhostwriter_DigitalGN01_C1_Website-3-CCpJusUDqGzG_JYcGC-1NQ.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/time-paradox-ghostwriter-volume-1/product/6842/digital">Time Paradox Ghostwriter, Vol. 1</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/read/manga/time-paradox-ghostwriter-volume-2/product/6843/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-90128-TimeParadoxGhostwriter_DigitalGN02_C1_Website-3-S7-f0bKwNY4vlx_V6tOe8Q.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/read/manga/time-paradox-ghostwriter-volume-2/product/6843/digital">Time Paradox Ghostwriter, Vol. 2</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+    </section>
+    <section class="dvd-bluray" style="display:none;">
+      <div class="shelf flex flex-wrap type-rg line-caption">
+          <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/watch/tv-series/jojo-s-bizarre-adventure/product/6781/blu-ray" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="JoJo’s Bizarre Adventure: Golden Wind Part 1" data-original="https://dw9to29mmj727.cloudfront.net/products/782009247074.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">TV Series</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/watch/tv-series/jojo-s-bizarre-adventure/product/6781/blu-ray">JoJo’s Bizarre Adventure: Golden Wind Part 1</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/watch/tv-series/pokemon-black-and-white-video-season-14/product/6809/dvd" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Pokémon The Series: Black &amp; White Complete Season" data-original="https://dw9to29mmj727.cloudfront.net/products/782009246879.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">TV Series</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/watch/tv-series/pokemon-black-and-white-video-season-14/product/6809/dvd">Pokémon The Series: Black &amp; White Complete Season</a>
+    </h4>
+  </div>
+</article>
+
+
+
+      </div>
+      <table class="product-table type-sm type-rg--lg line-caption" style="display: none; table-layout: fixed;">
+  <tbody>
+      <tr>
+        <td width="80">
+          <a href="/watch/tv-series/jojo-s-bizarre-adventure/product/6781/blu-ray"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/782009247074.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">TV Series</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/watch/tv-series/jojo-s-bizarre-adventure/product/6781/blu-ray">JoJo’s Bizarre Adventure: Golden Wind Part 1</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 13
+        </td>
+      </tr>
+      <tr>
+        <td width="80">
+          <a href="/watch/tv-series/pokemon-black-and-white-video-season-14/product/6809/dvd"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/782009246879.jpg" /></a>
+        </td>
+          <td width="100" class="type-center">
+            
+
+          </td>
+        <td>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">TV Series</a>
+        </td>
+        <td class="product-table--primary">
+          <a class="color-off-black hover-red" href="/watch/tv-series/pokemon-black-and-white-video-season-14/product/6809/dvd">Pokémon The Series: Black &amp; White Complete Season</a>
+        </td>
+        <td class="product-table--primary">
+          Jul 27
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+    </section>
+</div>
+
+
+
+    <div id="modal-err" class="modal pad-md pad-b-lg pad-lg--md pad-xl--lg" data-modal-state="off">
+  <a href="#modal-err" data-modal-btn class="modal-close">
+    <i class="icon-close"></i>
+  </a>
+  <div class="modal-g-lg shift mar-b-lg">
+    <h2 class="o_err-title type-md weight-bold style-caps line-solid"></h2>
+    <div class="o_err-msg type-rg mar-t-md"><p></p></div>
+  </div>
+  <div class="modal-actions">
+    <div class="modal-g-lg shift">
+      <input type="button" class="btn-primary type-rg pad-x-xl" value="OK" />
+    </div>
+  </div>
+</div>
+
+<div id="modal-confirm" class="modal pad-md pad-b-lg pad-lg--md pad-xl--lg" data-modal-state="off">
+  <a href="#modal-confirm" data-modal-btn class="modal-close">
+    <i class="icon-close"></i>
+  </a>
+  <div class="modal-g-lg shift mar-b-lg">
+    <h2 class="o_confirm-title type-md weight-bold style-caps line-solid"></h2>
+    <div class="o_confirm-msg type-rg mar-t-md"></div>
+  </div>
+  <div class="modal-actions">
+    <div class="modal-g-lg shift">
+      <div class="disp-ib mar-b-rg">
+        <input type="button" class="o_confirm-yes btn-primary type-rg pad-x-md mar-r-md" value="Yes" />
+      </div>
+      <div class="disp-ib mar-b-rg">
+        <input type="button" class="o_confirm-no btn-primary type-rg pad-x-md" value="No" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="modal-wait" class="modal pad-md pad-b-lg pad-lg--md pad-xl--lg" data-modal-state="off">
+  <div class="modal-g-lg shift mar-b-lg">
+    <h2 class="o_wait-title type-md weight-bold style-caps line-solid"></h2>
+    <div class="o_wait-msg type-rg mar-t-md"><p></p></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).on("modal-signup-open", function() {
+    var pageCtxt = pageCategory();
+    if      ("wsj"   == pageCtxt) { $("#signup_wsj"  ).prop("checked", true); }
+    else if ("read"  == pageCtxt) { $("#signup_manga").prop("checked", true); }
+    else if ("watch" == pageCtxt) { $("#signup_anime").prop("checked", true); }
+  });
+</script>
+
+<div id="modal-signup" class="modal pad-md pad-b-lg pad-lg--md pad-xl--lg" data-modal-state="off">
+  <a href="#modal-signup" data-modal-btn class="modal-close">
+    <i class="icon-close"></i>
+  </a>
+  <div class="modal-g-lg shift mar-b-lg o_modal-header">
+    <h2 class="type-md weight-bold style-caps line-solid">Sign up for a new VIZ account</h2>
+    <div class="color-mid-gray type-rg mar-t-rg">
+      <p>Already have a VIZ account? <a href="#modal-login" data-modal-btn>Log in</a>.</p>
+    </div>
+    <div id="create_account_error" class="feedback type-sm mar-t-rg disp-n"></div>
+  </div>
+  <form class="clearfix clear-b">
+
+    <div class="modal-field type-rg o_signup-login">
+      <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+        <label>
+          Username
+          <i data-tooltip aria-haspopup="true" data-tip-text="Your username is public." class="icon-tool-tip tooltip-target"></i>
+        </label>
+      </div>
+      <div class="modal-g-lg">
+        <input id="login" name="login" type="text"></input>
+        <div id="login-feedback" class="feedback type-sm mar-t-rg disp-n"></div>
+      </div>
+    </div>
+
+    <div class="modal-field type-rg o_signup-email">
+      <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+        <label>E-mail</label>
+      </div>
+      <div class="modal-g-lg">
+        <input type="text" name="email" id="new_email"></input>
+        <div id="email-feedback" class="feedback type-sm mar-t-rg disp-n"></div>
+      </div>
+    </div>
+
+    <div class="modal-field type-rg o_signup-password">
+      <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+        <label>Password</label>
+       </div>
+      <div class="modal-g-lg">
+        <input type="password" name="pass" id="pass" autocomplete="new-password"></input>
+        <div id="password-feedback" class="feedback type-sm mar-t-rg disp-n"></div>
+      </div>
+    </div>
+
+    <div class="modal-field type-rg o_signup-birthday">
+      <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+        <label>
+          Birthday
+          <i data-tooltip aria-haspopup="true" data-tip-text="To sign up, you must be 13 or older. Other people won’t see your birthday." class="icon-tool-tip tooltip-target"></i>
+        </label>
+      </div>
+      <div class="modal-g-lg">
+        <div class="select-wrapper disp-bl disp-ib--sm mar-b-rg mar-r-rg--sm">
+          <select id="signup_date_month" name="date[month]" class="expand">
+<option value="">Month</option>
+<option value="1">Jan</option>
+<option value="2">Feb</option>
+<option value="3">Mar</option>
+<option value="4">Apr</option>
+<option value="5">May</option>
+<option value="6">Jun</option>
+<option value="7">Jul</option>
+<option value="8">Aug</option>
+<option value="9">Sep</option>
+<option value="10">Oct</option>
+<option value="11">Nov</option>
+<option value="12">Dec</option>
+</select>
+
+        </div>
+        <div class="select-wrapper disp-bl disp-ib--sm mar-b-rg mar-r-rg--sm">
+          <select id="signup_date_day" name="date[day]" class="expand">
+<option value="">Day</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+
+        </div>
+        <div class="select-wrapper disp-bl disp-ib--sm mar-b-rg mar-r-rg--sm">
+           <select id="signup_date_year" name="date[year]" class="expand">
+<option value="">Year</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+<option value="2019">2019</option>
+<option value="2018">2018</option>
+<option value="2017">2017</option>
+<option value="2016">2016</option>
+<option value="2015">2015</option>
+<option value="2014">2014</option>
+<option value="2013">2013</option>
+<option value="2012">2012</option>
+<option value="2011">2011</option>
+<option value="2010">2010</option>
+<option value="2009">2009</option>
+<option value="2008">2008</option>
+<option value="2007">2007</option>
+<option value="2006">2006</option>
+<option value="2005">2005</option>
+<option value="2004">2004</option>
+<option value="2003">2003</option>
+<option value="2002">2002</option>
+<option value="2001">2001</option>
+<option value="2000">2000</option>
+<option value="1999">1999</option>
+<option value="1998">1998</option>
+<option value="1997">1997</option>
+<option value="1996">1996</option>
+<option value="1995">1995</option>
+<option value="1994">1994</option>
+<option value="1993">1993</option>
+<option value="1992">1992</option>
+<option value="1991">1991</option>
+<option value="1990">1990</option>
+<option value="1989">1989</option>
+<option value="1988">1988</option>
+<option value="1987">1987</option>
+<option value="1986">1986</option>
+<option value="1985">1985</option>
+<option value="1984">1984</option>
+<option value="1983">1983</option>
+<option value="1982">1982</option>
+<option value="1981">1981</option>
+<option value="1980">1980</option>
+<option value="1979">1979</option>
+<option value="1978">1978</option>
+<option value="1977">1977</option>
+<option value="1976">1976</option>
+<option value="1975">1975</option>
+<option value="1974">1974</option>
+<option value="1973">1973</option>
+<option value="1972">1972</option>
+<option value="1971">1971</option>
+<option value="1970">1970</option>
+<option value="1969">1969</option>
+<option value="1968">1968</option>
+<option value="1967">1967</option>
+<option value="1966">1966</option>
+<option value="1965">1965</option>
+<option value="1964">1964</option>
+<option value="1963">1963</option>
+<option value="1962">1962</option>
+<option value="1961">1961</option>
+<option value="1960">1960</option>
+<option value="1959">1959</option>
+<option value="1958">1958</option>
+<option value="1957">1957</option>
+<option value="1956">1956</option>
+<option value="1955">1955</option>
+<option value="1954">1954</option>
+<option value="1953">1953</option>
+<option value="1952">1952</option>
+<option value="1951">1951</option>
+<option value="1950">1950</option>
+<option value="1949">1949</option>
+<option value="1948">1948</option>
+<option value="1947">1947</option>
+<option value="1946">1946</option>
+<option value="1945">1945</option>
+<option value="1944">1944</option>
+<option value="1943">1943</option>
+<option value="1942">1942</option>
+<option value="1941">1941</option>
+<option value="1940">1940</option>
+<option value="1939">1939</option>
+<option value="1938">1938</option>
+<option value="1937">1937</option>
+<option value="1936">1936</option>
+<option value="1935">1935</option>
+<option value="1934">1934</option>
+<option value="1933">1933</option>
+<option value="1932">1932</option>
+<option value="1931">1931</option>
+<option value="1930">1930</option>
+<option value="1929">1929</option>
+<option value="1928">1928</option>
+<option value="1927">1927</option>
+<option value="1926">1926</option>
+<option value="1925">1925</option>
+<option value="1924">1924</option>
+<option value="1923">1923</option>
+<option value="1922">1922</option>
+<option value="1921">1921</option>
+<option value="1920">1920</option>
+</select>
+
+        </div>
+        <div id="birthday-feedback" class="feedback type-sm mar-t-rg disp-n"></div>
+      </div>
+    </div>
+
+    <div class="modal-field type-rg o_signup-interests">
+      <div class="modal-g-sm type-right--lg mar-b-sm">
+        <label>
+          Interests
+        </label>
+      </div>
+      <div class="modal-g-lg flex--sm mar-b-sm type-sm type-rg--lg">
+        <label style="white-space:nowrap" class="mar-r-md">
+          <input type="checkbox" name="signup_anime" id="signup_anime" value="1" class="pad-r-sm"> Anime
+        </label>
+        <label style="white-space:nowrap" class="mar-r-md">
+          <input type="checkbox" name="signup_manga" id="signup_manga" value="1" class="pad-r-sm"> Manga
+        </label>
+        <label style="white-space:nowrap">
+          <input type="checkbox" name="signup_wsj" id="signup_wsj" value="1" class="pad-r-sm"> Shonen Jump
+        </label>
+      </div>
+    </div>
+
+    <div class="modal-field type-rg o_signup-captcha">
+      <div class="modal-g-lg shift">
+        <div id="captcha"></div>
+        <div id="captcha-feedback" class="feedback type-sm mar-t-rg disp-n"></div>
+      </div>
+    </div>
+
+    <div class="modal-field type-rg o_signup-remember">
+      <div class="modal-g-lg shift">
+        <label class="disp-ib mar-0--lg">
+          <input type="checkbox" class="v-mid mar-r-sm" name="signup_rem_user" id="signup_rem_user">
+          <span class="color-mid-gray">Remember me</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="modal-actions mar-b-rg o_signup-submit">
+      <div class="modal-g-lg shift">
+        <input type="button" onclick="javascript:createAccount()" class="btn-primary type-rg pad-x-xl" value="Sign up" />
+        <div class="mar-t-md type-sm">
+          <p>By signing up, I agree to VIZ's <a target="signupwin" href="/terms">Terms of Service</a> and <a target="signupwin" href="/privacy">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<script type="text/javascript">
+  var recaptcha_response;
+  var captcha_response = function(resp) { recaptcha_response = resp; }
+  var feedback_recaptcha_response;
+  var feedback_captcha_response = function(resp) { feedback_recaptcha_response = resp; }
+
+  var recaptchaCallback = function() {
+    //console.log('recaptchaCallback called');
+    grecaptcha.render('captcha', { 
+      "sitekey"  : "6LcOjgITAAAAADBlwgh-UTh4-2Hmh1LNWQE-Or9l",
+      "callback" : captcha_response
+    });
+    grecaptcha.render('feedback-captcha', {
+      "sitekey"  : "6Ldn5xoTAAAAAClzsqqpxV4ki8tGc9FnvZy53TCA",
+      "callback" : feedback_captcha_response
+    });
+  }
+</script>
+<script src="https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&render=explicit" async defer></script>
+
+<div id="modal-login" class="modal pad-md pad-b-lg pad-lg--md pad-xl--lg" data-modal-state="off">
+  <a href="#modal-login" data-modal-btn class="modal-close">
+    <i class="icon-close"></i>
+  </a>
+  <div class="modal-g-lg shift mar-b-lg o_modal-header">
+    <h2 class="type-md weight-bold style-caps line-solid">Log in to VIZ</h2>
+    <div class="color-mid-gray type-rg mar-t-rg">
+      <p>Don't have an account? <a href="#modal-signup" data-modal-btn data-event='{"category":"Account","action":"Begins Sign-up Process","label":"title"}'>Sign up</a>.</p>
+    </div>
+  </div>
+  <div id="sign_in_feedback" class="feedback modal-g-lg shift mar-b-lg disp-n"></div>
+  <form class="clearfix clear-b">
+
+    <div class="modal-field type-rg o_login-account">
+      <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+        <label>
+          Account
+        </label>
+      </div>
+      <div class="modal-g-lg">
+        <input type="text" name="try_login" id="try_login" onkeydown="if (event.keyCode == 13){$('.o_login-submit input').click();return false;}" placeholder="E-mail or username"></input>
+      </div>
+    </div>
+
+    <div class="modal-field type-rg o_login-password">
+      <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+        <label>
+          Password
+        </label>
+       </div>
+      <div class="modal-g-lg">
+        <input type="password" name="try_pass" id="try_pass" onkeydown="if (event.keyCode == 13){$('.o_login-submit input').click();return false;}"></input>
+      </div>
+    </div>
+
+    <div class="modal-field type-rg o_login-remember">
+      <div class="modal-g-lg shift">
+         <label class="disp-ib mar-b-md mar-0--lg">
+           <input type="checkbox" class="v-mid mar-r-sm" name="rem_user" id="rem_user">
+           <span class="color-mid-gray">Remember me</span>
+         </label>
+         <a href="#modal-resetpass" data-modal-btn class="color-red hover-dark-red disp-bl float-r--lg">Forgot password?</a>
+      </div>
+    </div>
+
+    <div class="modal-actions mar-b-rg o_login-submit">
+      <div class="modal-g-lg shift">
+        <input type="button" class="btn-primary type-rg pad-x-xl" value="Log in" onclick="javascript:tryLogin()" />
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<div id="modal-resetpass" class="modal pad-md pad-b-lg pad-lg--md pad-xl--lg" data-modal-state="off">
+  <a href="#modal-resetpass" data-modal-btn class="modal-close">
+    <i class="icon-close"></i>
+  </a>
+  <div id="hide_on_success">
+    <div class="modal-g-lg shift mar-b-lg">
+      <h2 class="type-md weight-bold style-caps line-solid">Reset Password</h2>
+      <div class="type-rg mar-t-md"><p>Enter the e-mail address associated with your account and we'll email you a link to reset your password.</p></div>
+    </div>
+
+    <form class="clearfix clear-b">
+
+      <div class="modal-field type-rg">
+        <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+          <label>E-mail</label>
+        </div>
+        <div class="modal-g-lg">
+          <input placeholder="Enter your e-mail address" type="text" id="forgot_pass_email" name="forgot_pass_email" onkeydown="if (event.keyCode == 13){$('#btn_forgot_pass').click();return false;}"></input>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <div class="modal-g-lg shift mar-b-lg">
+          <input id="btn_forgot_pass" type="button" class="btn-primary type-rg pad-x-xl" value="Send reset link" onClick="javascript:send_forgot_pass()" />
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <div id="messages" class="modal-g-lg shift mar-b-lg">
+    <h3 id="msg_error"    class="type-md weight-bold line-solid color-red disp-n"></h3>
+    <h3 id="msg_loading"  class="type-md weight-bold line-solid disp-n">Requesting Password Reset Instructions...</h3>
+    <div id="msg_success" class="disp-n">
+      <h3 class="type-md weight-bold line-solid">You have been sent an email with instructions on how to reset your password.</h3>
+      <h4 class="type-rg bg-yellow weight-bold line-solid pad-md mar-t-md">NOTE: If you don't receive a message right away, please be patient. At times some customers have experienced delays of several minutes.</h4>
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  $(document).on("modal-newsletter-open", function() {
+    var pageCtxt = pageCategory();
+    if      ("wsj"   == pageCtxt) { $("#newsletter_wsj"  ).prop("checked", true); }
+    else if ("read"  == pageCtxt) { $("#newsletter_manga").prop("checked", true); }
+    else if ("watch" == pageCtxt) { $("#newsletter_anime").prop("checked", true); }
+    else {
+      $("#newsletter_wsj"  ).prop("checked", true);
+      $("#newsletter_manga").prop("checked", true);
+      $("#newsletter_anime").prop("checked", true);
+    }
+  });
+</script>
+
+<div id="modal-newsletter" class="modal pad-md pad-b-lg pad-lg--md pad-xl--lg" data-modal-state="off">
+  <a href="#modal-newsletter" data-modal-btn class="modal-close">
+    <i class="icon-close"></i>
+  </a>
+  <div class="modal-g-lg shift mar-b-lg">
+    <h2 class="type-md weight-bold style-caps line-solid">Subscribe to the VIZ Newsletter</h2>
+  </div>
+  <form class="clearfix clear-b" onsubmit="javascript:newsletterSignup(); return false;">
+    <div class="modal-field type-rg">
+      <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+        <label>E-mail</label>
+      </div>
+      <div class="modal-g-lg">
+        <input type="text" name="newsletter_email" id="newsletter_email"></input>
+        <div id="newsletter-email-feedback" class="feedback type-sm mar-t-rg disp-n"></div>
+      </div>
+    </div>
+
+    <div class="modal-field type-rg">
+      <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+        <label>
+          First Name
+        </label>
+      </div>
+      <div class="modal-g-lg">
+        <input id="newsletter_first_name" name="newsletter_first_name" type="text"></input>
+        <div id="newsletter-first-name-feedback" class="feedback type-sm mar-t-rg disp-n"></div>
+      </div>
+    </div>
+
+    <div class="modal-field type-rg">
+      <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+        <label>
+          Last Name
+        </label>
+      </div>
+      <div class="modal-g-lg">
+        <input id="newsletter_last_name" name="newsletter_last_name" type="text"></input>
+        <div id="newsletter-last-name-feedback" class="feedback type-sm mar-t-rg disp-n"></div>
+      </div>
+    </div>
+
+    <div class="modal-field type-rg">
+      <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+        <label>
+          Birthday
+          <i data-tooltip aria-haspopup="true" data-tip-text="To sign up, you must be 13 or older. Other people won’t see your birthday." class="icon-tool-tip tooltip-target"></i>
+        </label>
+      </div>
+      <div class="modal-g-lg">
+        <div class="select-wrapper disp-bl disp-ib--sm mar-b-rg mar-r-rg--sm">
+          <select id="newsletter_date_month" name="newsletter_date[month]" class="expand">
+<option value="">Month</option>
+<option value="1">Jan</option>
+<option value="2">Feb</option>
+<option value="3">Mar</option>
+<option value="4">Apr</option>
+<option value="5">May</option>
+<option value="6">Jun</option>
+<option value="7">Jul</option>
+<option value="8">Aug</option>
+<option value="9">Sep</option>
+<option value="10">Oct</option>
+<option value="11">Nov</option>
+<option value="12">Dec</option>
+</select>
+
+        </div>
+        <div class="select-wrapper disp-bl disp-ib--sm mar-b-rg mar-r-rg--sm">
+          <select id="newsletter_date_day" name="newsletter_date[day]" class="expand">
+<option value="">Day</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+
+        </div>
+        <div class="select-wrapper disp-bl disp-ib--sm mar-b-rg mar-r-rg--sm">
+           <select id="newsletter_date_year" name="newsletter_date[year]" class="expand">
+<option value="">Year</option>
+<option value="1920">1920</option>
+<option value="1921">1921</option>
+<option value="1922">1922</option>
+<option value="1923">1923</option>
+<option value="1924">1924</option>
+<option value="1925">1925</option>
+<option value="1926">1926</option>
+<option value="1927">1927</option>
+<option value="1928">1928</option>
+<option value="1929">1929</option>
+<option value="1930">1930</option>
+<option value="1931">1931</option>
+<option value="1932">1932</option>
+<option value="1933">1933</option>
+<option value="1934">1934</option>
+<option value="1935">1935</option>
+<option value="1936">1936</option>
+<option value="1937">1937</option>
+<option value="1938">1938</option>
+<option value="1939">1939</option>
+<option value="1940">1940</option>
+<option value="1941">1941</option>
+<option value="1942">1942</option>
+<option value="1943">1943</option>
+<option value="1944">1944</option>
+<option value="1945">1945</option>
+<option value="1946">1946</option>
+<option value="1947">1947</option>
+<option value="1948">1948</option>
+<option value="1949">1949</option>
+<option value="1950">1950</option>
+<option value="1951">1951</option>
+<option value="1952">1952</option>
+<option value="1953">1953</option>
+<option value="1954">1954</option>
+<option value="1955">1955</option>
+<option value="1956">1956</option>
+<option value="1957">1957</option>
+<option value="1958">1958</option>
+<option value="1959">1959</option>
+<option value="1960">1960</option>
+<option value="1961">1961</option>
+<option value="1962">1962</option>
+<option value="1963">1963</option>
+<option value="1964">1964</option>
+<option value="1965">1965</option>
+<option value="1966">1966</option>
+<option value="1967">1967</option>
+<option value="1968">1968</option>
+<option value="1969">1969</option>
+<option value="1970">1970</option>
+<option value="1971">1971</option>
+<option value="1972">1972</option>
+<option value="1973">1973</option>
+<option value="1974">1974</option>
+<option value="1975">1975</option>
+<option value="1976">1976</option>
+<option value="1977">1977</option>
+<option value="1978">1978</option>
+<option value="1979">1979</option>
+<option value="1980">1980</option>
+<option value="1981">1981</option>
+<option value="1982">1982</option>
+<option value="1983">1983</option>
+<option value="1984">1984</option>
+<option value="1985">1985</option>
+<option value="1986">1986</option>
+<option value="1987">1987</option>
+<option value="1988">1988</option>
+<option value="1989">1989</option>
+<option value="1990">1990</option>
+<option value="1991">1991</option>
+<option value="1992">1992</option>
+<option value="1993">1993</option>
+<option value="1994">1994</option>
+<option value="1995">1995</option>
+<option value="1996">1996</option>
+<option value="1997">1997</option>
+<option value="1998">1998</option>
+<option value="1999">1999</option>
+<option value="2000">2000</option>
+<option value="2001">2001</option>
+<option value="2002">2002</option>
+<option value="2003">2003</option>
+<option value="2004">2004</option>
+<option value="2005">2005</option>
+<option value="2006">2006</option>
+<option value="2007">2007</option>
+<option value="2008">2008</option>
+<option value="2009">2009</option>
+<option value="2010">2010</option>
+<option value="2011">2011</option>
+<option value="2012">2012</option>
+<option value="2013">2013</option>
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+</select>
+
+        </div>
+        <div id="newsletter-birthday-feedback" class="feedback type-sm mar-t-rg disp-n"></div>
+      </div>
+    </div>
+
+    <div class="modal-field type-rg">
+      <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+        <label>
+          Newsletters
+        </label>
+      </div>
+      <div class="modal-g-lg type-sm type-rg--lg">
+        <div class="flex--sm mar-y-md--lg mar-b-sm">
+          <label style="white-space:nowrap" class="mar-r-md">
+            <input type="checkbox" name="newsletter_anime" id="newsletter_anime" value="1" class="pad-r-sm"> Anime
+          </label>
+          <label style="white-space:nowrap" class="mar-r-md">
+            <input type="checkbox" name="newsletter_manga" id="newsletter_manga" value="1" class="pad-r-sm"> Manga
+          </label>
+          <label style="white-space:nowrap">
+            <input type="checkbox" name="newsletter_wsj" id="newsletter_wsj" value="1" class="pad-r-sm"> Shonen Jump
+          </label>
+        </div>
+        <div id="newsletter-interests-feedback" class="feedback type-sm mar-t-rg disp-n"></div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <div class="modal-g-lg shift">
+        <button type="submit" class="btn-primary type-rg pad-x-xl">Subscribe</button>
+        <div class="mar-t-md type-sm">
+          <p>By subscribing, I agree to VIZ's <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+
+<div id="modal-feedback" class="modal pad-md pad-b-lg pad-lg--md pad-xl--lg" data-modal-state="off">
+  <a href="#modal-feedback" data-modal-btn class="modal-close">
+    <i class="icon-close"></i>
+  </a>
+  <div class="modal-g-lg shift mar-b-lg">
+    <h2 class="type-md weight-bold style-caps line-solid">Feedback</h2>
+    <div class="type-rg mar-t-md"><p>Please submit a suggestion, comment or question - we would love to hear from you!</p></div>
+  </div>
+  <form id="feedback_form" class="clearfix clear-b">
+    <div class="modal-field type-rg">
+      <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+        <label>E-mail <span class="type-sm">(optional)</span></label>
+      </div>
+      <div class="modal-g-lg">
+        <input type="text" name="feedback_email" id="feedback_email"></input>
+        <div id="feedback-email-feedback" class="feedback type-sm mar-t-rg disp-n"></div>
+      </div>
+    </div>
+    <div class="modal-field type-rg">
+      <div class="modal-g-sm type-right--lg mar-y-md--lg mar-b-sm">
+        <label>
+          Comments
+        </label>
+      </div>
+      <div class="modal-g-lg">
+        <textarea rows=4 id="feedback_comments" name="feedback_comments"></textarea>
+        <div id="feedback-comments-feedback" class="feedback type-sm mar-t-rg disp-n color-red"></div>
+      </div>
+    </div>
+    <div class="modal-field type-rg">
+      <div class="modal-g-lg shift">
+        <div id="feedback-captcha"></div>
+        <div id="feedback-captcha-feedback" class="feedback type-sm mar-t-rg disp-n color-red"></div>
+      </div>
+    </div>
+    <div class="modal-actions mar-b-lg">
+      <div class="modal-g-lg shift">
+        <input type="submit" class="btn-primary type-rg pad-x-xl" value="Send Feedback" />
+      </div>
+    </div>
+  </form>
+</div>
+<script type="text/javascript">
+  $("#feedback_form").submit(function(){
+    var isWsjPage = 0;
+    var errors    = false;
+
+    // REM the email field is optional
+
+    if ($("#feedback_comments").val() == "") {
+      validate.feedback_msg( $("#feedback-comments-feedback"), 'Please enter a message to send.', true );
+      errors = true;
+    } 
+    if (feedback_recaptcha_response) {
+    
+    } else {
+      validate.feedback_msg( $("#feedback-captcha-feedback"), 'You must complete the captcha verification above', true );
+      errors = true;
+    }
+
+    if (errors === true) {
+      // No need to scroll since its a modal
+    } else {
+      var jqxhr = $.ajax({
+        type: "POST",
+        url:  "/company/feedback_send",
+        data: {
+          source:   "feedback",
+          email:    $("#feedback_email").val(),
+          comments: $("#feedback_comments").val(),
+          is_wsj:   isWsjPage,
+          recaptcha_response: feedback_recaptcha_response
+        },
+        dataType: "json"
+      });
+      jqxhr.done(function(data, textStatus, xhr) { 
+        if (data.sent == 1) {
+          $("#feedback_email, #feedback_comments").val("");
+
+          Modals.toggle("#modal-thanks");
+          $("#modal-thanks h2").html('Thank you!');
+          $("#modal-thanks #thanks-left label").html('<div id="thanks-small-note" class="mar-t-md type-sm mar-b-lg">Your comments have been received.</div><a class="flex-width-1 btn-primary pad-x-sm pad-x-md--sm" href="javascript:Modals.toggle(\'#modal-thanks\')">Close</a>');
+
+        } else {
+          validate.feedback_msg( $("#feedback-captcha-feedback"), data.error, true );
+        }
+      });
+      jqxhr.fail(function(xhr, textStatus, error) {
+        showErr(xhr.statusText, JSON.stringify(error));
+      });
+    }
+    return false; // stop default behavior
+  });
+</script>
+
+<div id="modal-thanks" class="modal pad-md pad-b-lg pad-lg--md pad-xl--lg" data-modal-state="off">
+  <a href="#modal-thanks" data-modal-btn class="modal-close">
+    <i class="icon-close"></i>
+  </a>
+  <div class="mar-b-lg">
+    <h2 class="type-md weight-bold style-caps line-solid"></h2>
+  </div>
+  <div class="modal-field type-rg">
+    <div id="thanks-left" class="mar-y-md--lg mar-b-sm">
+      <label></label>
+    </div>
+  </div>
+</div>
+
+<div id="modal-gdpr" class="modal pad-md pad-b-lg pad-lg--md pad-xl--lg" data-modal-state="off">
+  <div class="modal-g-lg shift mar-b-lg">
+    <h2 class="o_err-title type-md weight-bold style-caps line-solid">Note to our visitors in the EU</h2>
+    <div class="o_err-msg type-rg mar-t-md">
+This website uses cookies and tracking technologies to assist with your navigation, analyze use of our website and products and services, assist with your registration and login, and to assist with our marketing efforts. You may block cookies via standard web-browser settings, but this site may not function correctly without cookies.
+    </div>
+  </div>
+  <div class="modal-actions">
+    <div class="modal-g-lg shift">
+      <input type="button" class="btn-primary type-rg pad-x-xl modal-close" value="OK" onclick="Modals.close(); setCookie('gdpr_seen', 1, 365);" />
+    </div>
+  </div>
+</div>
+
+
+<div id="modal-editcomment" class="modal pad-md pad-b-lg pad-lg--md" data-modal-state="off">
+  <a href="#modal-editcomment" data-modal-btn class="modal-close"><i class="icon-close"></i></a>
+
+  <div class="clearfix mar-t-md mar-b-lg type-center line-solid">
+    <h3 class="type-md type-lg--lg">Edit comment</h3>
+  </div>
+  <form id="edit_comment_form" action="#" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="Xu4OF35iW1iCnlAuBFnod0NEm6t9ixkKZGq6t2Y6Sb43MZWMJ_NuQ5T_aNLK3WTczGo3n1jjE3ZDnPjZ4tfLpQ" />
+    <div class="comment_form_err color-red clearfix mar-t-md mar-b-lg" style="display:none;">
+      <h3 class="type-md weight-bold line-solid"></h3>
+    </div>
+    <textarea name="comment[content]" class="admin" rows="4" cols="100"></textarea>
+    <div>
+      <div class="mar-t-md" style="margin-top:8px;">
+        <label class="disp-bl float-l--md mar-b-md mar-y-rg--md">
+          <input type="checkbox" name="comment[is_spoiler]" value="1" class="is_spoiler v-mid mar-r-rg" />
+          <span class="v-mid color-mid-gray">Contains spoilers!</span>
+        </label>
+        <input class="submit_btn btn-primary-dark type-rg float-r--md" type="submit" value="Update Comment" />
+      </div>
+      <img class="wait_gif disp-n" style="float:right; margin:12px 7px 0 0;" src="https://assets.viz.com/assets/ajax-loader-slick-e7b44c86b050fca766a96ddac2d0932af0126da6f2305280342d909168dcce6b.gif" />
+      <div class="clear-b"></div>
+    </div>
+</form></div>
+
+
+
+      <section id="newsletter-footer" class="bg-lighter-gray">
+  <div class="row flex--lg flex-items-center pad-y-lg pos-r">
+    <div class="g-2--lg mar-b-lg mar-b-0--lg pos-a--lg b-0 disp-n--nl">
+      <img class="disp-bl" src="https://dw9to29mmj727.cloudfront.net/misc/newsletter-naruto3.png" />
+    </div>
+    <div class="g-6--lg g-shift-2--lg mar-b-md mar-b-0--lg">
+      <h3 class="type-md type-lg--lg line-solid mar-b-rg">Get the latest manga &amp; anime news!</h3>
+      <p class="type-sm type-rg--lg line-caption">You&rsquo;ll never miss a beat when you subscribe to our newsletter.</p>
+    </div>
+    <form class="g-4--lg flex flex--stretch type-sm type-rg--sm" onsubmit="raiseNewsletterSignupDialog($('#newsletter_footer_email').val()); $('#newsletter_footer_email').val(''); return false;">
+      <input type="text" class="flex-width-3" placeholder="Enter your email address" id="newsletter_footer_email">
+      <button type="submit" class="btn-primary flex-width-1 btn-primary pad-x-sm pad-x-md--sm" id="newsletter_footer_signup">Sign Up</button>
+    </form>
+  </div>
+</section>
+
+
+      <footer id="global-footer" class="o_site-footer bg-off-black">
+  <div class="row flex">
+    <div class="o_logo-bottom bg-black flex g-3--lg g-omega--lg">
+      <a href="/" class="o_logo-img color-white type-md weight-bold">
+        <img alt="VIZ" src="https://assets.viz.com/assets/logo@2x-b76f649f933ea15f45147ff5445a2501c85c7f863ba0aba5ea7bec93c3272cc6.png" />
+      </a>
+    </div>
+  </div>
+  <div class="row pad-y-xl">
+    <div class="g-6 g-6--md mar-b-lg type-md style-caps weight-bold">
+      <ul class="o_footer-primary-nav-col">
+        <li class="o_footer-primary-nav-item"><a class="color-mid-gray hover-red" href="/read">Read</a></li>
+        <li class="o_footer-primary-nav-item"><a class="color-mid-gray hover-red" href="/watch">Watch</a></li>
+        <li class="o_footer-primary-nav-item"><a class="color-mid-gray hover-red" href="/shonenjump">Shonen Jump</a></li>
+      </ul>
+      <ul class="o_footer-primary-nav-col">
+        <li class="o_footer-primary-nav-item"><a class="color-mid-gray hover-red" href="/community">Community</a></li>
+        <li class="o_footer-primary-nav-item"><a class="color-mid-gray hover-red" href="/calendar">Calendar</a></li>
+      </ul>
+    </div>
+    <div class="g-6 g-6--md g-omega--md type-rg">
+      <ul class="o_footer-secondary-nav-col">
+        <li class="o_footer-secondary-nav-item"><a class="color-mid-gray hover-red" href="/company-about">About VIZ</a></li>
+        <li class="o_footer-secondary-nav-item"><a class="color-mid-gray hover-red" href="/company-contact">Contact VIZ</a></li>
+        <li class="o_footer-secondary-nav-item"><a class="color-mid-gray hover-red" href="/company-faq">FAQ</a></li>
+        <li class="o_footer-secondary-nav-item"><a class="color-mid-gray hover-red" href="/events">Events</a></li>
+      </ul>
+      <ul class="o_footer-secondary-nav-col">
+        <li class="o_footer-secondary-nav-item"><a class="color-mid-gray hover-red" href="/apps">Apps</a></li>
+        <li class="o_footer-secondary-nav-item"><a class="color-mid-gray hover-red" href="/ratings">Ratings</a></li>
+        <li class="o_footer-secondary-nav-item">
+          <a class="color-mid-gray hover-red" href="/company-jobs">Jobs</a> <span class="color-mid-gray">/</span>
+          <a class="color-mid-gray hover-red" href="/company-internships">Internships</a>
+        </li>
+        <li class="o_footer-secondary-nav-item"><a class="color-mid-gray hover-red" href="/copyrights">Copyrights</a></li>
+      </ul>
+      <ul class="o_footer-secondary-nav-col end">
+        <li class="o_footer-secondary-nav-item"><a class="color-mid-gray hover-red" href="/privacy">Privacy Policy</a></li>
+        <li class="o_footer-secondary-nav-item"><a class="color-mid-gray hover-red" href="/terms">Terms of Use</a></li>
+        <li class="o_footer-secondary-nav-item">&nbsp;</li>
+        <li class="o_footer-secondary-nav-item"><a class="color-mid-gray hover-red" href="https://twitter.com/VIZMedia" target="viz_twitter">Twitter</a></li>
+        <li class="o_footer-secondary-nav-item"><a class="color-mid-gray hover-red" href="https://www.facebook.com/OfficialVIZMedia" target="viz_facebook">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer_account" class="row"></div>
+</footer>
+
+
+
+    <div id="overlay"      data-overlay-state="off" class="o_overlay"></div>
+    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+    <!-- Twitter universal website tag code -->
+<script src="//platform.twitter.com/oct.js" type="text/javascript" async defer></script>
+<script type="text/javascript">
+setTimeout(function(){twttr.conversion.trackPid('nuvyy', { tw_sale_amount: 0, tw_order_quantity: 0 });}, 200);
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=nuvyy&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+<img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=nuvyy&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+</noscript>
+<!-- End Twitter universal website tag code -->
+
+  </body>
+</html>
+
