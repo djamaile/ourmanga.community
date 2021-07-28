@@ -28,3 +28,4 @@
 # bazel
 /bazel-*
 .bazelrc
+.scripts
