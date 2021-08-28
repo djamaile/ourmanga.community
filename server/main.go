@@ -1,11 +1,13 @@
 package main
 
 import (
-	"github.com/gorilla/mux"
 	"encoding/json"
-	"github.com/djamaile/mango/pkg/releases"
 	"log"
 	"net/http"
+
+	"github.com/djamaile/mango/pkg/releases"
+	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 )
 
 func vizHandler(w http.ResponseWriter, r *http.Request) {
@@ -36,8 +38,7 @@ func main() {
 	r.HandleFunc("/releases/darkhorse", darkHorseHandler)
 	r.HandleFunc("/releases/kodansha", kodanshaHandler)
 
+	handler := cors.Default().Handler(r)
 	log.Println("Listening on :8000")
-	log.Fatal(http.ListenAndServe(":8000", r))
+	log.Fatal(http.ListenAndServe(":8000", handler))
 }
-
-

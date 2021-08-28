@@ -10,6 +10,7 @@ go_library(
     deps = [
         "//pkg/releases",
         "@com_github_gorilla_mux//:go_default_library",
+        "@com_github_rs_cors//:go_default_library",
     ],
     data = [
         "//pages:generated_pages"
