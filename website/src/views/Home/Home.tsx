@@ -73,6 +73,8 @@ const Home: React.FC = () => {
   return (
     <>
       <div className="container px-4 mx-auto">
+        {/* logo */}
+        <h1 className="text-4xl black">私たちの漫画<span>♡</span></h1>
         {/* publishers */}
         <div className="grid grid-cols-6 lg:grid-cols-12 gap-12 justify-center mb-4">
           {publishers.map((p) => {
