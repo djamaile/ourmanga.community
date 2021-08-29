@@ -1,0 +1,100 @@
+{
+  "name": "mango",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^6.2.0",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.8",
+    "autoprefixer": "^9",
+    "axios": "^0.21.1",
+    "postcss": "^7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-query": "^3.19.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "serve": "^12.0.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@latest",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1",
+    "zustand": "^3.5.10"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "GENERATE_SOURCEMAP=false crago build",
+    "compile": "tsc",
+    "format": "prettier --write src",
+    "test": "jest",
+    "test:ci": "jest --ci",
+    "test:watch": "jest --watch",
+    "eject": "react-scripts eject",
+    "lint": "eslint 'src/*.{js,ts,tsx}'",
+    "lint:fix": "yarn run lint --fix",
+    "pretty": "pretty-quick --staged",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
+    "cy:run": "cypress run --headless --browser chrome",
+    "cy:open": "cypress open --browser chrome",
+    "start:prod": "serve -s build -l 4000"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run test --watchAll=false --silent && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": [
+      "pretty-quick --staged",
+      "yarn run lint:fix"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@cypress/react": "^5.9.2",
+    "@cypress/webpack-dev-server": "^1.4.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "cypress": "^8.1.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "husky": "^7.0.1",
+    "jest-svg-transformer": "^1.0.0",
+    "lint-staged": "^11.1.1",
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1",
+    "ts-jest": "^26.5.5"
+  }
+}

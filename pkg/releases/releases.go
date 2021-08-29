@@ -2,7 +2,6 @@ package releases
 
 import (
 	"fmt"
-	"github.com/gocolly/colly"
 	"log"
 	"net/http"
 	"os"
@@ -10,12 +9,14 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/gocolly/colly"
 )
 
 type Manga struct {
-	Name  string
-	Image string
-	Link  string
+	Name  string `json:"name"`
+	Image string `json:"image"`
+	Link  string `json:"link"`
 }
 
 var location, _ = time.LoadLocation("UTC")
@@ -33,7 +34,7 @@ func CollectYenPressReleases() []Manga {
 
 	collector.OnHTML(".book-shelf-title-grid", func(element *colly.HTMLElement) {
 		temp := Manga{}
-		temp.Name = element.ChildText(".book-detail p")
+		temp.Name = element.ChildText(".book-detail h2")
 		temp.Image = element.ChildAttr("img", "src")
 		temp.Link = element.ChildAttr(".book-detail-links a", "href")
 		allYenReleases = append(allYenReleases, temp)
@@ -53,7 +54,7 @@ func CollectYenPressReleases() []Manga {
 	for _, file := range files {
 		fmt.Println(file.Name())
 	}
-	collector.Visit("file://" + path.Join(pwd,s))
+	collector.Visit("file://" + path.Join(pwd, s))
 
 	return allYenReleases
 }
