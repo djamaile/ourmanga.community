@@ -8,7 +8,7 @@ interface GlobalState {
 export const useStore = create<GlobalState>((set) => ({
   publisher: "viz",
   changePublisher: (name: string) => {
-    set((state) => ({
+    set(() => ({
       publisher: name,
     }));
   },

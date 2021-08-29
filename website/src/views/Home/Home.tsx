@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useQuery } from "react-query";
 import { useStore } from "../../global";
 
@@ -28,7 +28,7 @@ const PublisherLogo: React.FC<Props> = ({ ...props }) => {
         alt="viz media logo"
         width="100"
         height="100"
-        className="object-contain cursor-pointer"
+        className="object-contain cursor-pointer m-auto block"
       />
     </section>
   );
@@ -41,7 +41,6 @@ const Home: React.FC = () => {
     `/releases/${publisher}`,
     {},
   ]);
-  // const [manga, setManga] = useState<Manga[] | undefined>(undefined);
 
   if (isFetching) return <p>Is loading...</p>;
 
@@ -74,11 +73,17 @@ const Home: React.FC = () => {
     <>
       <div className="container px-4 mx-auto">
         {/* logo */}
-        <h1 className="text-4xl black">私たちの漫画<span>♡</span></h1>
+        <h1 className="text-4xl black mt-4">私たちの漫画♡</h1>
         {/* publishers */}
-        <div className="grid grid-cols-6 lg:grid-cols-12 gap-12 justify-center mb-4">
+        <div className="grid grid-cols-3 lg:grid-cols-5 gap-12 justify-center mb-8">
           {publishers.map((p) => {
-            return <PublisherLogo image={p.image} name={p.name} />;
+            return (
+              <PublisherLogo
+                image={p.image}
+                name={p.name}
+                key={p.name + p.image}
+              />
+            );
           })}
         </div>
         {/* manga-books */}

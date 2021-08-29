@@ -36,7 +36,7 @@ func CollectYenPressReleases() []Manga {
 		temp := Manga{}
 		temp.Name = element.ChildText(".book-detail h2")
 		temp.Image = element.ChildAttr("img", "src")
-		temp.Link = element.ChildAttr(".book-detail-links a", "href")
+		temp.Link = "https://yenpress.com" + element.ChildAttr(".book-detail-links a", "href")
 		allYenReleases = append(allYenReleases, temp)
 	})
 
