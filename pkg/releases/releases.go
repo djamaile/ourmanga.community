@@ -187,3 +187,39 @@ func CollectVizReleases() []Manga {
 
 	return allVizReleases
 }
+
+func CollectTokyoPopReleases() []Manga {
+	var allTokyoPopReleases []Manga
+	_, month, _ := time.Now().Date()
+
+	t := &http.Transport{}
+	t.RegisterProtocol("file", http.NewFileTransport(http.Dir("/")))
+
+	collector := colly.NewCollector()
+	collector.WithTransport(t)
+
+	collector.OnHTML(".release-month", func(element *colly.HTMLElement) {
+		fmt.Println("hallo")
+		monthOfRelease := element.ChildText(".release-month-label")
+		fmt.Println(monthOfRelease, month.String())
+		if monthOfRelease != month.String() {
+			return
+		}
+
+		temp := Manga{}
+		temp.Name = element.ChildText(".rs-item-title")
+		temp.Image = element.ChildAttr(".rs-item-image", "data-src")
+		temp.Link = "bed"
+		allTokyoPopReleases = append(allTokyoPopReleases, temp)
+	})
+
+	collector.OnRequest(func(request *colly.Request) {
+		fmt.Println("Visiting", request.URL.String())
+	})
+
+	pwd, _ := os.Getwd()
+	s := fmt.Sprintf("pages/tokyopop-%d-%d-%d.html", int(year), int(month), int(day))
+	collector.Visit("file://" + path.Join(pwd, s))
+
+	return allTokyoPopReleases
+}

@@ -13,9 +13,10 @@ console.log(chalk.blue(`getting files for: ${year}-${month}-${day}`));
 const sites = [
   {url: "https://yenpress.com/new-releases/", name: "yenpress"},
   {url: "https://sevenseasentertainment.com/release-dates/", name: "sevenseas"},
-  {url:`https://www.darkhorse.com/Books/Browse/Manga---${monthName}+${year}-${monthName}+${year}/P9wdwkt8`, name:"darkhorse"},
-  {url:"https://kodansha.us/manga/calendar", name:"kodansha"},
-  {url:`https://www.viz.com/calendar/${year}/${month}`, name:"viz"},
+  {url: `https://www.darkhorse.com/Books/Browse/Manga---${monthName}+${year}-${monthName}+${year}/P9wdwkt8`, name:"darkhorse"},
+  {url: "https://kodansha.us/manga/calendar", name:"kodansha"},
+  {url: `https://www.viz.com/calendar/${year}/${month}`, name:"viz"},
+  {url: "https://www.tokyopop.com/upcoming", name:"tokyopop"},
 ];
 
 await Promise.all(sites.map(async site => {

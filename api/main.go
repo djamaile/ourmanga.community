@@ -30,6 +30,10 @@ func kodanshaHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(releases.CollectKodanshaReleases())
 }
 
+func tokyopopHandler(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(releases.CollectTokyoPopReleases())
+}
+
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/releases/viz", vizHandler)
@@ -37,6 +41,7 @@ func main() {
 	r.HandleFunc("/releases/sevenseas", sevenSeasHandler)
 	r.HandleFunc("/releases/darkhorse", darkHorseHandler)
 	r.HandleFunc("/releases/kodansha", kodanshaHandler)
+	r.HandleFunc("/releases/tokyopop", tokyopopHandler)
 
 	handler := cors.Default().Handler(r)
 	log.Println("Listening on :8000")
