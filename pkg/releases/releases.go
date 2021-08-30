@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"path"
+	"path/filepath"
 	"strconv"
 	"strings"
 	"time"
@@ -54,7 +55,7 @@ func CollectYenPressReleases() []Manga {
 	for _, file := range files {
 		fmt.Println(file.Name())
 	}
-	collector.Visit("file://" + path.Join(pwd, s))
+	collector.Visit("file://" + ".." + ".." + ".." + path.Join(pwd, s))
 
 	return allYenReleases
 }
@@ -181,9 +182,10 @@ func CollectVizReleases() []Manga {
 		fmt.Println("Visiting", request.URL.String())
 	})
 
-	pwd, _ := os.Getwd()
-	s := fmt.Sprintf("pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
-	collector.Visit("file://" + path.Join(pwd, s))
+	//pwd, _ := os.Getwd()
+	s := fmt.Sprintf("../../pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
+	absPath, _ := filepath.Abs(s)
+	collector.Visit("file://" + absPath)
 
 	return allVizReleases
 }
