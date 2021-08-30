@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "GENERATE_SOURCEMAP=false crago build",
+    "build": "GENERATE_SOURCEMAP=false craco build",
     "compile": "tsc",
     "format": "prettier --write src",
     "test": "jest",
