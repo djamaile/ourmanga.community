@@ -9,6 +9,6 @@ import (
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(releases.CollectVizReleases())
+	fmt.Println(json.NewEncoder(w).Encode(releases.CollectVizReleases()))
 	fmt.Fprint(w)
 }
