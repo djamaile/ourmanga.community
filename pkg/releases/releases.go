@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"path"
+	"runtime"
 	"strconv"
 	"strings"
 	"time"
@@ -181,9 +182,12 @@ func CollectVizReleases() []Manga {
 		fmt.Println("Visiting", request.URL.String())
 	})
 
-	pwd, _ := os.Getwd()
-	s := fmt.Sprintf("api/pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
-	collector.Visit("file://" + path.Join(pwd, s))
+	//pwd, _ := os.Getwd()
+	s := fmt.Sprintf("pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
+	_, currentFilePath, _, _ := runtime.Caller(0)
+	dir := path.Dir(currentFilePath)
+	//s := fmt.Sprintf("pages/ci.yml")
+	collector.Visit("file://" + path.Join(dir, s))
 
 	return allVizReleases
 }
