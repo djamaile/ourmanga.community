@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"os"
 	"path"
-	"runtime"
 	"strconv"
 	"strings"
 	"time"
@@ -171,6 +170,7 @@ func CollectVizReleases() []Manga {
 	collector.WithTransport(t)
 
 	collector.OnHTML(".manga-books article", func(element *colly.HTMLElement) {
+		fmt.Println(element.DOM.Html())
 		temp := Manga{}
 		temp.Name = element.ChildText(".color-off-black")
 		temp.Image = element.ChildAttr("a.product-thumb img", "data-original")
@@ -182,12 +182,9 @@ func CollectVizReleases() []Manga {
 		fmt.Println("Visiting", request.URL.String())
 	})
 
-	//pwd, _ := os.Getwd()
+	pwd, _ := os.Getwd()
 	s := fmt.Sprintf("pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
-	_, currentFilePath, _, _ := runtime.Caller(0)
-	dir := path.Dir(currentFilePath)
-	//s := fmt.Sprintf("pages/ci.yml")
-	collector.Visit("file://" + path.Join(dir, s))
+	collector.Visit("file://" + path.Join(pwd, s))
 
 	return allVizReleases
 }
