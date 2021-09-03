@@ -1,7 +1,0 @@
-{
-    "functions": {
-      "api/viz.go": {
-        "includeFiles": "pages/**"
-      }
-    }
-  }

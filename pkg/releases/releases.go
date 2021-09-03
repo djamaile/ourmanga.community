@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"os"
 	"path"
-	"path/filepath"
 	"strconv"
 	"strings"
 	"time"
@@ -182,10 +181,9 @@ func CollectVizReleases() []Manga {
 		fmt.Println("Visiting", request.URL.String())
 	})
 
-	//pwd, _ := os.Getwd()
+	pwd, _ := os.Getwd()
 	s := fmt.Sprintf("../../pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
-	absPath, _ := filepath.Abs(s)
-	collector.Visit("file://" + absPath)
+	collector.Visit("file://" + path.Join(pwd, s))
 
 	return allVizReleases
 }
