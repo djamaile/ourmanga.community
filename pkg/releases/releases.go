@@ -182,7 +182,7 @@ func CollectVizReleases() []Manga {
 	})
 
 	pwd, _ := os.Getwd()
-	s := fmt.Sprintf("var/task/api/pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
+	s := fmt.Sprintf("api/pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
 	collector.Visit("file://" + path.Join(pwd, s))
 
 	return allVizReleases
