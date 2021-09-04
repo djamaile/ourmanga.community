@@ -2,7 +2,6 @@ package releases
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 	"path"
@@ -46,15 +45,7 @@ func CollectYenPressReleases() []Manga {
 
 	pwd, _ := os.Getwd()
 	s := fmt.Sprintf("pages/yenpress-%d-%d-%d.html", int(year), int(month), int(day))
-	files, err := os.ReadDir("../")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	for _, file := range files {
-		fmt.Println(file.Name())
-	}
-	collector.Visit("file://" + ".." + ".." + ".." + path.Join(pwd, s))
+	collector.Visit("file://" + path.Join(pwd, s))
 
 	return allYenReleases
 }
