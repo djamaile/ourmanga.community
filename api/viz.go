@@ -1,8 +1,8 @@
 package api
 
 import (
-	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"time"
 
@@ -47,5 +47,9 @@ func CollectVizReleases() []Manga {
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(CollectVizReleases())
+	//json.NewEncoder(w).Encode(CollectVizReleases())
+	indexHTML, err := ioutil.ReadFile("/var/task/api/pages/viz-2021-9-3.html")
+	check(err)
+	fmt.Println(indexHTML)
+	w.Write(indexHTML)
 }
