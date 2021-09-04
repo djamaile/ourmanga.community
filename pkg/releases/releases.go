@@ -173,9 +173,9 @@ func CollectVizReleases() []Manga {
 		fmt.Println("Visiting", request.URL.String())
 	})
 
-	//pwd, _ := os.Getwd()
-	//s := fmt.Sprintf("api/pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
-	collector.Visit("file:///var/task/api/pages/viz-2021-9-3.html")
+	pwd, _ := os.Getwd()
+	s := fmt.Sprintf("api/pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
+	collector.Visit("file://" + path.Join(pwd, s))
 
 	return allVizReleases
 }
