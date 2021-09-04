@@ -46,9 +46,16 @@ func CollectVizReleases() []Manga {
 	return allVizReleases
 }
 
+func check(e error) {
+	if e != nil {
+		fmt.Println(e)
+		panic(e)
+	}
+}
+
 func Handler(w http.ResponseWriter, r *http.Request) {
 	//json.NewEncoder(w).Encode(CollectVizReleases())
-	indexHTML, err := ioutil.ReadFile("/var/task/api/pages/viz-2021-9-3.html")
+	indexHTML, err := ioutil.ReadFile("var/task/api/pages/viz-2021-9-3.html")
 	check(err)
 	fmt.Println(indexHTML)
 	w.Write(indexHTML)
