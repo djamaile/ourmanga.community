@@ -3,6 +3,7 @@ package api
 import (
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"time"
 
@@ -55,6 +56,14 @@ func check(e error) {
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 	//json.NewEncoder(w).Encode(CollectVizReleases())
+	files, err := ioutil.ReadDir(".")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, file := range files {
+		fmt.Println(file.Name(), file.IsDir())
+	}
 	indexHTML, err := ioutil.ReadFile("pages/viz-2021-9-3.html")
 	check(err)
 	fmt.Println(indexHTML)
