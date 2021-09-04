@@ -1,10 +1,11 @@
 package api
 
 import (
+	"encoding/json"
 	"fmt"
-	"io/ioutil"
-	"log"
 	"net/http"
+	"os"
+	"path"
 	"time"
 
 	"github.com/gocolly/colly"
@@ -40,9 +41,9 @@ func CollectVizReleases() []Manga {
 		fmt.Println("Visiting", request.URL.String())
 	})
 
-	//pwd, _ := os.Getwd()
-	//s := fmt.Sprintf("api/pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
-	collector.Visit("file://var/task/api/pages/viz-2021-9-3.html")
+	pwd, _ := os.Getwd()
+	s := fmt.Sprintf("../pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
+	collector.Visit("file://" + path.Join(pwd, s))
 
 	return allVizReleases
 }
@@ -55,17 +56,17 @@ func check(e error) {
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	//json.NewEncoder(w).Encode(CollectVizReleases())
-	files, err := ioutil.ReadDir(".")
-	if err != nil {
-		log.Fatal(err)
-	}
+	json.NewEncoder(w).Encode(CollectVizReleases())
+	// files, err := ioutil.ReadDir(".")
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
-	for _, file := range files {
-		fmt.Println(file.Name(), file.IsDir())
-	}
-	indexHTML, err := ioutil.ReadFile("pages/viz-2021-9-3.html")
-	check(err)
-	fmt.Println(indexHTML)
-	w.Write(indexHTML)
+	// for _, file := range files {
+	// 	fmt.Println(file.Name(), file.IsDir())
+	// }
+	// indexHTML, err := ioutil.ReadFile("pages/viz-2021-9-3.html")
+	// check(err)
+	// fmt.Println(indexHTML)
+	// w.Write(indexHTML)
 }
