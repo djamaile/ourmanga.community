@@ -1,0 +1,7 @@
+filegroup(
+    name = "generated_pages",
+    visibility = ["//visibility:public"],
+    srcs = glob([
+        "*",
+    ]),
+)
