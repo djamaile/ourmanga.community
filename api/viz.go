@@ -55,7 +55,7 @@ func check(e error) {
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 	//json.NewEncoder(w).Encode(CollectVizReleases())
-	indexHTML, err := ioutil.ReadFile("var/task/api/pages/viz-2021-9-3.html")
+	indexHTML, err := ioutil.ReadFile("pages/viz-2021-9-3.html")
 	check(err)
 	fmt.Println(indexHTML)
 	w.Write(indexHTML)
