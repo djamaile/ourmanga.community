@@ -161,7 +161,6 @@ func CollectVizReleases() []Manga {
 	collector.WithTransport(t)
 
 	collector.OnHTML(".manga-books article", func(element *colly.HTMLElement) {
-		fmt.Println(element.DOM.Html())
 		temp := Manga{}
 		temp.Name = element.ChildText(".color-off-black")
 		temp.Image = element.ChildAttr("a.product-thumb img", "data-original")
@@ -174,7 +173,7 @@ func CollectVizReleases() []Manga {
 	})
 
 	pwd, _ := os.Getwd()
-	s := fmt.Sprintf("api/pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
+	s := fmt.Sprintf("pages/viz-%d-%d-%d.html", int(year), int(month), int(day))
 	collector.Visit("file://" + path.Join(pwd, s))
 
 	return allVizReleases
