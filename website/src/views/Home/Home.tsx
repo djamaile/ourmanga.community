@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { useStore } from "../../global";
+import { PUBLISHERS } from "../../utils/constants";
 
 type Manga = {
   name: string;
@@ -34,6 +35,47 @@ const PublisherLogo: React.FC<Props> = ({ ...props }) => {
   );
 };
 
+const MangaBooks: React.FC<Mangas> = ({ ...props }) => {
+  if (props.data === null) {
+    return (
+      <div className="grid grid-cols-1">
+        <h1 className="text-center capitalize text-4xl">
+          No releases planned yet...
+        </h1>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {props.data.map((manga: Manga) => {
+          return (
+            <div>
+              <div className="flex flex-col justify-center items-center">
+                <div className="bg-yellow-300 w-56 h-72 flex justify-center	items-center rounded-md">
+                  <img
+                    src={manga.image}
+                    alt={manga.name}
+                    className="m-0 w-36 h-56 m-auto block"
+                  />
+                </div>
+                <a
+                  className="font-bold text-md hover:text-red-500 m-auto block"
+                  href={manga.link}
+                  target="_blank"
+                  rel="noreferrer">
+                  {manga.name}
+                </a>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+};
+
 const Home: React.FC = () => {
   const publisher = useStore((state) => state.publisher);
   const { data, error, isFetching } = useQuery<Mangas>([
@@ -42,32 +84,11 @@ const Home: React.FC = () => {
     {},
   ]);
 
+  const mangas: Manga[] = data?.data as Manga[];
+
   if (isFetching) return <p>Is loading...</p>;
 
   if (error) return <p>${error}</p>;
-
-  const publishers = [
-    {
-      image:
-        "https://media-exp1.licdn.com/dms/image/C4D0BAQEeo_kogsXllw/company-logo_200_200/0/1519856560642?e=2159024400&v=beta&t=7MOhLsBxLaptYbSWMo9lgqUlHHPTTgyJ3ZgKZIiQw4g",
-      name: "viz",
-    },
-    {
-      image: "https://upload.wikimedia.org/wikipedia/en/9/99/Yen_Press.png",
-      name: "yenpress",
-    },
-    {
-      image:
-        "https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Dark_Horse_Comics_logo.svg/1200px-Dark_Horse_Comics_logo.svg.png",
-      name: "darkhorse",
-    },
-    { image: "https://logodix.com/logo/1914457.png", name: "kodansha" },
-    {
-      image:
-        "https://pbs.twimg.com/profile_images/875779221414699008/r6prXoN2_400x400.jpg",
-      name: "sevenseas",
-    },
-  ];
 
   return (
     <>
@@ -76,7 +97,7 @@ const Home: React.FC = () => {
         <h1 className="text-4xl black mt-4">私たちの漫画♡</h1>
         {/* publishers */}
         <div className="grid grid-cols-3 lg:grid-cols-5 gap-12 justify-center mb-8">
-          {publishers.map((p) => {
+          {PUBLISHERS.map((p) => {
             return (
               <PublisherLogo
                 image={p.image}
@@ -87,30 +108,7 @@ const Home: React.FC = () => {
           })}
         </div>
         {/* manga-books */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {data?.data.map((manga: Manga) => {
-            return (
-              <div>
-                <div className="flex flex-col justify-center items-center">
-                  <div className="bg-yellow-300 w-56 h-72 flex justify-center	items-center rounded-md">
-                    <img
-                      src={manga.image}
-                      alt={manga.name}
-                      className="m-0 w-36 h-56 m-auto block"
-                    />
-                  </div>
-                  <a
-                    className="font-bold text-md hover:text-red-500 m-auto block"
-                    href={manga.link}
-                    target="_blank"
-                    rel="noreferrer">
-                    {manga.name}
-                  </a>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <MangaBooks data={mangas} />
       </div>
     </>
   );

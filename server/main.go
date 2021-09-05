@@ -36,12 +36,12 @@ func tokyopopHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	r := mux.NewRouter()
-	r.HandleFunc("/releases/viz", vizHandler)
-	r.HandleFunc("/releases/yenpress", yenHandler)
-	r.HandleFunc("/releases/sevenseas", sevenSeasHandler)
-	r.HandleFunc("/releases/darkhorse", darkHorseHandler)
-	r.HandleFunc("/releases/kodansha", kodanshaHandler)
-	r.HandleFunc("/releases/tokyopop", tokyopopHandler)
+	r.HandleFunc("/api/releases/viz", vizHandler)
+	r.HandleFunc("/api/releases/yenpress", yenHandler)
+	r.HandleFunc("/api/releases/sevenseas", sevenSeasHandler)
+	r.HandleFunc("/api/releases/darkhorse", darkHorseHandler)
+	r.HandleFunc("/api/releases/kodansha", kodanshaHandler)
+	r.HandleFunc("/api/releases/tokyopop", tokyopopHandler)
 
 	handler := cors.Default().Handler(r)
 	log.Println("Listening on :8080")
