@@ -78,12 +78,11 @@ const MangaBooks: React.FC<Mangas> = ({ ...props }) => {
 
 const Home: React.FC = () => {
   const publisher = useStore((state) => state.publisher);
-  const backend: string =  process.env.NODE_ENV === 'development' ? `/releases/${publisher}` : `/api/releases/${publisher}`;
-  const { data, error, isFetching } = useQuery<Mangas>([
-    "GET",
-    backend,
-    {},
-  ]);
+  const backend: string =
+    process.env.NODE_ENV === "development"
+      ? `/releases/${publisher}`
+      : `/api/releases/${publisher}`;
+  const { data, error, isFetching } = useQuery<Mangas>(["GET", backend, {}]);
 
   const mangas: Manga[] = data?.data as Manga[];
 
