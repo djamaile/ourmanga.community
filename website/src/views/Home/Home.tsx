@@ -80,7 +80,7 @@ const Home: React.FC = () => {
   const publisher = useStore((state) => state.publisher);
   const { data, error, isFetching } = useQuery<Mangas>([
     "GET",
-    `/api/releases/${publisher}`,
+    `/releases/${publisher}`,
     {},
   ]);
 
