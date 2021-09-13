@@ -1,21 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import { useStore } from "../../global";
 import { PUBLISHERS } from "../../utils/constants";
-
-type Manga = {
-  name: string;
-  image: string;
-  link: string;
-};
-
-type Mangas = {
-  data: Manga[];
-};
+import { Manga, Mangas } from "../../types";
 
 interface Props {
   image: string;
   name: string;
+}
+
+interface HeartProps {
+  manga: Manga;
 }
 
 const PublisherLogo: React.FC<Props> = ({ ...props }) => {
@@ -32,6 +27,40 @@ const PublisherLogo: React.FC<Props> = ({ ...props }) => {
         className="object-contain cursor-pointer m-auto block"
       />
     </section>
+  );
+};
+
+const HeartIcon: React.FC<HeartProps> = ({ ...props }) => {
+  const [liked, setLiked] = useState<boolean>(false);
+  const addLikedManga = useStore((state) => state.addLikedManga);
+  const likedMangas = useStore((state) => state.likedMangas);
+
+  const likeManga = () => {
+    if (!liked) {
+      addLikedManga(props.manga);
+    } else {
+      console.log("remove manga");
+    }
+    setLiked(!liked);
+    console.log(likedMangas);
+  };
+
+  return (
+    <div onClick={() => likeManga()}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-6 w-6 cursor-pointer"
+        fill={liked ? "red" : "none"}
+        viewBox="0 0 24 24"
+        stroke={liked ? "red" : "currentColor"}>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+        />
+      </svg>
+    </div>
   );
 };
 
@@ -57,9 +86,10 @@ const MangaBooks: React.FC<Mangas> = ({ ...props }) => {
                   <img
                     src={manga.image}
                     alt={manga.name}
-                    className="m-0 w-36 h-56 m-auto block"
+                    className="w-36 h-56 m-auto block"
                   />
                 </div>
+                <HeartIcon manga={manga} />
                 <a
                   className="font-bold text-md hover:text-red-500 m-auto block"
                   href={manga.link}
@@ -78,6 +108,7 @@ const MangaBooks: React.FC<Mangas> = ({ ...props }) => {
 
 const Home: React.FC = () => {
   const publisher = useStore((state) => state.publisher);
+  const likedMangas = useStore((state) => state.likedMangas);
   const backend: string =
     process.env.NODE_ENV === "development"
       ? `/releases/${publisher}`
@@ -88,7 +119,10 @@ const Home: React.FC = () => {
 
   if (isFetching) return <p>Is loading...</p>;
 
+  // TODO: make 404 page
   if (error) return <p>${error}</p>;
+
+  console.log(likedMangas);
 
   return (
     <>
