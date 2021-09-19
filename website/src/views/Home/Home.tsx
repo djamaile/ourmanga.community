@@ -31,18 +31,27 @@ const PublisherLogo: React.FC<Props> = ({ ...props }) => {
 };
 
 const HeartIcon: React.FC<HeartProps> = ({ ...props }) => {
-  const [liked, setLiked] = useState<boolean>(false);
-  const addLikedManga = useStore((state) => state.addLikedManga);
-  const likedMangas = useStore((state) => state.likedMangas);
+  const { addLikedManga, removeLikedManga, likedMangas } = useStore(
+    (state) => state
+  );
+
+  const isLiked = (): boolean =>
+    likedMangas.some((m) => m.name === props.manga.name);
+
+  const getRightAttribute = (type: string) => {
+    if (isLiked()) {
+      return "red";
+    }
+    return type === "stroke" ? "currentColor" : "none";
+  };
 
   const likeManga = () => {
-    if (!liked) {
+    if (!isLiked()) {
       addLikedManga(props.manga);
     } else {
-      console.log("remove manga");
+      console.log("REMOVING");
+      removeLikedManga(props.manga);
     }
-    setLiked(!liked);
-    console.log(likedMangas);
   };
 
   return (
@@ -50,9 +59,9 @@ const HeartIcon: React.FC<HeartProps> = ({ ...props }) => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6 cursor-pointer"
-        fill={liked ? "red" : "none"}
+        fill={getRightAttribute("fill")}
         viewBox="0 0 24 24"
-        stroke={liked ? "red" : "currentColor"}>
+        stroke={getRightAttribute("stroke")}>
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
