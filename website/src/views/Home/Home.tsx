@@ -152,7 +152,7 @@ const Home: React.FC = () => {
             );
           })}
         </div>
-        <div className="grid grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="flex flex-col justify-center items-center">
             <div className="flex justify-center	items-center">
               <button
