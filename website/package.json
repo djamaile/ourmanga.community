@@ -23,6 +23,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-use": "^17.3.1",
     "serve": "^12.0.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@latest",
     "typescript": "^4.1.2",
