@@ -31,6 +31,8 @@
   },
   "scripts": {
     "start": "craco start",
+    "backend": "go run ../server/main.go",
+    "dev": "concurrently \"yarn run backend\" \"yarn run start\"",
     "build": "GENERATE_SOURCEMAP=false craco build",
     "compile": "tsc",
     "format": "prettier --write src",
@@ -83,6 +85,7 @@
     "@cypress/webpack-dev-server": "^1.4.0",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
+    "concurrently": "^6.2.1",
     "cypress": "^8.1.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
