@@ -27,6 +27,7 @@
     "@typescript-eslint/no-use-before-define": ["error"],
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
     "react/jsx-filename-extension": [
       "warn",
       {

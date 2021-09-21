@@ -4,9 +4,9 @@ import { useQuery } from "react-query";
 import { useStore } from "../../global";
 import { PUBLISHERS } from "../../utils/constants";
 import { Manga, Mangas } from "../../types";
-import { MangaBooks } from "./MangaBooks";
-import { PublisherLogo } from "./PublisherLogo";
-import { LikedButton } from "./LikedButton";
+import { MangaBooks } from "../../components/Home/MangaBooks";
+import { PublisherLogo } from "../../components/Home/PublisherLogo";
+import { LikedButton } from "../../components/Home/LikedButton";
 import mascot from "../../assets/images/mascot.jpg";
 
 const Home: React.FC = () => {
