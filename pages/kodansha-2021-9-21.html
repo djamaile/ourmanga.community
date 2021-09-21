@@ -1,8 +1,7 @@
 <!doctype html>
 <!-- new AWS -->
 <html lang="en-US" class="">
-<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
-</script>
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventHandler=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventHandler,e.eventOptions)))}_interceptClicks(e){e.interceptedClicks=[],e.clickHandler=e._saveClicks.bind(e),window.addEventListener("click",e.clickHandler)}_saveClicks(e){this.interceptedClicks.push(e),e.target.matches('a[href="#"], a[href="#"] *')&&e.preventDefault()}_replayClicks(){window.removeEventListener("click",this.clickHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let a=e.get(n);void 0===a&&(a=n.nextSibling,e.set(n,a));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,a)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e),e._interceptClicks(e)}}RocketLazyLoadScripts.run();</script>
 	
     <script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=G-GG5R5BNRH3"></script>
 
@@ -25,7 +24,7 @@
   <script id="google_analytics_partners_domain_to_metadata" type="application/json">
     {"amazon.com":{"identifier":"amazon_unknown_type","type":null},"barnesandnoble.com":{"identifier":"barnes_and_noble_unknown_type","type":null},"booksamillion.com":{"identifier":"books_a_million","type":"print"},"bookshop.org":{"identifier":"bookshop_org","type":"print"},"global.bookwalker.jp":{"identifier":"bookwalker","type":"ebook"},"comixology.com":{"identifier":"comixology_unknown_type","type":null},"crunchyroll.com":{"identifier":"crunchyroll","type":"streaming"},"play.google.com":{"identifier":"google_play","type":"ebook"},"hudsonbooksellers.com":{"identifier":"hudson_booksellers","type":"print"},"indiebound.org":{"identifier":"indiebound","type":"print"},"itunes.apple.com":{"identifier":"itunes","type":null},"store.kobobooks.com":{"identifier":"kobo","type":"ebook"},"penguinrandomhouse.com":{"identifier":"penguin_random_house","type":"print"},"powells.com":{"identifier":"powells","type":"print"},"rightstufanime.com":{"identifier":"rightstuf","type":"print"},"target.com":{"identifier":"target","type":"print"},"walmart.com":{"identifier":"walmart","type":"print"},"inkr.com":{"identifier":"inkr","type":"streaming"},"inky-pen.com":{"identifier":"inkypen","type":"streaming"},"mangamo.com":{"identifier":"mangamo","type":"streaming"}}  </script>
 
-	<meta charset="UTF-8">
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -83,7 +82,7 @@
   
 	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 
-	<!-- This site is optimized with the Yoast SEO plugin v17.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<!-- This site is optimized with the Yoast SEO plugin v17.2 - https://yoast.com/wordpress/plugins/seo/ -->
 	<title>Manga Release Calendar - Kodansha</title>
 	<link rel="canonical" href="https://kodansha.us/manga/calendar/" />
 	<meta property="og:locale" content="en_US" />
@@ -1305,7 +1304,7 @@ img.emoji {
       <header class="filters__results-header">
                   
 <h2 class="filters__results-title">
-  <span class="u-break-words">Displaying</span> 4 of 7 Weeks</h2>
+  <span class="u-break-words">Displaying</span> 4 of 6 Weeks</h2>
         
         <div class="l-cluster l-cluster--spread filters__mobile-controls">
           <dialog-toggle dialog="filters">
@@ -1351,510 +1350,6 @@ img.emoji {
   </div>
 
   <ul class="l-stack">
-          <li class="calendar__day">
-        
-<h3 class="title title--discovery">
-  9/14/2021</h3>
-
-                  <ol class="l-grid l-grid--max-2">
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/abe-kuns-got-me-now-7/" class="card__link">Abe-kun&#8217;s Got Me Now 7</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Aki Iwai        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/abe-kuns-got-me-now-7/?buy"
-            aria-label="Buy: Abe-kun's Got Me Now 7"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/Abe-kunsGotMeNow_007_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Abe-kun&#039;s Got Me Now, 7" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/Abe-kunsGotMeNow_007_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/Abe-kunsGotMeNow_007_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/Abe-kunsGotMeNow_007_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/Abe-kunsGotMeNow_007_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/Abe-kunsGotMeNow_007_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/Abe-kunsGotMeNow_007_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/ace-of-the-diamond-34/" class="card__link">Ace of the Diamond, Volume 34</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Yuji Terajima        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/ace-of-the-diamond-34/?buy"
-            aria-label="Buy: Ace of the Diamond, Volume 34"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/AceoftheDiamond_vol34_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Ace of the Diamond, 34" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/AceoftheDiamond_vol34_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/AceoftheDiamond_vol34_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/AceoftheDiamond_vol34_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/AceoftheDiamond_vol34_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/AceoftheDiamond_vol34_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/AceoftheDiamond_vol34_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/giant-killing-26/" class="card__link">Giant Killing, Volume 26</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Masaya Tsunamoto and Tsujitomo        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/giant-killing-26/?buy"
-            aria-label="Buy: Giant Killing, Volume 26"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/GiantKilling_vol26_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Giant Killing, 26" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/GiantKilling_vol26_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/GiantKilling_vol26_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/GiantKilling_vol26_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/GiantKilling_vol26_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/GiantKilling_vol26_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/GiantKilling_vol26_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/go-with-the-clouds-north-by-northwest-5/" class="card__link">Go with the Clouds, North-by-Northwest, Volume 5</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Aki Irie        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/go-with-the-clouds-north-by-northwest-5/?buy"
-            aria-label="Buy: Go with the Clouds, North-by-Northwest, Volume 5"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="220" height="300" src="https://kodansha.us/wp-content/uploads/2021/05/9781949980714-GowiththeClouds_05-220x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/05/9781949980714-GowiththeClouds_05-220x300.jpg 220w, https://kodansha.us/wp-content/uploads/2021/05/9781949980714-GowiththeClouds_05-751x1024.jpg 751w, https://kodansha.us/wp-content/uploads/2021/05/9781949980714-GowiththeClouds_05-768x1047.jpg 768w, https://kodansha.us/wp-content/uploads/2021/05/9781949980714-GowiththeClouds_05-1126x1536.jpg 1126w, https://kodansha.us/wp-content/uploads/2021/05/9781949980714-GowiththeClouds_05-1502x2048.jpg 1502w, https://kodansha.us/wp-content/uploads/2021/05/9781949980714-GowiththeClouds_05.jpg 1650w" sizes="(max-width: 220px) 100vw, 220px" decoding="async" style="--image-width: 220; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/orient-4/" class="card__link">Orient, Volume 4</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Shinobu Ohtaka        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/orient-4/?buy"
-            aria-label="Buy: Orient, Volume 4"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2020/12/Orient_vol_004_cvr-200x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2020/12/Orient_vol_004_cvr-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2020/12/Orient_vol_004_cvr-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2020/12/Orient_vol_004_cvr-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2020/12/Orient_vol_004_cvr-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2020/12/Orient_vol_004_cvr-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2020/12/Orient_vol_004_cvr.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/police-in-a-pod-4/" class="card__link">Police in a Pod, Volume 4</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Miko Yasu        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/police-in-a-pod-4/?buy"
-            aria-label="Buy: Police in a Pod, Volume 4"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/PoliceinaPod_004_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Police in a Pod, 4" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/PoliceinaPod_004_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/PoliceinaPod_004_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/PoliceinaPod_004_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/PoliceinaPod_004_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/PoliceinaPod_004_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/PoliceinaPod_004_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/a-school-frozen-in-time-3/" class="card__link">A School Frozen in Time, Volume 3</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Mizuki Tsujimura and Naoshi Arakawa        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/a-school-frozen-in-time-3/?buy"
-            aria-label="Buy: A School Frozen in Time, Volume 3"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="220" height="300" src="https://kodansha.us/wp-content/uploads/2021/06/9781647290511-ASchoolFrozenInTime_003_cvr-220x300.jpg" class="attachment-medium size-medium" alt="cover for A School Frozen in Time, 3" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/06/9781647290511-ASchoolFrozenInTime_003_cvr-220x300.jpg 220w, https://kodansha.us/wp-content/uploads/2021/06/9781647290511-ASchoolFrozenInTime_003_cvr-751x1024.jpg 751w, https://kodansha.us/wp-content/uploads/2021/06/9781647290511-ASchoolFrozenInTime_003_cvr-768x1047.jpg 768w, https://kodansha.us/wp-content/uploads/2021/06/9781647290511-ASchoolFrozenInTime_003_cvr-1126x1536.jpg 1126w, https://kodansha.us/wp-content/uploads/2021/06/9781647290511-ASchoolFrozenInTime_003_cvr-1502x2048.jpg 1502w, https://kodansha.us/wp-content/uploads/2021/06/9781647290511-ASchoolFrozenInTime_003_cvr.jpg 1650w" sizes="(max-width: 220px) 100vw, 220px" decoding="async" style="--image-width: 220; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/the-springtime-of-my-life-began-with-you-4/" class="card__link">The <span class="u-break-words">Springtime</span> of My Life Began with You, Volume 4</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Nikki Asada        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/the-springtime-of-my-life-began-with-you-4/?buy"
-            aria-label="Buy: The Springtime of My Life Began with You, Volume 4"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/TheSpringtimeofMyLifeBeganwithYou_004_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for The Springtime of My Life Began with You, 4" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/TheSpringtimeofMyLifeBeganwithYou_004_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/TheSpringtimeofMyLifeBeganwithYou_004_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/TheSpringtimeofMyLifeBeganwithYou_004_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/TheSpringtimeofMyLifeBeganwithYou_004_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/TheSpringtimeofMyLifeBeganwithYou_004_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/TheSpringtimeofMyLifeBeganwithYou_004_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/tokyo-revengers-22/" class="card__link">Tokyo Revengers, Volume 22</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Ken Wakui        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/tokyo-revengers-22/?buy"
-            aria-label="Buy: Tokyo Revengers, Volume 22"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/TokyoRevengers_022_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Tokyo Revengers, 22" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/TokyoRevengers_022_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/TokyoRevengers_022_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/TokyoRevengers_022_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/TokyoRevengers_022_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/TokyoRevengers_022_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/TokyoRevengers_022_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/turns-out-my-online-friend-is-my-real-life-boss-1/" class="card__link">Turns Out My Online Friend is My Real-Life Boss! 1</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Nmura        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Debut</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/turns-out-my-online-friend-is-my-real-life-boss-1/?buy"
-            aria-label="Buy: Turns Out My Online Friend is My Real-Life Boss! 1"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/TurnsOutMyOnlineFriendisMyRealLifeBoss_001_00-200x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/TurnsOutMyOnlineFriendisMyRealLifeBoss_001_00-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/TurnsOutMyOnlineFriendisMyRealLifeBoss_001_00-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/TurnsOutMyOnlineFriendisMyRealLifeBoss_001_00-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/TurnsOutMyOnlineFriendisMyRealLifeBoss_001_00-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/TurnsOutMyOnlineFriendisMyRealLifeBoss_001_00-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/TurnsOutMyOnlineFriendisMyRealLifeBoss_001_00.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/we-must-never-fall-in-love-8/" class="card__link">We Must Never Fall in Love 8</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Haru Tsukishima        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/we-must-never-fall-in-love-8/?buy"
-            aria-label="Buy: We Must Never Fall in Love 8"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/WeMustNeverFallinLove_008_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for We Must Never Fall in Love, 8" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/WeMustNeverFallinLove_008_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/WeMustNeverFallinLove_008_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/WeMustNeverFallinLove_008_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/WeMustNeverFallinLove_008_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/WeMustNeverFallinLove_008_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/WeMustNeverFallinLove_008_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/were-on-our-own-from-here-1/" class="card__link">We&#8217;re On Our Own From Here 1</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Yu Machio        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Debut</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/were-on-our-own-from-here-1/?buy"
-            aria-label="Buy: We're On Our Own From Here 1"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/WereonOurOwnfromHere_001_00-200x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/WereonOurOwnfromHere_001_00-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/WereonOurOwnfromHere_001_00-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/WereonOurOwnfromHere_001_00-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/WereonOurOwnfromHere_001_00-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/WereonOurOwnfromHere_001_00-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/WereonOurOwnfromHere_001_00.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/yamaguchi-kun-isnt-so-bad-2/" class="card__link">Yamaguchi-kun Isn&#8217;t So Bad, Volume 2</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Yuu Saiki        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/yamaguchi-kun-isnt-so-bad-2/?buy"
-            aria-label="Buy: Yamaguchi-kun Isn't So Bad, Volume 2"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/Yamaguchi-kunIsntSoBad-cvr_02-200x300.jpg" class="attachment-medium size-medium" alt="cover for Yamaguchi-kun Isn&#039;t So Bad, 2" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/Yamaguchi-kunIsntSoBad-cvr_02-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/Yamaguchi-kunIsntSoBad-cvr_02-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/Yamaguchi-kunIsntSoBad-cvr_02-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/Yamaguchi-kunIsntSoBad-cvr_02-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/Yamaguchi-kunIsntSoBad-cvr_02-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/Yamaguchi-kunIsntSoBad-cvr_02.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                      </ol>
-              </li>
           <li class="calendar__day">
         
 <h3 class="title title--discovery">
@@ -1995,6 +1490,14 @@ img.emoji {
       </li>
       </ul>
       
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/the-decagon-house-murders-2/?buy"
+            aria-label="Buy: The Decagon House Murders, Volume 2"
+          >
+            Buy          </a>
+        </p>
           </div>
 
     <div class="u-reorder-first">
@@ -2729,6 +2232,14 @@ img.emoji {
       </li>
       </ul>
       
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/you-got-me-sempai-10/?buy"
+            aria-label="Buy: You Got Me, Sempai!, Volume 10"
+          >
+            Buy          </a>
+        </p>
           </div>
 
     <div class="u-reorder-first">
@@ -2761,6 +2272,14 @@ img.emoji {
       </li>
       </ul>
       
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/youre-my-cutie-1/?buy"
+            aria-label="Buy: You're My Cutie, Volume 1"
+          >
+            Buy          </a>
+        </p>
           </div>
 
     <div class="u-reorder-first">
@@ -4139,13 +3658,370 @@ img.emoji {
               </li>
                       </ol>
               </li>
+          <li class="calendar__day">
+        
+<h3 class="title title--discovery">
+  10/12/2021</h3>
+
+                  <ol class="l-grid l-grid--max-2">
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/altair-a-record-of-battles-24/" class="card__link">Altair: A Record of Battles, Volume 24</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Kotono Kato        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/Altair_vol24_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Altair: A Record of Battles, 24" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/Altair_vol24_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/Altair_vol24_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/Altair_vol24_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/Altair_vol24_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/Altair_vol24_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/Altair_vol24_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/ex-enthusiasts-6/" class="card__link">Ex-<span class="u-break-words">Enthusiasts</span> 6</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Yukari Takinami        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/ExEnthusiastsMotokareMania_vol06_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Ex-Enthusiasts, 6" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/ExEnthusiastsMotokareMania_vol06_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/ExEnthusiastsMotokareMania_vol06_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/ExEnthusiastsMotokareMania_vol06_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/ExEnthusiastsMotokareMania_vol06_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/ExEnthusiastsMotokareMania_vol06_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/ExEnthusiastsMotokareMania_vol06_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/giant-killing-27/" class="card__link">Giant Killing, Volume 27</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Masaya Tsunamoto and Tsujitomo        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/giant-killing-27/?buy"
+            aria-label="Buy: Giant Killing, Volume 27"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/GiantKilling_vol27_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Giant Killing, 27" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/GiantKilling_vol27_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/GiantKilling_vol27_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/GiantKilling_vol27_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/GiantKilling_vol27_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/GiantKilling_vol27_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/GiantKilling_vol27_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/knight-of-the-ice-7/" class="card__link">Knight of the Ice, Volume 7</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Yayoi Ogawa        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+                <li>
+        <span class="tag">Print</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/knight-of-the-ice-7/?buy"
+            aria-label="Buy: Knight of the Ice, Volume 7"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="210" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/9781646510849-KnightOfTheIce_007_cvr-210x300.jpg" class="attachment-medium size-medium" alt="cover for Knight of the Ice, 7" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/9781646510849-KnightOfTheIce_007_cvr-210x300.jpg 210w, https://kodansha.us/wp-content/uploads/2021/09/9781646510849-KnightOfTheIce_007_cvr-718x1024.jpg 718w, https://kodansha.us/wp-content/uploads/2021/09/9781646510849-KnightOfTheIce_007_cvr-768x1096.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/9781646510849-KnightOfTheIce_007_cvr-1077x1536.jpg 1077w, https://kodansha.us/wp-content/uploads/2021/09/9781646510849-KnightOfTheIce_007_cvr-1436x2048.jpg 1436w, https://kodansha.us/wp-content/uploads/2021/09/9781646510849-KnightOfTheIce_007_cvr.jpg 1500w" sizes="(max-width: 210px) 100vw, 210px" decoding="async" style="--image-width: 210; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/my-pink-is-overflowing-5/" class="card__link">My Pink Is <span class="u-break-words">Overflowing</span>, Volume 5</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Yuki Monou        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/MyPinkIsOverflowing_005_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for My Pink is Overflowing, 5" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/MyPinkIsOverflowing_005_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/MyPinkIsOverflowing_005_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/MyPinkIsOverflowing_005_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/MyPinkIsOverflowing_005_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/MyPinkIsOverflowing_005_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/MyPinkIsOverflowing_005_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/perfect-world-8/" class="card__link">Perfect World, Volume 8</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Rie Aruga        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/perfect-world-8/?buy"
+            aria-label="Buy: Perfect World, Volume 8"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="211" height="300" src="https://kodansha.us/wp-content/uploads/2020/12/PerfectWorld_008_cover-211x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2020/12/PerfectWorld_008_cover-211x300.jpg 211w, https://kodansha.us/wp-content/uploads/2020/12/PerfectWorld_008_cover-719x1024.jpg 719w, https://kodansha.us/wp-content/uploads/2020/12/PerfectWorld_008_cover-768x1094.jpg 768w, https://kodansha.us/wp-content/uploads/2020/12/PerfectWorld_008_cover-1079x1536.jpg 1079w, https://kodansha.us/wp-content/uploads/2020/12/PerfectWorld_008_cover-1438x2048.jpg 1438w, https://kodansha.us/wp-content/uploads/2020/12/PerfectWorld_008_cover.jpg 1500w" sizes="(max-width: 211px) 100vw, 211px" decoding="async" style="--image-width: 211; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/police-in-a-pod-5/" class="card__link">Police in a Pod, Volume 5</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Miko Yasu        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/police-in-a-pod-5/?buy"
+            aria-label="Buy: Police in a Pod, Volume 5"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/PoliceinaPod_005_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Police in a Pod, 5" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/PoliceinaPod_005_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/PoliceinaPod_005_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/PoliceinaPod_005_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/PoliceinaPod_005_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/PoliceinaPod_005_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/PoliceinaPod_005_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/space-brothers-39/" class="card__link">Space Brothers, Volume 39</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Chuya Koyama        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/space-brothers-39/?buy"
+            aria-label="Buy: Space Brothers, Volume 39"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/SpaceBrothers_vol39_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Space Brothers, 39" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/SpaceBrothers_vol39_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/SpaceBrothers_vol39_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/SpaceBrothers_vol39_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/SpaceBrothers_vol39_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/SpaceBrothers_vol39_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/SpaceBrothers_vol39_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/wave-listen-to-me-7/" class="card__link">Wave, Listen to Me!, Volume 7</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Hiroaki Samura        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/wave-listen-to-me-7/?buy"
+            aria-label="Buy: Wave, Listen to Me!, Volume 7"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="210" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/9781632368171-WaveListenToMe_007_cvr-210x300.jpg" class="attachment-medium size-medium" alt="cover for Wave, Listen to Me!, 7" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/9781632368171-WaveListenToMe_007_cvr-210x300.jpg 210w, https://kodansha.us/wp-content/uploads/2021/09/9781632368171-WaveListenToMe_007_cvr-718x1024.jpg 718w, https://kodansha.us/wp-content/uploads/2021/09/9781632368171-WaveListenToMe_007_cvr-768x1095.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/9781632368171-WaveListenToMe_007_cvr-1077x1536.jpg 1077w, https://kodansha.us/wp-content/uploads/2021/09/9781632368171-WaveListenToMe_007_cvr-1436x2048.jpg 1436w, https://kodansha.us/wp-content/uploads/2021/09/9781632368171-WaveListenToMe_007_cvr.jpg 1723w" sizes="(max-width: 210px) 100vw, 210px" decoding="async" style="--image-width: 210; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/yamaguchi-kun-isnt-so-bad-3/" class="card__link">Yamaguchi-kun Isn&#8217;t So Bad, Volume 3</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Yuu Saiki        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/yamaguchi-kun-isnt-so-bad-3/?buy"
+            aria-label="Buy: Yamaguchi-kun Isn't So Bad, Volume 3"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/Yamaguchi-kunIsntSoBad-cvr_03-200x300.jpg" class="attachment-medium size-medium" alt="cover for Yamaguchi-kun Isn&#039;t So Bad, 3" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/Yamaguchi-kunIsntSoBad-cvr_03-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/Yamaguchi-kunIsntSoBad-cvr_03-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/Yamaguchi-kunIsntSoBad-cvr_03-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/Yamaguchi-kunIsntSoBad-cvr_03-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/Yamaguchi-kunIsntSoBad-cvr_03-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/Yamaguchi-kunIsntSoBad-cvr_03.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                      </ol>
+              </li>
       </ul>
 </div>
       
                       <div class="filters__results-footer">
           <div class="l-sidebar l-sidebar--center">
             <div class="l-sidebar__main">
-              <p class="filters__results-title">Displaying 4 of 7 Weeks</p>
+              <p class="filters__results-title">Displaying 4 of 6 Weeks</p>
             </div>
 
             <div class="pagination l-cluster l-cluster--center l-cluster--end-vertical">
@@ -4378,7 +4254,7 @@ img.emoji {
 	<script src='https://kodansha.us/wp-content/plugins/hurrytimer/assets/js/cookie.min.js?ver=3.14.1' id='hurryt-cookie-js'></script>
 <script src='https://kodansha.us/wp-content/plugins/hurrytimer/assets/js/jquery.countdown.min.js?ver=2.2.0' id='hurryt-countdown-js'></script>
 <script id='hurrytimer-js-extra'>
-var hurrytimer_ajax_object = {"ajax_url":"https:\/\/kodansha.us\/wp-admin\/admin-ajax.php","ajax_nonce":"a48919a113","disable_actions":"","methods":{"COOKIE":1,"IP":2,"USER_SESSION":3},"actionsOptions":{"none":1,"hide":2,"redirect":3,"stockStatus":4,"hideAddToCartButton":5,"displayMessage":6,"expire_coupon":7},"restartOptions":{"none":1,"immediately":2,"afterReload":3,"after_duration":4},"COOKIEPATH":"\/","COOKIE_DOMAIN":"","redirect_no_back":"1","expire_coupon_message":""};
+var hurrytimer_ajax_object = {"ajax_url":"https:\/\/kodansha.us\/wp-admin\/admin-ajax.php","ajax_nonce":"39f3d83364","disable_actions":"","methods":{"COOKIE":1,"IP":2,"USER_SESSION":3},"actionsOptions":{"none":1,"hide":2,"redirect":3,"stockStatus":4,"hideAddToCartButton":5,"displayMessage":6,"expire_coupon":7},"restartOptions":{"none":1,"immediately":2,"afterReload":3,"after_duration":4},"COOKIEPATH":"\/","COOKIE_DOMAIN":"","redirect_no_back":"1","expire_coupon_message":""};
 </script>
 <script src='https://kodansha.us/wp-content/plugins/hurrytimer/assets/js/hurrytimer.js?ver=2.6.3' id='hurrytimer-js'></script>
 <script id='rocket-browser-checker-js-after'>
@@ -4398,4 +4274,4 @@ var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?
 </body>
 </html>
 
-<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1632144145 -->
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1632255499 -->
