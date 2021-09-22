@@ -74,6 +74,8 @@ const Home: React.FC = () => {
   // TODO: make 404 page
   if (error) return <p>${error}</p>;
 
+  console.log(mangas);
+
   return (
     <>
       <div className="container px-4 mx-auto">

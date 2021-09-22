@@ -16,6 +16,7 @@ type Manga struct {
 	Name  string `json:"name"`
 	Image string `json:"image"`
 	Link  string `json:"link"`
+	Liked string `json:"liked" default:"false"`
 }
 
 var location, _ = time.LoadLocation("UTC")
