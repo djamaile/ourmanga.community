@@ -4,32 +4,33 @@ import { Manga } from "../../types";
 
 interface Props {
   manga: Manga;
+  index: number;
 }
 
 export const HeartIcon: React.FC<Props> = ({ ...props }) => {
-  const [liked, setLiked] = useState<boolean>(false);
-  const { addLikedManga, removeLikedManga, likedMangas } = useStore(
+  const { liked } = props.manga;
+  const { addLikedManga, removeLikedManga, likedMangas, likeManga } = useStore(
     (state) => state
   );
 
   const isLiked = (type: string) => {
-    if (likedMangas.some((m) => m.name === props.manga.name)) {
+    if (props.manga.liked) {
       return "red";
     }
     return type === "stroke" ? "currentColor" : "none";
   };
 
-  const likeManga = () => {
-    if (!liked) {
-      addLikedManga(props.manga);
-    } else {
-      removeLikedManga(props.manga);
-    }
-    setLiked(!liked);
-  };
+  // const likeManga = () => {
+  //   if (!liked) {
+  //     addLikedManga(props.manga);
+  //   } else {
+  //     removeLikedManga(props.manga);
+  //   }
+  //   // qprops.manga.liked = !props.manga.liked;
+  // };
 
   return (
-    <div onClick={() => likeManga()}>
+    <div onClick={() => likeManga(props.index)}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6 cursor-pointer"

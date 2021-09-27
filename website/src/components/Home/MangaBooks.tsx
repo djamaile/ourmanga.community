@@ -12,7 +12,7 @@ export const MangaBooks: React.FC<Mangas> = ({ ...props }) => {
 
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-      {props.data.map((manga: Manga) => {
+      {props.data.map((manga: Manga, index) => {
         return (
           <div key={manga.name}>
             <div className="flex flex-col justify-center items-center">
@@ -23,7 +23,7 @@ export const MangaBooks: React.FC<Mangas> = ({ ...props }) => {
                   className="w-36 h-56 m-auto block"
                 />
               </div>
-              <HeartIcon manga={manga} />
+              <HeartIcon manga={manga} index={index} />
               <a
                 className="font-bold text-md hover:text-red-500 m-auto block"
                 href={manga.link}

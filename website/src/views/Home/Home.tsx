@@ -11,8 +11,10 @@ import mascot from "../../assets/images/mascot.jpg";
 
 const Home: React.FC = () => {
   useTitle("Our Manga - Home");
-  const { publisher, likedMangas } = useStore((state) => state);
-  const [mangas, setMangas] = React.useState<Manga[]>([]);
+  const { publisher, likedMangas, setMangas, mangas } = useStore(
+    (state) => state
+  );
+  // const [mangas, setMangas] = React.useState<Manga[]>([]);
   const date = new Date(Date.now());
   const backend: string =
     process.env.NODE_ENV === "development"
@@ -25,7 +27,7 @@ const Home: React.FC = () => {
   }, [data]);
 
   const setLikedMangas = () => {
-    setMangas(likedMangas);
+    setMangas(mangas.filter((m) => m.liked === true));
   };
 
   if (isFetching)
@@ -73,8 +75,6 @@ const Home: React.FC = () => {
 
   // TODO: make 404 page
   if (error) return <p>${error}</p>;
-
-  console.log(mangas);
 
   return (
     <>

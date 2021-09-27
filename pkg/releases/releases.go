@@ -16,7 +16,7 @@ type Manga struct {
 	Name  string `json:"name"`
 	Image string `json:"image"`
 	Link  string `json:"link"`
-	Liked string `json:"liked" default:"false"`
+	Liked bool   `json:"liked"`
 }
 
 var location, _ = time.LoadLocation("UTC")
@@ -166,6 +166,7 @@ func CollectVizReleases() []Manga {
 		temp.Name = element.ChildText(".color-off-black")
 		temp.Image = element.ChildAttr("a.product-thumb img", "data-original")
 		temp.Link = "https://viz.com" + element.ChildAttr("a.product-thumb", "href")
+		temp.Liked = false
 		allVizReleases = append(allVizReleases, temp)
 	})
 
