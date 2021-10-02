@@ -23,7 +23,7 @@ export const MangaBooks: React.FC<Mangas> = ({ ...props }) => {
                   className="w-36 h-56 m-auto block"
                 />
               </div>
-              <HeartIcon manga={manga} index={index} />
+              <HeartIcon manga={manga} />
               <a
                 className="font-bold text-md hover:text-red-500 m-auto block"
                 href={manga.link}

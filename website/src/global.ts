@@ -11,7 +11,6 @@ interface GlobalState {
   addLikedManga: (manga: Manga) => void;
   removeLikedManga: (manga: Manga) => void;
   setMangas: (mangas: Manga[]) => void;
-  likeManga: (index: number) => void;
 }
 
 export const useStore = create<GlobalState>(
@@ -25,20 +24,21 @@ export const useStore = create<GlobalState>(
           mangas: m,
         }));
       },
-      likeManga: (index: number) =>
-        set(
-          produce((state) => {
-            // const manga: Manga = state.mangas.find(
-            //   (m: Manga) => m.name === name
-            // );
-            // manga.liked = !manga.liked;
-            console.log(state.mangas);
-            const v = !state.mangas[index].liked;
-            /* eslint-disable no-param-reassign */
-            state.mangas[index].liked = v;
-            /* eslint-enable no-param-reassign */
-          })
-        ),
+      // TODO: use this function when DB is setup
+      // likeManga: (index: number) =>
+      //   set(
+      //     produce((state) => {
+      //       // const manga: Manga = state.mangas.find(
+      //       //   (m: Manga) => m.name === name
+      //       // );
+      //       // manga.liked = !manga.liked;
+      //       console.log(state.mangas);
+      //       const v = !state.mangas[index].liked;
+      //       /* eslint-disable no-param-reassign */
+      //       state.mangas[index].liked = v;
+      //       /* eslint-enable no-param-reassign */
+      //     })
+      //   ),
       changePublisher: (name: string) => {
         set(() => ({
           publisher: name,

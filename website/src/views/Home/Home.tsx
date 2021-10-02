@@ -14,7 +14,6 @@ const Home: React.FC = () => {
   const { publisher, likedMangas, setMangas, mangas } = useStore(
     (state) => state
   );
-  // const [mangas, setMangas] = React.useState<Manga[]>([]);
   const date = new Date(Date.now());
   const backend: string =
     process.env.NODE_ENV === "development"
@@ -27,7 +26,7 @@ const Home: React.FC = () => {
   }, [data]);
 
   const setLikedMangas = () => {
-    setMangas(mangas.filter((m) => m.liked === true));
+    setMangas(likedMangas);
   };
 
   if (isFetching)
@@ -79,8 +78,6 @@ const Home: React.FC = () => {
   return (
     <>
       <div className="container px-4 mx-auto">
-        {/* logo */}
-        {/* <h1 className="text-4xl black mt-4">私たちの漫画♡</h1> */}
         {/* mascot */}
         <div className="grid grid-cols-1 justify-center">
           <section className="flex justify-center">
