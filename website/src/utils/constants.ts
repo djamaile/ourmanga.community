@@ -5,7 +5,8 @@ export const PUBLISHERS = [
     name: "viz",
   },
   {
-    image: "https://upload.wikimedia.org/wikipedia/en/9/99/Yen_Press.png",
+    image:
+      "https://yenpress.com/wp-content/themes/YenPress/library/images/Yen-Green.svg",
     name: "yenpress",
   },
   {

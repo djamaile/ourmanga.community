@@ -29,49 +29,6 @@ const Home: React.FC = () => {
     setMangas(likedMangas);
   };
 
-  if (isFetching)
-    return (
-      <div className="container px-4 mx-auto">
-        <div className="grid grid-cols-1 justify-center">
-          <section className="flex justify-center">
-            <img
-              src={mascot}
-              alt="mascot"
-              width="300"
-              height="283"
-              className="object-scale-down"
-            />
-          </section>
-        </div>
-        <div className="grid grid-cols-1">
-          <h1 className="text-4xl black text-center italic mt-4 mb-7">
-            <span className="text-red-600">Our Manga</span> for the month of{" "}
-            {date.toLocaleString("en-US", { month: "short" })}
-          </h1>
-        </div>
-        {/* publishers */}
-        <div className="grid grid-cols-4 lg:grid-cols-5 gap-12 justify-center mb-8">
-          {PUBLISHERS.map((p) => {
-            return (
-              <PublisherLogo
-                image={p.image}
-                name={p.name}
-                key={p.name + p.image}
-              />
-            );
-          })}
-        </div>
-        {/* Liked Button */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="flex flex-col justify-center items-center">
-            <div className="flex justify-center	items-center">
-              <LikedButton setLikedMangas={() => setLikedMangas()} />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-
   // TODO: make 404 page
   if (error) return <p>${error}</p>;
 
@@ -118,7 +75,7 @@ const Home: React.FC = () => {
         </div>
         {/* TODO: Seperate to API to MangaBooks, so loading screen doesn't effect the whole screen}
         {/* manga-books */}
-        <MangaBooks data={mangas} />
+        {isFetching ? <></> : <MangaBooks data={mangas} />}
       </div>
     </>
   );

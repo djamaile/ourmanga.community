@@ -7,6 +7,9 @@ interface Props {
 
 export const PublisherLogo: React.FC<Props> = ({ ...props }) => {
   const changePublisher = useStore((state) => state.changePublisher);
+  const publisher = useStore((state) => state.publisher);
+  const styles = { divClass: "object-contain cursor-pointer m-auto block" };
+
   return (
     <section
       className="flex justify-center"
@@ -16,7 +19,8 @@ export const PublisherLogo: React.FC<Props> = ({ ...props }) => {
         alt={props.name}
         width="100"
         height="100"
-        className="object-contain cursor-pointer m-auto block"
+        className={`${styles.divClass} 
+          ${publisher !== props.name ? "filter grayscale" : ""}`}
       />
     </section>
   );
