@@ -1,7 +1,7 @@
 <!doctype html>
 <!-- new AWS -->
 <html lang="en-US" class="">
-<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventHandler=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventHandler,e.eventOptions)))}_interceptClicks(e){e.interceptedClicks=[],e.clickHandler=e._saveClicks.bind(e),window.addEventListener("click",e.clickHandler)}_saveClicks(e){this.interceptedClicks.push(e),e.target.matches('a[href="#"], a[href="#"] *')&&e.preventDefault()}_replayClicks(){window.removeEventListener("click",this.clickHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let a=e.get(n);void 0===a&&(a=n.nextSibling,e.set(n,a));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,a)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e),e._interceptClicks(e)}}RocketLazyLoadScripts.run();</script>
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
 	
     <script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=G-GG5R5BNRH3"></script>
 
@@ -68,6 +68,13 @@
         <link
       rel="preload"
       as="font"
+      href="/wp-content/themes/kodansha-usa/assets/Maax-Medium_Italic.24ed8a5d.woff2"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+        <link
+      rel="preload"
+      as="font"
       href="/wp-content/themes/kodansha-usa/assets/Maax-Bold.8dbbc02e.woff2"
       type="font/woff2"
       crossorigin="anonymous"
@@ -82,7 +89,7 @@
   
 	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 
-	<!-- This site is optimized with the Yoast SEO plugin v17.2 - https://yoast.com/wordpress/plugins/seo/ -->
+	<!-- This site is optimized with the Yoast SEO plugin v17.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
 	<title>Manga Release Calendar - Kodansha</title>
 	<link rel="canonical" href="https://kodansha.us/manga/calendar/" />
 	<meta property="og:locale" content="en_US" />
@@ -112,7 +119,7 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-	<link rel='stylesheet' id='hurrytimer-css'  href='https://kodansha.us/wp-content/uploads/hurrytimer/css/48d4dcd0f98f9639.css?ver=5.8.1' media='all' />
+	<link rel='stylesheet' id='hurrytimer-css'  href='https://kodansha.us/wp-content/uploads/hurrytimer/css/91d0dcc088bb44e8.css?ver=5.8.1' media='all' />
 <link rel='stylesheet' id='kodansha-comics-style-css'  href='https://kodansha.us/wp-content/themes/kodansha-usa/assets/css/style.css?ver=1.9.4' media='all' />
 <script src='https://kodansha.us/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
 <script src='https://kodansha.us/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
@@ -1304,7 +1311,7 @@ img.emoji {
       <header class="filters__results-header">
                   
 <h2 class="filters__results-title">
-  <span class="u-break-words">Displaying</span> 4 of 6 Weeks</h2>
+  <span class="u-break-words">Displaying</span> 4 of 9 Weeks</h2>
         
         <div class="l-cluster l-cluster--spread filters__mobile-controls">
           <dialog-toggle dialog="filters">
@@ -1331,6 +1338,11 @@ img.emoji {
         class="pagination__page"
               >
         2      </a>
+                      <a
+        href="https://kodansha.us/manga/calendar/page/3/"
+        class="pagination__page"
+              >
+        3      </a>
             
       <a rel="next" href="https://kodansha.us/manga/calendar/page/2/">
       <span class="screen-reader-text">Next</span>
@@ -1350,947 +1362,6 @@ img.emoji {
   </div>
 
   <ul class="l-stack">
-          <li class="calendar__day">
-        
-<h3 class="title title--discovery">
-  9/21/2021</h3>
-
-                  <ol class="l-grid l-grid--max-2">
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/bakemonogatari-manga-volume-10/" class="card__link"><span class="u-break-words">BAKEMONOGATARI</span> (manga), volume 10</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          NISIOISIN and Oh! Great        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/bakemonogatari-manga-volume-10/?buy"
-            aria-label="Buy: BAKEMONOGATARI (manga), volume 10"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="220" height="300" src="https://kodansha.us/wp-content/uploads/2021/06/9781647290078-Bakemonogatari_Manga_010_cvr-220x300.jpg" class="attachment-medium size-medium" alt="cover for BAKEMONOGATARI (manga), 10" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/06/9781647290078-Bakemonogatari_Manga_010_cvr-220x300.jpg 220w, https://kodansha.us/wp-content/uploads/2021/06/9781647290078-Bakemonogatari_Manga_010_cvr-751x1024.jpg 751w, https://kodansha.us/wp-content/uploads/2021/06/9781647290078-Bakemonogatari_Manga_010_cvr-768x1047.jpg 768w, https://kodansha.us/wp-content/uploads/2021/06/9781647290078-Bakemonogatari_Manga_010_cvr-1126x1536.jpg 1126w, https://kodansha.us/wp-content/uploads/2021/06/9781647290078-Bakemonogatari_Manga_010_cvr-1502x2048.jpg 1502w, https://kodansha.us/wp-content/uploads/2021/06/9781647290078-Bakemonogatari_Manga_010_cvr.jpg 1650w" sizes="(max-width: 220px) 100vw, 220px" decoding="async" style="--image-width: 220; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/blue-lock-7/" class="card__link">Blue Lock, Volume 7</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Muneyuki Kaneshiro and Yusuke Nomura        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/blue-lock-7/?buy"
-            aria-label="Buy: Blue Lock, Volume 7"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/BlueLock_vol07_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Blue Lock, 7" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/BlueLock_vol07_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/BlueLock_vol07_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/BlueLock_vol07_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/BlueLock_vol07_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/BlueLock_vol07_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/BlueLock_vol07_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/the-daily-lives-of-high-school-boys-7/" class="card__link">The Daily Lives of High School Boys, Volume 7</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Yasunobu Yamauchi        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/the-daily-lives-of-high-school-boys-7/?buy"
-            aria-label="Buy: The Daily Lives of High School Boys, Volume 7"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="220" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/9781647290085-TheDailyLivesofHighSchoolBoys_7-220x300.jpg" class="attachment-medium size-medium" alt="Cover for The Daily Lives of High School Boys, Volume 7" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/9781647290085-TheDailyLivesofHighSchoolBoys_7-220x300.jpg 220w, https://kodansha.us/wp-content/uploads/2021/09/9781647290085-TheDailyLivesofHighSchoolBoys_7-751x1024.jpg 751w, https://kodansha.us/wp-content/uploads/2021/09/9781647290085-TheDailyLivesofHighSchoolBoys_7-768x1047.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/9781647290085-TheDailyLivesofHighSchoolBoys_7-1126x1536.jpg 1126w, https://kodansha.us/wp-content/uploads/2021/09/9781647290085-TheDailyLivesofHighSchoolBoys_7-1502x2048.jpg 1502w, https://kodansha.us/wp-content/uploads/2021/09/9781647290085-TheDailyLivesofHighSchoolBoys_7.jpg 1650w" sizes="(max-width: 220px) 100vw, 220px" decoding="async" style="--image-width: 220; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/the-decagon-house-murders-2/" class="card__link">The Decagon House Murders, Volume 2</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Yukito Ayatsuji and Hiro Kiyohara        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/the-decagon-house-murders-2/?buy"
-            aria-label="Buy: The Decagon House Murders, Volume 2"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/the_decagon_house_murders_vol_02-200x300.jpg" class="attachment-medium size-medium" alt="cover for The Decagon House Murders, 2" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/the_decagon_house_murders_vol_02-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/the_decagon_house_murders_vol_02-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/the_decagon_house_murders_vol_02-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/the_decagon_house_murders_vol_02-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/the_decagon_house_murders_vol_02-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/the_decagon_house_murders_vol_02.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/dont-toy-with-me-miss-nagatoro-volume-8/" class="card__link">Don&#8217;t Toy With Me, Miss Nagatoro, volume 8</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Nanashi        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/dont-toy-with-me-miss-nagatoro-volume-8/?buy"
-            aria-label="Buy: Don't Toy With Me, Miss Nagatoro, volume 8"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="220" height="300" src="https://kodansha.us/wp-content/uploads/2021/06/9781647290504-DontToyWithMeMissNagatoro_008_cvr-220x300.jpg" class="attachment-medium size-medium" alt="cover for Don&#039;t Toy With Me, Miss Nagatoro, 8" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/06/9781647290504-DontToyWithMeMissNagatoro_008_cvr-220x300.jpg 220w, https://kodansha.us/wp-content/uploads/2021/06/9781647290504-DontToyWithMeMissNagatoro_008_cvr-751x1024.jpg 751w, https://kodansha.us/wp-content/uploads/2021/06/9781647290504-DontToyWithMeMissNagatoro_008_cvr-768x1047.jpg 768w, https://kodansha.us/wp-content/uploads/2021/06/9781647290504-DontToyWithMeMissNagatoro_008_cvr-1126x1536.jpg 1126w, https://kodansha.us/wp-content/uploads/2021/06/9781647290504-DontToyWithMeMissNagatoro_008_cvr-1502x2048.jpg 1502w, https://kodansha.us/wp-content/uploads/2021/06/9781647290504-DontToyWithMeMissNagatoro_008_cvr-scaled.jpg 1877w" sizes="(max-width: 220px) 100vw, 220px" decoding="async" style="--image-width: 220; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/dr-ramune-mysterious-disease-specialist-5/" class="card__link">Dr. Ramune &#8211;<span class="u-break-words">Mysterious</span> Disease <span class="u-break-words">Specialist</span>-, Volume 5</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Toro Aho        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/dr-ramune-mysterious-disease-specialist-5/?buy"
-            aria-label="Buy: Dr. Ramune -Mysterious Disease Specialist-, Volume 5"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/DrRamune_vol05_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Dr. Ramune -Mysterious Disease Specialist-, 5" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/DrRamune_vol05_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/DrRamune_vol05_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/DrRamune_vol05_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/DrRamune_vol05_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/DrRamune_vol05_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/DrRamune_vol05_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/drifting-dragons-9/" class="card__link">Drifting Dragons, Volume 9</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Taku Kuwabara        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/drifting-dragons-9/?buy"
-            aria-label="Buy: Drifting Dragons, Volume 9"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="211" height="300" src="https://kodansha.us/wp-content/uploads/2020/12/9781646599059-DriftingDragons_09-211x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2020/12/9781646599059-DriftingDragons_09-211x300.jpg 211w, https://kodansha.us/wp-content/uploads/2020/12/9781646599059-DriftingDragons_09-719x1024.jpg 719w, https://kodansha.us/wp-content/uploads/2020/12/9781646599059-DriftingDragons_09-768x1093.jpg 768w, https://kodansha.us/wp-content/uploads/2020/12/9781646599059-DriftingDragons_09-1079x1536.jpg 1079w, https://kodansha.us/wp-content/uploads/2020/12/9781646599059-DriftingDragons_09-1438x2048.jpg 1438w, https://kodansha.us/wp-content/uploads/2020/12/9781646599059-DriftingDragons_09.jpg 1600w" sizes="(max-width: 211px) 100vw, 211px" decoding="async" style="--image-width: 211; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/heavens-design-team-6/" class="card__link">Heaven&#8217;s Design Team, Volume 6</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Hebi Zou, Tsuta Suzuki, and Tarako        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/heavens-design-team-6/?buy"
-            aria-label="Buy: Heaven's Design Team, Volume 6"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/05/HeavensDesignTeam_vol06_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Heaven&#039;s Design Team, 6" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/05/HeavensDesignTeam_vol06_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/05/HeavensDesignTeam_vol06_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/05/HeavensDesignTeam_vol06_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/05/HeavensDesignTeam_vol06_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/05/HeavensDesignTeam_vol06_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/05/HeavensDesignTeam_vol06_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/in-the-clear-moonlit-dusk-2/" class="card__link">In the Clear Moonlit Dusk, Volume 2</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Mika Yamamori        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/in-the-clear-moonlit-dusk-2/?buy"
-            aria-label="Buy: In the Clear Moonlit Dusk, Volume 2"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/IntheClearMoonlitDusk_002_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for In the Clear Moonlit Dusk, 2" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/IntheClearMoonlitDusk_002_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/IntheClearMoonlitDusk_002_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/IntheClearMoonlitDusk_002_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/IntheClearMoonlitDusk_002_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/IntheClearMoonlitDusk_002_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/IntheClearMoonlitDusk_002_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/living-room-matsunaga-san-7/" class="card__link">Living-Room Matsunaga-san, Volume 7</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Keiko Iwashita        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/living-room-matsunaga-san-7/?buy"
-            aria-label="Buy: Living-Room Matsunaga-san, Volume 7"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2020/12/LivingRoomMatsunagaSan_007_cvr-200x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2020/12/LivingRoomMatsunagaSan_007_cvr-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2020/12/LivingRoomMatsunagaSan_007_cvr-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2020/12/LivingRoomMatsunagaSan_007_cvr-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2020/12/LivingRoomMatsunagaSan_007_cvr-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2020/12/LivingRoomMatsunagaSan_007_cvr-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2020/12/LivingRoomMatsunagaSan_007_cvr.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/living-room-matsunaga-san-10/" class="card__link">Living-Room Matsunaga-san, Volume 10</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Keiko Iwashita        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/living-room-matsunaga-san-10/?buy"
-            aria-label="Buy: Living-Room Matsunaga-san, Volume 10"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/LivingRoomMatsunagaSan_vol10_cover-200x300.jpg" class="attachment-medium size-medium" alt="covLiving-Room Matsunaga-San, 10er for" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/LivingRoomMatsunagaSan_vol10_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/LivingRoomMatsunagaSan_vol10_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/LivingRoomMatsunagaSan_vol10_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/LivingRoomMatsunagaSan_vol10_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/LivingRoomMatsunagaSan_vol10_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/LivingRoomMatsunagaSan_vol10_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/my-darling-next-door-3/" class="card__link">My Darling Next Door, Volume 3</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Rukana        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/my-darling-next-door-3/?buy"
-            aria-label="Buy: My Darling Next Door, Volume 3"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/MyDarlingNextDoor_003_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for My Darling Next Door, 3" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/MyDarlingNextDoor_003_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/MyDarlingNextDoor_003_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/MyDarlingNextDoor_003_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/MyDarlingNextDoor_003_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/MyDarlingNextDoor_003_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/MyDarlingNextDoor_003_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/our-fake-marriage-7/" class="card__link">Our Fake Marriage, Volume 7</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Kiwi Tokina        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/our-fake-marriage-7/?buy"
-            aria-label="Buy: Our Fake Marriage, Volume 7"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/OurFakeMarriage_007_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Our Fake Marriage, 7" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/OurFakeMarriage_007_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/OurFakeMarriage_007_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/OurFakeMarriage_007_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/OurFakeMarriage_007_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/OurFakeMarriage_007_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/OurFakeMarriage_007_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/peach-boy-riverside-2/" class="card__link">Peach Boy Riverside, Volume 2</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Coolkyousinnjya and Johanne        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/peach-boy-riverside-2/?buy"
-            aria-label="Buy: Peach Boy Riverside, Volume 2"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2020/12/PeachBoyRiverside-cvr_02-200x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2020/12/PeachBoyRiverside-cvr_02-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2020/12/PeachBoyRiverside-cvr_02-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2020/12/PeachBoyRiverside-cvr_02-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2020/12/PeachBoyRiverside-cvr_02-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2020/12/PeachBoyRiverside-cvr_02-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2020/12/PeachBoyRiverside-cvr_02.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/ran-the-peerless-beauty-10/" class="card__link">Ran the Peerless Beauty, Volume 10</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Ammitsu        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/ran-the-peerless-beauty-10/?buy"
-            aria-label="Buy: Ran the Peerless Beauty, Volume 10"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/RanthePeerlessBeauty_vol10_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Ran the Peerless Beauty, 10" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/RanthePeerlessBeauty_vol10_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/RanthePeerlessBeauty_vol10_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/RanthePeerlessBeauty_vol10_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/RanthePeerlessBeauty_vol10_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/RanthePeerlessBeauty_vol10_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/RanthePeerlessBeauty_vol10_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/rent-a-girlfriend-8/" class="card__link">Rent-A-<span class="u-break-words">Girlfriend</span>, Volume 8</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Reiji Miyajima        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/rent-a-girlfriend-8/?buy"
-            aria-label="Buy: Rent-A-Girlfriend, Volume 8"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="211" height="300" src="https://kodansha.us/wp-content/uploads/2021/07/9781646510924-RentAGirlfriend_008_cvr-211x300.jpg" class="attachment-medium size-medium" alt="cover for Rent-A-Girlfriend, 8" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/07/9781646510924-RentAGirlfriend_008_cvr-211x300.jpg 211w, https://kodansha.us/wp-content/uploads/2021/07/9781646510924-RentAGirlfriend_008_cvr-719x1024.jpg 719w, https://kodansha.us/wp-content/uploads/2021/07/9781646510924-RentAGirlfriend_008_cvr-768x1094.jpg 768w, https://kodansha.us/wp-content/uploads/2021/07/9781646510924-RentAGirlfriend_008_cvr-1078x1536.jpg 1078w, https://kodansha.us/wp-content/uploads/2021/07/9781646510924-RentAGirlfriend_008_cvr-1438x2048.jpg 1438w, https://kodansha.us/wp-content/uploads/2021/07/9781646510924-RentAGirlfriend_008_cvr.jpg 1725w" sizes="(max-width: 211px) 100vw, 211px" decoding="async" style="--image-width: 211; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/sachis-monstrous-appetite-4/" class="card__link">Sachi&#8217;s Monstrous Appetite, Volume 4</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Chomoran        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/sachis-monstrous-appetite-4/?buy"
-            aria-label="Buy: Sachi's Monstrous Appetite, Volume 4"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="209" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/9781646511921-SachisMonstrousAppetite_004_cvr-209x300.jpg" class="attachment-medium size-medium" alt="cover for Sachi&#039;s Monstrous Appetite, 4" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/9781646511921-SachisMonstrousAppetite_004_cvr-209x300.jpg 209w, https://kodansha.us/wp-content/uploads/2021/08/9781646511921-SachisMonstrousAppetite_004_cvr-713x1024.jpg 713w, https://kodansha.us/wp-content/uploads/2021/08/9781646511921-SachisMonstrousAppetite_004_cvr-768x1103.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/9781646511921-SachisMonstrousAppetite_004_cvr-1069x1536.jpg 1069w, https://kodansha.us/wp-content/uploads/2021/08/9781646511921-SachisMonstrousAppetite_004_cvr-1426x2048.jpg 1426w, https://kodansha.us/wp-content/uploads/2021/08/9781646511921-SachisMonstrousAppetite_004_cvr.jpg 1710w" sizes="(max-width: 209px) 100vw, 209px" decoding="async" style="--image-width: 209; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/star%e2%87%84crossed-3/" class="card__link">Star⇄Crossed!!, Volume 3</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Junko        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/star%e2%87%84crossed-3/?buy"
-            aria-label="Buy: Star⇄Crossed!!, Volume 3"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2020/12/StarCrossed_003_cover-200x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2020/12/StarCrossed_003_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2020/12/StarCrossed_003_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2020/12/StarCrossed_003_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2020/12/StarCrossed_003_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2020/12/StarCrossed_003_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2020/12/StarCrossed_003_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/sweat-and-soap-9/" class="card__link">Sweat and Soap, Volume 9</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Kintetsu Yamada        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/sweat-and-soap-9/?buy"
-            aria-label="Buy: Sweat and Soap, Volume 9"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="211" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/9781646512195-SweatAndSoap_009_cvr-211x300.jpg" class="attachment-medium size-medium" alt="cover for Sweat and Soap, 9" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/9781646512195-SweatAndSoap_009_cvr-211x300.jpg 211w, https://kodansha.us/wp-content/uploads/2021/08/9781646512195-SweatAndSoap_009_cvr-719x1024.jpg 719w, https://kodansha.us/wp-content/uploads/2021/08/9781646512195-SweatAndSoap_009_cvr-768x1093.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/9781646512195-SweatAndSoap_009_cvr-1079x1536.jpg 1079w, https://kodansha.us/wp-content/uploads/2021/08/9781646512195-SweatAndSoap_009_cvr-1439x2048.jpg 1439w, https://kodansha.us/wp-content/uploads/2021/08/9781646512195-SweatAndSoap_009_cvr.jpg 1726w" sizes="(max-width: 211px) 100vw, 211px" decoding="async" style="--image-width: 211; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/those-not-so-sweet-boys-4/" class="card__link">Those Not-So-Sweet Boys, Volume 4</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Yoko Nogiri        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/those-not-so-sweet-boys-4/?buy"
-            aria-label="Buy: Those Not-So-Sweet Boys, Volume 4"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/06/9781646512300-ThoseNotSoSweetBoys_004_cvr-200x300.jpg" class="attachment-medium size-medium" alt="cover for Those Not-So-Sweet Boys, 4" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/06/9781646512300-ThoseNotSoSweetBoys_004_cvr-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/06/9781646512300-ThoseNotSoSweetBoys_004_cvr-682x1024.jpg 682w, https://kodansha.us/wp-content/uploads/2021/06/9781646512300-ThoseNotSoSweetBoys_004_cvr-768x1153.jpg 768w, https://kodansha.us/wp-content/uploads/2021/06/9781646512300-ThoseNotSoSweetBoys_004_cvr-1023x1536.jpg 1023w, https://kodansha.us/wp-content/uploads/2021/06/9781646512300-ThoseNotSoSweetBoys_004_cvr-1364x2048.jpg 1364w, https://kodansha.us/wp-content/uploads/2021/06/9781646512300-ThoseNotSoSweetBoys_004_cvr.jpg 1499w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/when-will-ayumu-make-his-move-1/" class="card__link">When Will Ayumu Make His Move?, Volume 1</a>
-              </h4>
-
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Print</span>
-      </li>
-                <li>
-        <span class="tag">Debut</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/when-will-ayumu-make-his-move-1/?buy"
-            aria-label="Buy: When Will Ayumu Make His Move?, Volume 1"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="211" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00-211x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00-211x300.jpg 211w, https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00-719x1024.jpg 719w, https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00-768x1094.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00-1079x1536.jpg 1079w, https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00-1438x2048.jpg 1438w, https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00.jpg 1500w" sizes="(max-width: 211px) 100vw, 211px" decoding="async" style="--image-width: 211; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/will-it-be-the-world-or-her-9/" class="card__link">Will It Be the World or Her?, Volume 9</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Atsushi Uchiyama        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Final</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/will-it-be-the-world-or-her-9/?buy"
-            aria-label="Buy: Will It Be the World or Her?, Volume 9"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/WillitBetheWorldorHer_009_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Will It Be the World or Her?, 9" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/WillitBetheWorldorHer_009_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/WillitBetheWorldorHer_009_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/WillitBetheWorldorHer_009_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/WillitBetheWorldorHer_009_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/WillitBetheWorldorHer_009_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/WillitBetheWorldorHer_009_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/you-got-me-sempai-10/" class="card__link">You Got Me, Sempai!, Volume 10</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Azusa Mase        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Final</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/you-got-me-sempai-10/?buy"
-            aria-label="Buy: You Got Me, Sempai!, Volume 10"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/YouGotMeSempai_vol10_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for You Got Me, Sempai!, 10" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/YouGotMeSempai_vol10_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/YouGotMeSempai_vol10_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/YouGotMeSempai_vol10_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/YouGotMeSempai_vol10_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/YouGotMeSempai_vol10_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/YouGotMeSempai_vol10_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                          <li>
-                <div class="card book-card-small">
-  <div class="l-sidebar">
-    <div class="l-sidebar__main">
-      
-      
-<h4 class="title title--card-small">
-                    <a href="https://kodansha.us/volume/youre-my-cutie-1/" class="card__link">You&#8217;re My Cutie, Volume 1</a>
-              </h4>
-
-              <p class="byline byline--small">
-          By
-          Nakaba Harufuji        </p>
-      
-              <ul class="tag-list l-cluster l-cluster--baseline">
-            <li>
-        <span class="tag">Ebook</span>
-      </li>
-                <li>
-        <span class="tag">Debut</span>
-      </li>
-      </ul>
-      
-              <p class="book-card-small__cta">
-          <a
-            class="cta cta--text"
-            href="https://kodansha.us/volume/youre-my-cutie-1/?buy"
-            aria-label="Buy: You're My Cutie, Volume 1"
-          >
-            Buy          </a>
-        </p>
-          </div>
-
-    <div class="u-reorder-first">
-      <div class="l-frame product-image ">
-    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/YoureMyCutie_001_00-200x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/YoureMyCutie_001_00-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/YoureMyCutie_001_00-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/YoureMyCutie_001_00-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/YoureMyCutie_001_00-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/YoureMyCutie_001_00-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/YoureMyCutie_001_00.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
-    </div>
-  </div>
-</div>
-              </li>
-                      </ol>
-              </li>
           <li class="calendar__day">
         
 <h3 class="title title--discovery">
@@ -2391,6 +1462,14 @@ img.emoji {
       </li>
       </ul>
       
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/chihiro-kun-only-has-eyes-for-me-2/?buy"
+            aria-label="Buy: Chihiro-kun Only Has Eyes for Me, Volume 2"
+          >
+            Buy          </a>
+        </p>
           </div>
 
     <div class="u-reorder-first">
@@ -2623,6 +1702,14 @@ img.emoji {
       </li>
       </ul>
       
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/the-girl-the-shovel-and-the-evil-eye-1/?buy"
+            aria-label="Buy: The Girl, the Shovel, and the Evil Eye, Volume 1"
+          >
+            Buy          </a>
+        </p>
           </div>
 
     <div class="u-reorder-first">
@@ -2652,6 +1739,14 @@ img.emoji {
       </li>
       </ul>
       
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/the-great-cleric-7/?buy"
+            aria-label="Buy: The Great Cleric, Volume 7"
+          >
+            Buy          </a>
+        </p>
           </div>
 
     <div class="u-reorder-first">
@@ -3212,6 +2307,46 @@ img.emoji {
       
       
 <h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/love-after-world-domination-1/" class="card__link">Love After World <span class="u-break-words">Domination</span>, Volume 1</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Hiroshi Noda and Takahiro Wakamatsu        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+                <li>
+        <span class="tag">Debut</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/love-after-world-domination-1/?buy"
+            aria-label="Buy: Love After World Domination, Volume 1"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/LoveAfterWorldDomination_vol_01_00-200x300.jpg" class="attachment-medium size-medium" alt="Cover for Love After World Domination, Volume 1" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/LoveAfterWorldDomination_vol_01_00-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/LoveAfterWorldDomination_vol_01_00-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/LoveAfterWorldDomination_vol_01_00-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/LoveAfterWorldDomination_vol_01_00-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/LoveAfterWorldDomination_vol_01_00-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/LoveAfterWorldDomination_vol_01_00.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
                     <a href="https://kodansha.us/volume/my-dearest-self-with-malice-aforethought-9/" class="card__link">My Dearest Self With Malice <span class="u-break-words">Aforethought</span>, Volume 9</a>
               </h4>
 
@@ -3259,6 +2394,9 @@ img.emoji {
               <ul class="tag-list l-cluster l-cluster--baseline">
             <li>
         <span class="tag">Ebook</span>
+      </li>
+                <li>
+        <span class="tag">Final</span>
       </li>
       </ul>
       
@@ -3835,6 +2973,46 @@ img.emoji {
       
       
 <h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/our-bodies-entwining-entwined-1/" class="card__link">Our Bodies, Entwining, Entwined, Volume 1</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          iko        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+                <li>
+        <span class="tag">Debut</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/our-bodies-entwining-entwined-1/?buy"
+            aria-label="Buy: Our Bodies, Entwining, Entwined, Volume 1"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/OurBodiesEntwiningEntwined_001_00-200x300.jpg" class="attachment-medium size-medium" alt="Cover for Our Bodies, Entwining, Entwined, Volume 1" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/OurBodiesEntwiningEntwined_001_00-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/OurBodiesEntwiningEntwined_001_00-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/OurBodiesEntwiningEntwined_001_00-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/OurBodiesEntwiningEntwined_001_00-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/OurBodiesEntwiningEntwined_001_00-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/OurBodiesEntwiningEntwined_001_00.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
                     <a href="https://kodansha.us/volume/perfect-world-8/" class="card__link">Perfect World, Volume 8</a>
               </h4>
 
@@ -4015,13 +3193,738 @@ img.emoji {
               </li>
                       </ol>
               </li>
+          <li class="calendar__day">
+        
+<h3 class="title title--discovery">
+  10/19/2021</h3>
+
+                  <ol class="l-grid l-grid--max-2">
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/attack-on-titan-34/" class="card__link">Attack on Titan, Volume 34</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Hajime Isayama        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/attack-on-titan-34/?buy"
+            aria-label="Buy: Attack on Titan, Volume 34"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/9781646512362﻿_AoT_34-200x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/9781646512362﻿_AoT_34-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/08/9781646512362﻿_AoT_34-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/08/9781646512362﻿_AoT_34-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/9781646512362﻿_AoT_34-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/08/9781646512362﻿_AoT_34-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/08/9781646512362﻿_AoT_34.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/attack-on-titan-omnibus-1-vol-1-3/" class="card__link">Attack on Titan Omnibus 1 (Vol. 1-3)</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Hajime Isayama        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Print</span>
+      </li>
+                <li>
+        <span class="tag">Debut</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/attack-on-titan-omnibus-1-vol-1-3/?buy"
+            aria-label="Buy: Attack on Titan Omnibus 1 (Vol. 1-3)"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="210" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/AoT_Omni_01_00-210x300.jpg" class="attachment-medium size-medium" alt="Cover for Attack on Titan Omnibus, 1 (Vol. 1-3)" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/AoT_Omni_01_00-210x300.jpg 210w, https://kodansha.us/wp-content/uploads/2021/09/AoT_Omni_01_00-718x1024.jpg 718w, https://kodansha.us/wp-content/uploads/2021/09/AoT_Omni_01_00-768x1095.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/AoT_Omni_01_00-1078x1536.jpg 1078w, https://kodansha.us/wp-content/uploads/2021/09/AoT_Omni_01_00-1437x2048.jpg 1437w, https://kodansha.us/wp-content/uploads/2021/09/AoT_Omni_01_00.jpg 1500w" sizes="(max-width: 210px) 100vw, 210px" decoding="async" style="--image-width: 210; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/blue-lock-8/" class="card__link">Blue Lock, Volume 8</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Muneyuki Kaneshiro and Yusuke Nomura        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/blue-lock-8/?buy"
+            aria-label="Buy: Blue Lock, Volume 8"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/BlueLock_vol08_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Blue Lock, 8" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/BlueLock_vol08_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/BlueLock_vol08_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/BlueLock_vol08_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/BlueLock_vol08_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/BlueLock_vol08_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/BlueLock_vol08_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/codename-sailor-v-eternal-edition-2/" class="card__link">Codename: Sailor V Eternal Edition, Volume 2</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Naoko Takeuchi        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+                <li>
+        <span class="tag">Print</span>
+      </li>
+                <li>
+        <span class="tag">Final</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/codename-sailor-v-eternal-edition-2/?buy"
+            aria-label="Buy: Codename: Sailor V Eternal Edition, Volume 2"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="213" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/9781646511440-SailorMoonEE_012_cvr-213x300.jpg" class="attachment-medium size-medium" alt="cover for Codename: Sailor V Eternal Edition, 2" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/9781646511440-SailorMoonEE_012_cvr-213x300.jpg 213w, https://kodansha.us/wp-content/uploads/2021/08/9781646511440-SailorMoonEE_012_cvr-728x1024.jpg 728w, https://kodansha.us/wp-content/uploads/2021/08/9781646511440-SailorMoonEE_012_cvr-768x1081.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/9781646511440-SailorMoonEE_012_cvr-1092x1536.jpg 1092w, https://kodansha.us/wp-content/uploads/2021/08/9781646511440-SailorMoonEE_012_cvr-1455x2048.jpg 1455w, https://kodansha.us/wp-content/uploads/2021/08/9781646511440-SailorMoonEE_012_cvr-scaled.jpg 1819w" sizes="(max-width: 213px) 100vw, 213px" decoding="async" style="--image-width: 213; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/the-decagon-house-murders-3/" class="card__link">The Decagon House Murders, Volume 3</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Yukito Ayatsuji and Hiro Kiyohara        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/the-decagon-house-murders-3/?buy"
+            aria-label="Buy: The Decagon House Murders, Volume 3"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/DecagonHouseMurders_vol03_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for The Decagon House Murders, 3" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/DecagonHouseMurders_vol03_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/DecagonHouseMurders_vol03_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/DecagonHouseMurders_vol03_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/DecagonHouseMurders_vol03_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/DecagonHouseMurders_vol03_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/DecagonHouseMurders_vol03_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/defying-kurosaki-kun-17/" class="card__link">Defying Kurosaki-kun, Volume 17</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Makino        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/defying-kurosaki-kun-17/?buy"
+            aria-label="Buy: Defying Kurosaki-kun, Volume 17"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/DefyingKurosakikun_017_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Defying Kurosaki-kun, 17" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/DefyingKurosakikun_017_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/DefyingKurosakikun_017_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/DefyingKurosakikun_017_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/DefyingKurosakikun_017_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/DefyingKurosakikun_017_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/DefyingKurosakikun_017_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/doing-his-best-to-confess-1/" class="card__link">Doing His Best to Confess, Volume 1</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Satoru        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+                <li>
+        <span class="tag">Debut</span>
+      </li>
+      </ul>
+      
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/DoingHisBesttoConfess_001_00-200x300.jpg" class="attachment-medium size-medium" alt="Cover for Doing His Best to Confess, Volume 1" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/DoingHisBesttoConfess_001_00-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/DoingHisBesttoConfess_001_00-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/DoingHisBesttoConfess_001_00-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/DoingHisBesttoConfess_001_00-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/DoingHisBesttoConfess_001_00-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/DoingHisBesttoConfess_001_00.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/edens-zero-13/" class="card__link">EDENS ZERO, Volume 13</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Hiro Mashima        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+                <li>
+        <span class="tag">Print</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/edens-zero-13/?buy"
+            aria-label="Buy: EDENS ZERO, Volume 13"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/9781646512232-EdensZero_013_cvr-200x300.jpg" class="attachment-medium size-medium" alt="cover for EDENS ZERO, 13" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/9781646512232-EdensZero_013_cvr-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/9781646512232-EdensZero_013_cvr-682x1024.jpg 682w, https://kodansha.us/wp-content/uploads/2021/09/9781646512232-EdensZero_013_cvr-768x1154.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/9781646512232-EdensZero_013_cvr-1023x1536.jpg 1023w, https://kodansha.us/wp-content/uploads/2021/09/9781646512232-EdensZero_013_cvr-1364x2048.jpg 1364w, https://kodansha.us/wp-content/uploads/2021/09/9781646512232-EdensZero_013_cvr.jpg 1498w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/a-girl-her-guard-dog-6/" class="card__link">A Girl &#038; Her Guard Dog, Volume 6</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Hatsuharu        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/a-girl-her-guard-dog-6/?buy"
+            aria-label="Buy: A Girl &#038; Her Guard Dog, Volume 6"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/AGirlAndHerGuardDog_vol06_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for A Girl &amp; Her Guard Dog, 6" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/AGirlAndHerGuardDog_vol06_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/AGirlAndHerGuardDog_vol06_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/AGirlAndHerGuardDog_vol06_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/AGirlAndHerGuardDog_vol06_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/AGirlAndHerGuardDog_vol06_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/AGirlAndHerGuardDog_vol06_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/the-heroic-legend-of-arslan-15/" class="card__link">The Heroic Legend of Arslan, Volume 15</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Yoshiki Tanaka and Hiromu Arakawa        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+                <li>
+        <span class="tag">Print</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/the-heroic-legend-of-arslan-15/?buy"
+            aria-label="Buy: The Heroic Legend of Arslan, Volume 15"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="199" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/9781646512959-HeroicLegendOfArslan_015_cvr-199x300.jpg" class="attachment-medium size-medium" alt="cover for The Heroic Legend of Arslan, 15" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/9781646512959-HeroicLegendOfArslan_015_cvr-199x300.jpg 199w, https://kodansha.us/wp-content/uploads/2021/09/9781646512959-HeroicLegendOfArslan_015_cvr-679x1024.jpg 679w, https://kodansha.us/wp-content/uploads/2021/09/9781646512959-HeroicLegendOfArslan_015_cvr-768x1158.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/9781646512959-HeroicLegendOfArslan_015_cvr-1019x1536.jpg 1019w, https://kodansha.us/wp-content/uploads/2021/09/9781646512959-HeroicLegendOfArslan_015_cvr-1358x2048.jpg 1358w, https://kodansha.us/wp-content/uploads/2021/09/9781646512959-HeroicLegendOfArslan_015_cvr.jpg 1492w" sizes="(max-width: 199px) 100vw, 199px" decoding="async" style="--image-width: 199; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/love-in-focus-complete-collection/" class="card__link">Love in Focus Complete <span class="u-break-words">Collection</span></a>
+              </h4>
+
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Print</span>
+      </li>
+                <li>
+        <span class="tag">Debut</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/love-in-focus-complete-collection/?buy"
+            aria-label="Buy: Love in Focus Complete Collection"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/LoveInFocus_CE_00-200x300.jpg" class="attachment-medium size-medium" alt="Cover for Love in Focus Complete Collection" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/LoveInFocus_CE_00-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/LoveInFocus_CE_00-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/LoveInFocus_CE_00-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/LoveInFocus_CE_00-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/LoveInFocus_CE_00-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/LoveInFocus_CE_00.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/nina-the-starry-bride-5/" class="card__link">Nina the Starry Bride, Volume 5</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          RIKACHI        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/nina-the-starry-bride-5/?buy"
+            aria-label="Buy: Nina the Starry Bride, Volume 5"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/NinatheStarryBride_vol05_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for Nina the Starry Bride, 5" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/NinatheStarryBride_vol05_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/NinatheStarryBride_vol05_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/NinatheStarryBride_vol05_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/NinatheStarryBride_vol05_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/NinatheStarryBride_vol05_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/NinatheStarryBride_vol05_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/the-seven-deadly-sins-omnibus-1-vol-1-3/" class="card__link">The Seven Deadly Sins Omnibus 1 (Vol. 1-3)</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Nakaba Suzuki        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Print</span>
+      </li>
+                <li>
+        <span class="tag">Debut</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/the-seven-deadly-sins-omnibus-1-vol-1-3/?buy"
+            aria-label="Buy: The Seven Deadly Sins Omnibus 1 (Vol. 1-3)"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="204" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/9781646513796-SevenDeadlySinsOmnibus_001_cvr-204x300.jpg" class="attachment-medium size-medium" alt="cover for The Seven Deadly Sins Omnibus, 1" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/9781646513796-SevenDeadlySinsOmnibus_001_cvr-204x300.jpg 204w, https://kodansha.us/wp-content/uploads/2021/09/9781646513796-SevenDeadlySinsOmnibus_001_cvr-697x1024.jpg 697w, https://kodansha.us/wp-content/uploads/2021/09/9781646513796-SevenDeadlySinsOmnibus_001_cvr-768x1128.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/9781646513796-SevenDeadlySinsOmnibus_001_cvr-1046x1536.jpg 1046w, https://kodansha.us/wp-content/uploads/2021/09/9781646513796-SevenDeadlySinsOmnibus_001_cvr-1394x2048.jpg 1394w, https://kodansha.us/wp-content/uploads/2021/09/9781646513796-SevenDeadlySinsOmnibus_001_cvr.jpg 1718w" sizes="(max-width: 204px) 100vw, 204px" decoding="async" style="--image-width: 204; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/tesla-note-1/" class="card__link">Tesla Note, Volume 1</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Masafumi Nishida, Tadayoshi Kubo, and Kota Sannomiya        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+                <li>
+        <span class="tag">Debut</span>
+      </li>
+      </ul>
+      
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/TeslaNote_vol_001_v2_00-200x300.jpg" class="attachment-medium size-medium" alt="Cover for Tesla Note, Volume 1" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/TeslaNote_vol_001_v2_00-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/TeslaNote_vol_001_v2_00-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/TeslaNote_vol_001_v2_00-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/TeslaNote_vol_001_v2_00-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/TeslaNote_vol_001_v2_00-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/TeslaNote_vol_001_v2_00.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/that-wolf-boy-is-mine-omnibus-2-vol-3-4/" class="card__link">That Wolf-Boy Is Mine! Omnibus 2 (Vol. 3-4)</a>
+              </h4>
+
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Print</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/that-wolf-boy-is-mine-omnibus-2-vol-3-4/?buy"
+            aria-label="Buy: That Wolf-Boy Is Mine! Omnibus 2 (Vol. 3-4)"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/9781646513680-ThatWolfBoyIsMineOmnibus_002_cvr-200x300.jpg" class="attachment-medium size-medium" alt="cover for That Wolf-Boy Is Mine! Omnibus, 2" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/9781646513680-ThatWolfBoyIsMineOmnibus_002_cvr-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/9781646513680-ThatWolfBoyIsMineOmnibus_002_cvr-682x1024.jpg 682w, https://kodansha.us/wp-content/uploads/2021/09/9781646513680-ThatWolfBoyIsMineOmnibus_002_cvr-768x1153.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/9781646513680-ThatWolfBoyIsMineOmnibus_002_cvr-1023x1536.jpg 1023w, https://kodansha.us/wp-content/uploads/2021/09/9781646513680-ThatWolfBoyIsMineOmnibus_002_cvr-1364x2048.jpg 1364w, https://kodansha.us/wp-content/uploads/2021/09/9781646513680-ThatWolfBoyIsMineOmnibus_002_cvr.jpg 1499w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/vampire-dormitory-1/" class="card__link">Vampire Dormitory, Volume 1</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Ema Toyama        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+                <li>
+        <span class="tag">Print</span>
+      </li>
+                <li>
+        <span class="tag">Debut</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/vampire-dormitory-1/?buy"
+            aria-label="Buy: Vampire Dormitory, Volume 1"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2020/12/Vampire-Dormitory_cvr_001-200x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2020/12/Vampire-Dormitory_cvr_001-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2020/12/Vampire-Dormitory_cvr_001-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2020/12/Vampire-Dormitory_cvr_001-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2020/12/Vampire-Dormitory_cvr_001-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2020/12/Vampire-Dormitory_cvr_001-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2020/12/Vampire-Dormitory_cvr_001.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/were-new-at-this-9/" class="card__link">We&#8217;re New at This, Volume 9</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Ren Kawahara        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/were-new-at-this-9/?buy"
+            aria-label="Buy: We're New at This, Volume 9"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/WereNewAtThis_vol09_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for We&#039;re New at This, 9" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/WereNewAtThis_vol09_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/WereNewAtThis_vol09_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/WereNewAtThis_vol09_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/WereNewAtThis_vol09_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/WereNewAtThis_vol09_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/WereNewAtThis_vol09_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/when-will-ayumu-make-his-move-1/" class="card__link">When Will Ayumu Make His Move?, Volume 1</a>
+              </h4>
+
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+                <li>
+        <span class="tag">Print</span>
+      </li>
+                <li>
+        <span class="tag">Debut</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/when-will-ayumu-make-his-move-1/?buy"
+            aria-label="Buy: When Will Ayumu Make His Move?, Volume 1"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="211" height="300" src="https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00-211x300.jpg" class="attachment-medium size-medium" alt="" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00-211x300.jpg 211w, https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00-719x1024.jpg 719w, https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00-768x1094.jpg 768w, https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00-1079x1536.jpg 1079w, https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00-1438x2048.jpg 1438w, https://kodansha.us/wp-content/uploads/2021/08/WhenWillAyumuMakeHisMove_00.jpg 1500w" sizes="(max-width: 211px) 100vw, 211px" decoding="async" style="--image-width: 211; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                          <li>
+                <div class="card book-card-small">
+  <div class="l-sidebar">
+    <div class="l-sidebar__main">
+      
+      
+<h4 class="title title--card-small">
+                    <a href="https://kodansha.us/volume/youre-my-cutie-2/" class="card__link">You&#8217;re My Cutie, Volume 2</a>
+              </h4>
+
+              <p class="byline byline--small">
+          By
+          Nakaba Harufuji        </p>
+      
+              <ul class="tag-list l-cluster l-cluster--baseline">
+            <li>
+        <span class="tag">Ebook</span>
+      </li>
+      </ul>
+      
+              <p class="book-card-small__cta">
+          <a
+            class="cta cta--text"
+            href="https://kodansha.us/volume/youre-my-cutie-2/?buy"
+            aria-label="Buy: You're My Cutie, Volume 2"
+          >
+            Buy          </a>
+        </p>
+          </div>
+
+    <div class="u-reorder-first">
+      <div class="l-frame product-image ">
+    <img width="200" height="300" src="https://kodansha.us/wp-content/uploads/2021/09/Youre-My-Cutie_002_cover-200x300.jpg" class="attachment-medium size-medium" alt="cover for You&#039;re My Cutie, 2" loading="lazy" srcset="https://kodansha.us/wp-content/uploads/2021/09/Youre-My-Cutie_002_cover-200x300.jpg 200w, https://kodansha.us/wp-content/uploads/2021/09/Youre-My-Cutie_002_cover-683x1024.jpg 683w, https://kodansha.us/wp-content/uploads/2021/09/Youre-My-Cutie_002_cover-768x1152.jpg 768w, https://kodansha.us/wp-content/uploads/2021/09/Youre-My-Cutie_002_cover-1024x1536.jpg 1024w, https://kodansha.us/wp-content/uploads/2021/09/Youre-My-Cutie_002_cover-1365x2048.jpg 1365w, https://kodansha.us/wp-content/uploads/2021/09/Youre-My-Cutie_002_cover.jpg 1500w" sizes="(max-width: 200px) 100vw, 200px" decoding="async" style="--image-width: 200; --image-height: 300;" /></div>
+    </div>
+  </div>
+</div>
+              </li>
+                      </ol>
+              </li>
       </ul>
 </div>
       
                       <div class="filters__results-footer">
           <div class="l-sidebar l-sidebar--center">
             <div class="l-sidebar__main">
-              <p class="filters__results-title">Displaying 4 of 6 Weeks</p>
+              <p class="filters__results-title">Displaying 4 of 9 Weeks</p>
             </div>
 
             <div class="pagination l-cluster l-cluster--center l-cluster--end-vertical">
@@ -4037,6 +3940,11 @@ img.emoji {
         class="pagination__page"
               >
         2      </a>
+                      <a
+        href="https://kodansha.us/manga/calendar/page/3/"
+        class="pagination__page"
+              >
+        3      </a>
             
       <a rel="next" href="https://kodansha.us/manga/calendar/page/2/">
       <span class="screen-reader-text">Next</span>
@@ -4254,7 +4162,7 @@ img.emoji {
 	<script src='https://kodansha.us/wp-content/plugins/hurrytimer-pro/assets/js/cookie.min.js?ver=3.14.1' id='hurryt-cookie-js'></script>
 <script src='https://kodansha.us/wp-content/plugins/hurrytimer-pro/assets/js/jquery.countdown.min.js?ver=2.2.0' id='hurryt-countdown-js'></script>
 <script id='hurrytimer-js-extra'>
-var hurrytimer_ajax_object = {"ajax_url":"https:\/\/kodansha.us\/wp-admin\/admin-ajax.php","ajax_nonce":"a20f9c2ca0","disable_actions":"","methods":{"COOKIE":1,"IP":2,"USER_SESSION":3},"actionsOptions":{"none":1,"hide":2,"redirect":3,"stockStatus":4,"hideAddToCartButton":5,"displayMessage":6,"expire_coupon":7},"restartOptions":{"none":1,"immediately":2,"afterReload":3,"after_duration":4},"COOKIEPATH":"\/","COOKIE_DOMAIN":"","redirect_no_back":"1","expire_coupon_message":""};
+var hurrytimer_ajax_object = {"ajax_url":"https:\/\/kodansha.us\/wp-admin\/admin-ajax.php","ajax_nonce":"9309a7c406","disable_actions":"","methods":{"COOKIE":1,"IP":2,"USER_SESSION":3},"actionsOptions":{"none":1,"hide":2,"redirect":3,"stockStatus":4,"hideAddToCartButton":5,"displayMessage":6,"expire_coupon":7},"restartOptions":{"none":1,"immediately":2,"afterReload":3,"after_duration":4},"COOKIEPATH":"\/","COOKIE_DOMAIN":"","redirect_no_back":"1","expire_coupon_message":""};
 </script>
 <script src='https://kodansha.us/wp-content/plugins/hurrytimer-pro/assets/js/hurrytimer.js?ver=2.6.9.1' id='hurrytimer-js'></script>
 <script id='rocket-browser-checker-js-after'>
@@ -4274,4 +4182,4 @@ var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?
 </body>
 </html>
 
-<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1632716083 -->
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1633168656 -->

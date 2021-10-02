@@ -40,7 +40,7 @@
 </script>
 <!-- End Google Analytics -->
     <meta charset="UTF-8">
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"22494915","transactionName":"cFkNREpaWA9dF0pSVl9TDVRZRxsQUAoSblRSVQtVXA==","queueTime":0,"applicationTime":207,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"22494915","transactionName":"cFkNREpaWA9dF0pSVl9TDVRZRxsQUAoSblRSVQtVXA==","queueTime":0,"applicationTime":142,"agent":""}</script>
 <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"22494915"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
     <meta name="viewport"         content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
@@ -183,12 +183,12 @@ fbq('track', "PageView");</script>
     <div class="o_fan-favorites-row row nowrap">
       <h2 class="disp-ib mar-r-md color-mid-gray">Manga &amp; Anime Favorites</h2>
       <ul class="disp-ib">
+          <li class="disp-ib mar-r-md"><a href="/one-punch-man">One-Punch Man</a></li>
           <li class="disp-ib mar-r-md"><a href="/my-hero-academia">My Hero Academia</a></li>
           <li class="disp-ib mar-r-md"><a href="/demon-slayer-kimetsu-no-yaiba">Demon Slayer</a></li>
           <li class="disp-ib mar-r-md"><a href="/naruto">Naruto</a></li>
-          <li class="disp-ib mar-r-md"><a href="/pokemon">Pokémon</a></li>
           <li class="disp-ib mar-r-md"><a href="/boruto">Boruto</a></li>
-          <li class="disp-ib mar-r-md"><a href="/one-punch-man">One-Punch Man</a></li>
+          <li class="disp-ib mar-r-md"><a href="/pokemon">Pokémon</a></li>
           <li class="disp-ib mar-r-md"><a href="https://www.viz.com/blog/posts/mangaka-mania-21-lineup">Mangaka Mania!</a></li>
           <li class="disp-ib mar-r-md"><a href="/products/gomi-no-sensei" rel="nofollow" style="display: none" aria-hidden="true">Gomi</a></li>
       </ul>
@@ -365,19 +365,19 @@ fbq('track', "PageView");</script>
 <div class="row mar-y-lg">
   <div class="category-nav-container flex">
     <ul class="category-nav-list list-unmarked flex-width-1 h-scroll">
-      <li class=''><a href='/calendar/2021/08'>Aug 2021</a></li>
-<li class=''><a href='/calendar/2021/09'>Sep 2021</a></li>
-<li class=''><a href='/calendar/2021/10'>Oct 2021</a></li>
+      <li class=''><a href='/calendar/2021/09'>Sep 2021</a></li>
+<li class='active'><a href='javascript:void(0)'>Oct 2021</a></li>
 <li class=''><a href='/calendar/2021/11'>Nov 2021</a></li>
 <li class=''><a href='/calendar/2021/12'>Dec 2021</a></li>
+<li class=''><a href='/calendar/2022/01'>Jan 2022</a></li>
     </ul>
     <span class="category-nav-select select-wrapper flex-width-1">
       <select>
-        <option  value='/2021/08'>Aug 2021</option>
-<option  value='/2021/09'>Sep 2021</option>
-<option  value='/2021/10'>Oct 2021</option>
+        <option  value='/2021/09'>Sep 2021</option>
+<option selected value='/2021/10'>Oct 2021</option>
 <option  value='/2021/11'>Nov 2021</option>
 <option  value='/2021/12'>Dec 2021</option>
+<option  value='/2022/01'>Jan 2022</option>
       </select>
     </span>
     <div class="type-md pad-l-rg pad-t-sm pad-b-rg view-nav">
@@ -388,7 +388,7 @@ fbq('track', "PageView");</script>
 </div>
 <div class="row mar-y-lg mar-b-lg product-nav">
   <div class="clearfix mar-t-md mar-b-0">
-    <h3 class="type-md type-lg--lg line-solid float-l--lg">September 2021</h3>
+    <h3 class="type-md type-lg--lg line-solid float-l--lg">October 2021</h3>
     <ul data-filter-group="format" data-filter="all" class="list-unmarked list-inline list-divided h-scroll line-caption mar-t-md float-r--lg color-mid-gray type-sm type-rg--lg">
         <li><a data-filter="manga-books" data-filter-state="off" class="filter-link color-mid-gray hover-dark-red" href="javascript:void('Manga & Books')">Manga &amp; Books</a></li>
         <li><a data-filter="dvd-bluray"  data-filter-state="off" class="filter-link color-mid-gray hover-dark-red" href="javascript:void('DVD & Blu-ray')">Blu-ray, DVD &amp; Digital</a></li>
@@ -402,14 +402,14 @@ fbq('track', "PageView");</script>
   <figure class="ar-square">
     
 
-    <a href="/read/manga/boruto-naruto-next-generations-volume-12/product/6785/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Boruto: Naruto Next Generations, Vol. 12" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722775.jpg" />
+    <a href="/read/manga/blue-exorcist-volume-26/product/6817/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Blue Exorcist, Vol. 26" data-original="https://dw9to29mmj727.cloudfront.net/products/197472462X.jpg" />
     </a>
   </figure>
   <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
     <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
     <h4>
-      <a class="color-off-black hover-red" href="/read/manga/boruto-naruto-next-generations-volume-12/product/6785/paperback">Boruto: Naruto Next Generations, Vol. 12</a>
+      <a class="color-off-black hover-red" href="/read/manga/blue-exorcist-volume-26/product/6817/paperback">Blue Exorcist, Vol. 26</a>
     </h4>
   </div>
 </article>
@@ -418,14 +418,14 @@ fbq('track', "PageView");</script>
   <figure class="ar-square">
     
 
-    <a href="/read/manga/dr-stone-volume-18/product/6787/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Dr. STONE, Vol. 18" data-original="https://dw9to29mmj727.cloudfront.net/products/1974724050.jpg" />
+    <a href="/read/manga/chainsaw-man-volume-7/product/6814/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Chainsaw Man, Vol. 7" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720969.jpg" />
     </a>
   </figure>
   <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
     <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
     <h4>
-      <a class="color-off-black hover-red" href="/read/manga/dr-stone-volume-18/product/6787/paperback">Dr. STONE, Vol. 18</a>
+      <a class="color-off-black hover-red" href="/read/manga/chainsaw-man-volume-7/product/6814/paperback">Chainsaw Man, Vol. 7</a>
     </h4>
   </div>
 </article>
@@ -434,14 +434,14 @@ fbq('track', "PageView");</script>
   <figure class="ar-square">
     
 
-    <a href="/read/manga/dragon-ball-super-volume-14/product/6788/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Dragon Ball Super, Vol. 14" data-original="https://dw9to29mmj727.cloudfront.net/products/1974724638.jpg" />
+    <a href="/read/manga/jujutsu-kaisen-volume-12/product/6815/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Jujutsu Kaisen, Vol. 12" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722856.jpg" />
     </a>
   </figure>
   <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
     <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
     <h4>
-      <a class="color-off-black hover-red" href="/read/manga/dragon-ball-super-volume-14/product/6788/paperback">Dragon Ball Super, Vol. 14</a>
+      <a class="color-off-black hover-red" href="/read/manga/jujutsu-kaisen-volume-12/product/6815/paperback">Jujutsu Kaisen, Vol. 12</a>
     </h4>
   </div>
 </article>
@@ -450,14 +450,14 @@ fbq('track', "PageView");</script>
   <figure class="ar-square">
     
 
-    <a href="/read/manga/love-me-love-me-not-volume-10/product/6782/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Love Me, Love Me Not, Vol. 10" data-original="https://dw9to29mmj727.cloudfront.net/products/1974713180.jpg" />
+    <a href="/read/manga/moriarty-the-patriot-volume-5/product/6813/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Moriarty the Patriot, Vol. 5" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720845.jpg" />
     </a>
   </figure>
   <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
     <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
     <h4>
-      <a class="color-off-black hover-red" href="/read/manga/love-me-love-me-not-volume-10/product/6782/paperback">Love Me, Love Me Not, Vol. 10</a>
+      <a class="color-off-black hover-red" href="/read/manga/moriarty-the-patriot-volume-5/product/6813/paperback">Moriarty the Patriot, Vol. 5</a>
     </h4>
   </div>
 </article>
@@ -466,404 +466,14 @@ fbq('track', "PageView");</script>
   <figure class="ar-square">
     
 
-    <a href="/read/manga/mashle-magic-and-muscles-volume-2/product/6786/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Mashle: Magic and Muscles, Vol. 2" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723518.jpg" />
+    <a href="/read/novel/my-hero-academia-school-briefs-volume-5/product/6835/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="My Hero Academia: School Briefs, Vol. 5" data-original="https://dw9to29mmj727.cloudfront.net/products/1974724077.jpg" />
     </a>
   </figure>
   <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Novel</a></div>
     <h4>
-      <a class="color-off-black hover-red" href="/read/manga/mashle-magic-and-muscles-volume-2/product/6786/paperback">Mashle: Magic and Muscles, Vol. 2</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Best Seller</span>
-    <a href="/read/manga/my-hero-academia-volume-29/product/6789/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="My Hero Academia, Vol. 29" data-original="https://dw9to29mmj727.cloudfront.net/products/1974725103.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/my-hero-academia-volume-29/product/6789/paperback">My Hero Academia, Vol. 29</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/prince-freya-volume-5/product/6783/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Prince Freya, Vol. 5" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723364.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/prince-freya-volume-5/product/6783/paperback">Prince Freya, Vol. 5</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/snow-white-with-the-red-hair-volume-15/product/6805/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Snow White with the Red Hair, Vol. 15" data-original="https://dw9to29mmj727.cloudfront.net/products/1974707334.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/snow-white-with-the-red-hair-volume-15/product/6805/paperback">Snow White with the Red Hair, Vol. 15</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Series Debut!</span>
-    <a href="/read/manga/star-wars-the-high-republic-edge-of-balance-volume-1/product/6717/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Star Wars: The High Republic: Edge of Balance, Vol. 1" data-original="https://dw9to29mmj727.cloudfront.net/products/197472588X.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/star-wars-the-high-republic-edge-of-balance-volume-1/product/6717/paperback">Star Wars: The High Republic: Edge of Balance, Vol. 1</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/twin-star-exorcists-volume-23/product/6792/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Twin Star Exorcists, Vol. 23" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721876.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/twin-star-exorcists-volume-23/product/6792/paperback">Twin Star Exorcists, Vol. 23</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/undead-unluck-volume-3/product/6796/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Undead Unluck, Vol. 3" data-original="https://dw9to29mmj727.cloudfront.net/products/1974724654.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/undead-unluck-volume-3/product/6796/paperback">Undead Unluck, Vol. 3</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/yakuza-lover-volume-2/product/6784/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Yakuza Lover, Vol. 2" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720632.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/yakuza-lover-volume-2/product/6784/paperback">Yakuza Lover, Vol. 2</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Series Debut!</span>
-    <a href="/read/manga/animal-crossing-deserted-island-diary-vol-1-volume-1/product/6807/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Animal Crossing: New Horizons, Vol. 1" data-original="https://dw9to29mmj727.cloudfront.net/products/1974725928.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/animal-crossing-deserted-island-diary-vol-1-volume-1/product/6807/paperback">Animal Crossing: New Horizons, Vol. 1</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/fly-me-to-the-moon-volume-7/product/6791/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Fly Me to the Moon, Vol. 7" data-original="https://dw9to29mmj727.cloudfront.net/products/1974719251.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/fly-me-to-the-moon-volume-7/product/6791/paperback">Fly Me to the Moon, Vol. 7</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/hayate-the-combat-butler-volume-38/product/6790/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Hayate the Combat Butler, Vol. 38" data-original="https://dw9to29mmj727.cloudfront.net/products/1974714985.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/hayate-the-combat-butler-volume-38/product/6790/paperback">Hayate the Combat Butler, Vol. 38</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/kirby-manga-mania-volume-2/product/6793/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Kirby Manga Mania, Vol. 2" data-original="https://dw9to29mmj727.cloudfront.net/products/197472235X.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/kirby-manga-mania-volume-2/product/6793/paperback">Kirby Manga Mania, Vol. 2</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Series Debut!</span>
-    <a href="/read/manga/mao-volume-1/product/6806/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Mao, Vol. 1" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720527.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/mao-volume-1/product/6806/paperback">Mao, Vol. 1</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/pokemon-sun-moon-volume-11/product/6800/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Pokémon: Sun &amp; Moon, Vol. 11" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721752.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/pokemon-sun-moon-volume-11/product/6800/paperback">Pokémon: Sun &amp; Moon, Vol. 11</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/splatoon-volume-13/product/6795/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Splatoon, Vol. 13" data-original="https://dw9to29mmj727.cloudfront.net/products/1974724581.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/splatoon-volume-13/product/6795/paperback">Splatoon, Vol. 13</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/legend-of-zelda-twilight-princess-volume-9/product/6794/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="The Legend of Zelda: Twilight Princess, Vol. 9" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723380.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/legend-of-zelda-twilight-princess-volume-9/product/6794/paperback">The Legend of Zelda: Twilight Princess, Vol. 9</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/yo-kai-watch-volume-18/product/6881/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="YO-KAI WATCH, Vol. 18" data-original="https://dw9to29mmj727.cloudfront.net/products/1974714853.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/yo-kai-watch-volume-18/product/6881/paperback">YO-KAI WATCH, Vol. 18</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/beastars-volume-14/product/6797/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="BEASTARS, Vol. 14" data-original="https://dw9to29mmj727.cloudfront.net/products/1974719936.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/beastars-volume-14/product/6797/paperback">BEASTARS, Vol. 14</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/dead-dead-demons-dededede-destruction-volume-10/product/6801/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Dead Dead Demon’s Dededede Destruction, Vol. 10" data-original="https://dw9to29mmj727.cloudfront.net/products/1974725200.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/dead-dead-demons-dededede-destruction-volume-10/product/6801/paperback">Dead Dead Demon’s Dededede Destruction, Vol. 10</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/fist-of-the-north-star-volume-2/product/6799/hardcover" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Fist of the North Star, Vol. 2" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721574.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/fist-of-the-north-star-volume-2/product/6799/hardcover">Fist of the North Star, Vol. 2</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/hell-s-paradise-jigokuraku-volume-10/product/6798/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Hell’s Paradise: Jigokuraku, Vol. 10" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720993.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/hell-s-paradise-jigokuraku-volume-10/product/6798/paperback">Hell’s Paradise: Jigokuraku, Vol. 10</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/maison-ikkoku-collector-s-edition-volume-5/product/6802/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Maison Ikkoku Collector’s Edition, Vol. 5" data-original="https://dw9to29mmj727.cloudfront.net/products/1974711919.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/maison-ikkoku-collector-s-edition-volume-5/product/6802/paperback">Maison Ikkoku Collector’s Edition, Vol. 5</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/read/manga/way-of-the-househusband-volume-6/product/6803/paperback" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="The Way of the Househusband, Vol. 6" data-original="https://dw9to29mmj727.cloudfront.net/products/1974724611.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/way-of-the-househusband-volume-6/product/6803/paperback">The Way of the Househusband, Vol. 6</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Series Debut!</span>
-    <a href="/read/manga/bone-collection-volume-1/product/6908/digital" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Bone Collection, Vol. 1" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-86276-BoneCollection_DigitalGN01_C1_Web-3-WYKrnhOiaRAXmb32TeBveA.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/bone-collection-volume-1/product/6908/digital">Bone Collection, Vol. 1</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Digital Only</span>
-    <a href="/read/manga/bone-collection-volume-2/product/6909/digital" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Bone Collection, Vol. 2" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88656-BoneCollection_DigitalGN02_C1_Web-3-xLh4uFvpU-Fa26bK-jVKJQ.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/read/manga/bone-collection-volume-2/product/6909/digital">Bone Collection, Vol. 2</a>
+      <a class="color-off-black hover-red" href="/read/novel/my-hero-academia-school-briefs-volume-5/product/6835/paperback">My Hero Academia: School Briefs, Vol. 5</a>
     </h4>
   </div>
 </article>
@@ -873,14 +483,14 @@ fbq('track', "PageView");</script>
     
 
       <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Series Debut!</span>
-    <a href="/read/manga/magu-chan-god-of-destruction-volume-1/product/6907/digital" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Magu-chan: God of Destruction, Vol. 1" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-83908-MaguChan_DigitalGN01_C1_Web-3-CR7gEBL_7Qx0jvcqE-43EQ.jpg" />
+    <a href="/read/manga/my-love-mix-up-volume-1/product/6832/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="My Love Mix-Up!, Vol. 1" data-original="https://dw9to29mmj727.cloudfront.net/products/1974725278.jpg" />
     </a>
   </figure>
   <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
     <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
     <h4>
-      <a class="color-off-black hover-red" href="/read/manga/magu-chan-god-of-destruction-volume-1/product/6907/digital">Magu-chan: God of Destruction, Vol. 1</a>
+      <a class="color-off-black hover-red" href="/read/manga/my-love-mix-up-volume-1/product/6832/paperback">My Love Mix-Up!, Vol. 1</a>
     </h4>
   </div>
 </article>
@@ -889,15 +499,321 @@ fbq('track', "PageView");</script>
   <figure class="ar-square">
     
 
-      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Digital Only</span>
-    <a href="/read/manga/mission-yozakura-family-volume-4/product/6910/digital" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Mission: Yozakura Family, Vol. 4" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-91308-MissionYozakuraFamily_DigitalGN04_C1_Web-3-F2ovH1ggdgsofRhb32YAuQ.jpg" />
+    <a href="/read/manga/one-punch-man-volume-23/product/6818/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="One-Punch Man, Vol. 23" data-original="https://dw9to29mmj727.cloudfront.net/products/197472512X.jpg" />
     </a>
   </figure>
   <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
     <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
     <h4>
-      <a class="color-off-black hover-red" href="/read/manga/mission-yozakura-family-volume-4/product/6910/digital">Mission: Yozakura Family, Vol. 4</a>
+      <a class="color-off-black hover-red" href="/read/manga/one-punch-man-volume-23/product/6818/paperback">One-Punch Man, Vol. 23</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/seraph-of-the-end-volume-22/product/6816/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Seraph of the End, Vol. 22" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723445.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/seraph-of-the-end-volume-22/product/6816/paperback">Seraph of the End, Vol. 22</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/spy-x-family-volume-6/product/6824/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Spy x Family, Vol. 6" data-original="https://dw9to29mmj727.cloudfront.net/products/1974725138.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/spy-x-family-volume-6/product/6824/paperback">Spy x Family, Vol. 6</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/we-never-learn-volume-18/product/6823/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="We Never Learn, Vol. 18" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722929.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/we-never-learn-volume-18/product/6823/paperback">We Never Learn, Vol. 18</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/yona-of-the-dawn-volume-32/product/6812/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Yona of the Dawn, Vol. 32" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720098.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/yona-of-the-dawn-volume-32/product/6812/paperback">Yona of the Dawn, Vol. 32</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/call-of-the-night-vol-1-volume-4/product/6822/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Call of the Night, Vol. 4" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723046.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/call-of-the-night-vol-1-volume-4/product/6822/paperback">Call of the Night, Vol. 4</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/case-closed-volume-80/product/6821/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Case Closed, Vol. 80" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721159.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/case-closed-volume-80/product/6821/paperback">Case Closed, Vol. 80</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/novel/fullmetal-alchemist-novel-volume-6/product/6830/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Fullmetal Alchemist: A New Beginning" data-original="https://dw9to29mmj727.cloudfront.net/products/1974725774.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Novel</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/novel/fullmetal-alchemist-novel-volume-6/product/6830/paperback">Fullmetal Alchemist: A New Beginning</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/how-do-we-relationship-volume-4/product/6820/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="How Do We Relationship?, Vol. 4" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720748.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/how-do-we-relationship-volume-4/product/6820/paperback">How Do We Relationship?, Vol. 4</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/komi-cant-communicate-volume-15/product/6819/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Komi Can’t Communicate, Vol. 15" data-original="https://dw9to29mmj727.cloudfront.net/products/1974718859.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/komi-cant-communicate-volume-15/product/6819/paperback">Komi Can’t Communicate, Vol. 15</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/picture-book/marvel-meow/product/6837/hardcover" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Marvel Meow" data-original="https://dw9to29mmj727.cloudfront.net/products/1974726037.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Picture Book</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/picture-book/marvel-meow/product/6837/hardcover">Marvel Meow</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Final Volume!</span>
+    <a href="/read/manga/pokemon-adventures-collector-s-edition-volume-10/product/6825/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Pokémon Adventures Collector’s Edition, Vol. 10" data-original="https://dw9to29mmj727.cloudfront.net/products/1974711307.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/pokemon-adventures-collector-s-edition-volume-10/product/6825/paperback">Pokémon Adventures Collector’s Edition, Vol. 10</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/requiem-of-the-rose-king-volume-14/product/6829/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Requiem of the Rose King, Vol. 14" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723666.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/requiem-of-the-rose-king-volume-14/product/6829/paperback">Requiem of the Rose King, Vol. 14</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/art-book/art-of-genlock/product/6836/hardcover" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="The Art of gen:LOCK" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723461.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Art Book</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/art-book/art-of-genlock/product/6836/hardcover">The Art of gen:LOCK</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/asadora-volume-4/product/6827/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Asadora!, Vol. 4" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722961.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/asadora-volume-4/product/6827/paperback">Asadora!, Vol. 4</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Series Debut!</span>
+    <a href="/read/manga/burn-the-witch-volume-1/product/6833/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Burn the Witch, Vol. 1" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723593.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/burn-the-witch-volume-1/product/6833/paperback">Burn the Witch, Vol. 1</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/no-guns-life-volume-11/product/6828/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="No Guns Life, Vol. 11" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723437.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/no-guns-life-volume-11/product/6828/paperback">No Guns Life, Vol. 11</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/manga/no-5-volume-2/product/6826/paperback" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="No. 5, Vol. 2" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720772.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/no-5-volume-2/product/6826/paperback">No. 5, Vol. 2</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+    <a href="/read/book/creative-gene/product/6834/hardcover" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="The Creative Gene" data-original="https://dw9to29mmj727.cloudfront.net/products/197472591X.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Book</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/book/creative-gene/product/6834/hardcover">The Creative Gene</a>
+    </h4>
+  </div>
+</article>
+
+  <article class="g-3 g-3--md mar-b-lg g-omega bg-white color-off-black type-sm type-rg--lg">
+  <figure class="ar-square">
+    
+
+      <span class="product-tag pad-x-rg pad-y-sm pos-a t-0 r-0 z-2 bg-off-black color-white">Digital First!</span>
+    <a href="/read/manga/record-of-ragnarok-volume-1/product/6839/digital" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Record of Ragnarok, Vol. 1" data-original="https://dw9to29mmj727.cloudfront.net/products/1974727866.jpg" />
+    </a>
+  </figure>
+  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
+    <div class="mar-b-sm"><a class="color-mid-gray hover-red">Manga</a></div>
+    <h4>
+      <a class="color-off-black hover-red" href="/read/manga/record-of-ragnarok-volume-1/product/6839/digital">Record of Ragnarok, Vol. 1</a>
     </h4>
   </div>
 </article>
@@ -909,7 +825,7 @@ fbq('track', "PageView");</script>
   <tbody>
       <tr>
         <td width="80">
-          <a href="/read/manga/boruto-naruto-next-generations-volume-12/product/6785/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722775.jpg" /></a>
+          <a href="/read/manga/blue-exorcist-volume-26/product/6817/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/197472462X.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -919,15 +835,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/boruto-naruto-next-generations-volume-12/product/6785/paperback">Boruto: Naruto Next Generations, Vol. 12</a>
+          <a class="color-off-black hover-red" href="/read/manga/blue-exorcist-volume-26/product/6817/paperback">Blue Exorcist, Vol. 26</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 05
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/dr-stone-volume-18/product/6787/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974724050.jpg" /></a>
+          <a href="/read/manga/chainsaw-man-volume-7/product/6814/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720969.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -937,15 +853,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/dr-stone-volume-18/product/6787/paperback">Dr. STONE, Vol. 18</a>
+          <a class="color-off-black hover-red" href="/read/manga/chainsaw-man-volume-7/product/6814/paperback">Chainsaw Man, Vol. 7</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 05
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/dragon-ball-super-volume-14/product/6788/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974724638.jpg" /></a>
+          <a href="/read/manga/jujutsu-kaisen-volume-12/product/6815/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722856.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -955,15 +871,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/dragon-ball-super-volume-14/product/6788/paperback">Dragon Ball Super, Vol. 14</a>
+          <a class="color-off-black hover-red" href="/read/manga/jujutsu-kaisen-volume-12/product/6815/paperback">Jujutsu Kaisen, Vol. 12</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 05
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/love-me-love-me-not-volume-10/product/6782/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974713180.jpg" /></a>
+          <a href="/read/manga/moriarty-the-patriot-volume-5/product/6813/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720845.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -973,33 +889,33 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/love-me-love-me-not-volume-10/product/6782/paperback">Love Me, Love Me Not, Vol. 10</a>
+          <a class="color-off-black hover-red" href="/read/manga/moriarty-the-patriot-volume-5/product/6813/paperback">Moriarty the Patriot, Vol. 5</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 05
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/mashle-magic-and-muscles-volume-2/product/6786/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723518.jpg" /></a>
+          <a href="/read/novel/my-hero-academia-school-briefs-volume-5/product/6835/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974724077.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
 
           </td>
         <td>
-          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Novel</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/mashle-magic-and-muscles-volume-2/product/6786/paperback">Mashle: Magic and Muscles, Vol. 2</a>
+          <a class="color-off-black hover-red" href="/read/novel/my-hero-academia-school-briefs-volume-5/product/6835/paperback">My Hero Academia: School Briefs, Vol. 5</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 05
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/my-hero-academia-volume-29/product/6789/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974725103.jpg" /></a>
+          <a href="/read/manga/my-love-mix-up-volume-1/product/6832/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974725278.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1009,15 +925,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/my-hero-academia-volume-29/product/6789/paperback">My Hero Academia, Vol. 29</a>
+          <a class="color-off-black hover-red" href="/read/manga/my-love-mix-up-volume-1/product/6832/paperback">My Love Mix-Up!, Vol. 1</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 05
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/prince-freya-volume-5/product/6783/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723364.jpg" /></a>
+          <a href="/read/manga/one-punch-man-volume-23/product/6818/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/197472512X.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1027,15 +943,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/prince-freya-volume-5/product/6783/paperback">Prince Freya, Vol. 5</a>
+          <a class="color-off-black hover-red" href="/read/manga/one-punch-man-volume-23/product/6818/paperback">One-Punch Man, Vol. 23</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 05
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/snow-white-with-the-red-hair-volume-15/product/6805/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974707334.jpg" /></a>
+          <a href="/read/manga/seraph-of-the-end-volume-22/product/6816/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723445.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1045,15 +961,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/snow-white-with-the-red-hair-volume-15/product/6805/paperback">Snow White with the Red Hair, Vol. 15</a>
+          <a class="color-off-black hover-red" href="/read/manga/seraph-of-the-end-volume-22/product/6816/paperback">Seraph of the End, Vol. 22</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 05
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/star-wars-the-high-republic-edge-of-balance-volume-1/product/6717/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/197472588X.jpg" /></a>
+          <a href="/read/manga/spy-x-family-volume-6/product/6824/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974725138.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1063,15 +979,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/star-wars-the-high-republic-edge-of-balance-volume-1/product/6717/paperback">Star Wars: The High Republic: Edge of Balance, Vol. 1</a>
+          <a class="color-off-black hover-red" href="/read/manga/spy-x-family-volume-6/product/6824/paperback">Spy x Family, Vol. 6</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 05
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/twin-star-exorcists-volume-23/product/6792/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721876.jpg" /></a>
+          <a href="/read/manga/we-never-learn-volume-18/product/6823/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722929.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1081,15 +997,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/twin-star-exorcists-volume-23/product/6792/paperback">Twin Star Exorcists, Vol. 23</a>
+          <a class="color-off-black hover-red" href="/read/manga/we-never-learn-volume-18/product/6823/paperback">We Never Learn, Vol. 18</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 05
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/undead-unluck-volume-3/product/6796/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974724654.jpg" /></a>
+          <a href="/read/manga/yona-of-the-dawn-volume-32/product/6812/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720098.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1099,15 +1015,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/undead-unluck-volume-3/product/6796/paperback">Undead Unluck, Vol. 3</a>
+          <a class="color-off-black hover-red" href="/read/manga/yona-of-the-dawn-volume-32/product/6812/paperback">Yona of the Dawn, Vol. 32</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 05
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/yakuza-lover-volume-2/product/6784/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720632.jpg" /></a>
+          <a href="/read/manga/call-of-the-night-vol-1-volume-4/product/6822/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723046.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1117,15 +1033,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/yakuza-lover-volume-2/product/6784/paperback">Yakuza Lover, Vol. 2</a>
+          <a class="color-off-black hover-red" href="/read/manga/call-of-the-night-vol-1-volume-4/product/6822/paperback">Call of the Night, Vol. 4</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 12
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/animal-crossing-deserted-island-diary-vol-1-volume-1/product/6807/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974725928.jpg" /></a>
+          <a href="/read/manga/case-closed-volume-80/product/6821/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721159.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1135,33 +1051,33 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/animal-crossing-deserted-island-diary-vol-1-volume-1/product/6807/paperback">Animal Crossing: New Horizons, Vol. 1</a>
+          <a class="color-off-black hover-red" href="/read/manga/case-closed-volume-80/product/6821/paperback">Case Closed, Vol. 80</a>
         </td>
         <td class="product-table--primary">
-          Sep 14
+          Oct 12
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/fly-me-to-the-moon-volume-7/product/6791/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974719251.jpg" /></a>
+          <a href="/read/novel/fullmetal-alchemist-novel-volume-6/product/6830/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974725774.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
 
           </td>
         <td>
-          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Novel</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/fly-me-to-the-moon-volume-7/product/6791/paperback">Fly Me to the Moon, Vol. 7</a>
+          <a class="color-off-black hover-red" href="/read/novel/fullmetal-alchemist-novel-volume-6/product/6830/paperback">Fullmetal Alchemist: A New Beginning</a>
         </td>
         <td class="product-table--primary">
-          Sep 14
+          Oct 12
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/hayate-the-combat-butler-volume-38/product/6790/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974714985.jpg" /></a>
+          <a href="/read/manga/how-do-we-relationship-volume-4/product/6820/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720748.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1171,15 +1087,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/hayate-the-combat-butler-volume-38/product/6790/paperback">Hayate the Combat Butler, Vol. 38</a>
+          <a class="color-off-black hover-red" href="/read/manga/how-do-we-relationship-volume-4/product/6820/paperback">How Do We Relationship?, Vol. 4</a>
         </td>
         <td class="product-table--primary">
-          Sep 14
+          Oct 12
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/kirby-manga-mania-volume-2/product/6793/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/197472235X.jpg" /></a>
+          <a href="/read/manga/komi-cant-communicate-volume-15/product/6819/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974718859.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1189,33 +1105,33 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/kirby-manga-mania-volume-2/product/6793/paperback">Kirby Manga Mania, Vol. 2</a>
+          <a class="color-off-black hover-red" href="/read/manga/komi-cant-communicate-volume-15/product/6819/paperback">Komi Can’t Communicate, Vol. 15</a>
         </td>
         <td class="product-table--primary">
-          Sep 14
+          Oct 12
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/mao-volume-1/product/6806/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720527.jpg" /></a>
+          <a href="/read/picture-book/marvel-meow/product/6837/hardcover"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974726037.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
 
           </td>
         <td>
-          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Picture Book</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/mao-volume-1/product/6806/paperback">Mao, Vol. 1</a>
+          <a class="color-off-black hover-red" href="/read/picture-book/marvel-meow/product/6837/hardcover">Marvel Meow</a>
         </td>
         <td class="product-table--primary">
-          Sep 14
+          Oct 12
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/pokemon-sun-moon-volume-11/product/6800/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721752.jpg" /></a>
+          <a href="/read/manga/pokemon-adventures-collector-s-edition-volume-10/product/6825/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974711307.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1225,15 +1141,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/pokemon-sun-moon-volume-11/product/6800/paperback">Pokémon: Sun &amp; Moon, Vol. 11</a>
+          <a class="color-off-black hover-red" href="/read/manga/pokemon-adventures-collector-s-edition-volume-10/product/6825/paperback">Pokémon Adventures Collector’s Edition, Vol. 10</a>
         </td>
         <td class="product-table--primary">
-          Sep 14
+          Oct 12
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/splatoon-volume-13/product/6795/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974724581.jpg" /></a>
+          <a href="/read/manga/requiem-of-the-rose-king-volume-14/product/6829/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723666.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1243,33 +1159,33 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/splatoon-volume-13/product/6795/paperback">Splatoon, Vol. 13</a>
+          <a class="color-off-black hover-red" href="/read/manga/requiem-of-the-rose-king-volume-14/product/6829/paperback">Requiem of the Rose King, Vol. 14</a>
         </td>
         <td class="product-table--primary">
-          Sep 14
+          Oct 12
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/legend-of-zelda-twilight-princess-volume-9/product/6794/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723380.jpg" /></a>
+          <a href="/read/art-book/art-of-genlock/product/6836/hardcover"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723461.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
 
           </td>
         <td>
-          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Art Book</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/legend-of-zelda-twilight-princess-volume-9/product/6794/paperback">The Legend of Zelda: Twilight Princess, Vol. 9</a>
+          <a class="color-off-black hover-red" href="/read/art-book/art-of-genlock/product/6836/hardcover">The Art of gen:LOCK</a>
         </td>
         <td class="product-table--primary">
-          Sep 14
+          Oct 12
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/yo-kai-watch-volume-18/product/6881/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974714853.jpg" /></a>
+          <a href="/read/manga/asadora-volume-4/product/6827/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974722961.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1279,15 +1195,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/yo-kai-watch-volume-18/product/6881/paperback">YO-KAI WATCH, Vol. 18</a>
+          <a class="color-off-black hover-red" href="/read/manga/asadora-volume-4/product/6827/paperback">Asadora!, Vol. 4</a>
         </td>
         <td class="product-table--primary">
-          Sep 14
+          Oct 19
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/beastars-volume-14/product/6797/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974719936.jpg" /></a>
+          <a href="/read/manga/burn-the-witch-volume-1/product/6833/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723593.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1297,15 +1213,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/beastars-volume-14/product/6797/paperback">BEASTARS, Vol. 14</a>
+          <a class="color-off-black hover-red" href="/read/manga/burn-the-witch-volume-1/product/6833/paperback">Burn the Witch, Vol. 1</a>
         </td>
         <td class="product-table--primary">
-          Sep 21
+          Oct 19
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/dead-dead-demons-dededede-destruction-volume-10/product/6801/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974725200.jpg" /></a>
+          <a href="/read/manga/no-guns-life-volume-11/product/6828/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974723437.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1315,15 +1231,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/dead-dead-demons-dededede-destruction-volume-10/product/6801/paperback">Dead Dead Demon’s Dededede Destruction, Vol. 10</a>
+          <a class="color-off-black hover-red" href="/read/manga/no-guns-life-volume-11/product/6828/paperback">No Guns Life, Vol. 11</a>
         </td>
         <td class="product-table--primary">
-          Sep 21
+          Oct 19
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/fist-of-the-north-star-volume-2/product/6799/hardcover"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974721574.jpg" /></a>
+          <a href="/read/manga/no-5-volume-2/product/6826/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720772.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1333,33 +1249,33 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/fist-of-the-north-star-volume-2/product/6799/hardcover">Fist of the North Star, Vol. 2</a>
+          <a class="color-off-black hover-red" href="/read/manga/no-5-volume-2/product/6826/paperback">No. 5, Vol. 2</a>
         </td>
         <td class="product-table--primary">
-          Sep 21
+          Oct 19
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/hell-s-paradise-jigokuraku-volume-10/product/6798/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974720993.jpg" /></a>
+          <a href="/read/book/creative-gene/product/6834/hardcover"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/197472591X.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
 
           </td>
         <td>
-          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
+          <a href="javascript:void(0)" class="color-mid-gray hover-red">Book</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/hell-s-paradise-jigokuraku-volume-10/product/6798/paperback">Hell’s Paradise: Jigokuraku, Vol. 10</a>
+          <a class="color-off-black hover-red" href="/read/book/creative-gene/product/6834/hardcover">The Creative Gene</a>
         </td>
         <td class="product-table--primary">
-          Sep 21
+          Oct 19
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/read/manga/maison-ikkoku-collector-s-edition-volume-5/product/6802/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974711919.jpg" /></a>
+          <a href="/read/manga/record-of-ragnarok-volume-1/product/6839/digital"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974727866.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1369,100 +1285,10 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/maison-ikkoku-collector-s-edition-volume-5/product/6802/paperback">Maison Ikkoku Collector’s Edition, Vol. 5</a>
+          <a class="color-off-black hover-red" href="/read/manga/record-of-ragnarok-volume-1/product/6839/digital">Record of Ragnarok, Vol. 1</a>
         </td>
         <td class="product-table--primary">
-          Sep 21
-        </td>
-      </tr>
-      <tr>
-        <td width="80">
-          <a href="/read/manga/way-of-the-househusband-volume-6/product/6803/paperback"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/1974724611.jpg" /></a>
-        </td>
-          <td width="100" class="type-center">
-            
-
-          </td>
-        <td>
-          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
-        </td>
-        <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/way-of-the-househusband-volume-6/product/6803/paperback">The Way of the Househusband, Vol. 6</a>
-        </td>
-        <td class="product-table--primary">
-          Sep 21
-        </td>
-      </tr>
-      <tr>
-        <td width="80">
-          <a href="/read/manga/bone-collection-volume-1/product/6908/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-86276-BoneCollection_DigitalGN01_C1_Web-3-WYKrnhOiaRAXmb32TeBveA.jpg" /></a>
-        </td>
-          <td width="100" class="type-center">
-            
-
-          </td>
-        <td>
-          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
-        </td>
-        <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/bone-collection-volume-1/product/6908/digital">Bone Collection, Vol. 1</a>
-        </td>
-        <td class="product-table--primary">
-          Sep 28
-        </td>
-      </tr>
-      <tr>
-        <td width="80">
-          <a href="/read/manga/bone-collection-volume-2/product/6909/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-88656-BoneCollection_DigitalGN02_C1_Web-3-xLh4uFvpU-Fa26bK-jVKJQ.jpg" /></a>
-        </td>
-          <td width="100" class="type-center">
-            
-
-          </td>
-        <td>
-          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
-        </td>
-        <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/bone-collection-volume-2/product/6909/digital">Bone Collection, Vol. 2</a>
-        </td>
-        <td class="product-table--primary">
-          Sep 28
-        </td>
-      </tr>
-      <tr>
-        <td width="80">
-          <a href="/read/manga/magu-chan-god-of-destruction-volume-1/product/6907/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-83908-MaguChan_DigitalGN01_C1_Web-3-CR7gEBL_7Qx0jvcqE-43EQ.jpg" /></a>
-        </td>
-          <td width="100" class="type-center">
-            
-
-          </td>
-        <td>
-          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
-        </td>
-        <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/magu-chan-god-of-destruction-volume-1/product/6907/digital">Magu-chan: God of Destruction, Vol. 1</a>
-        </td>
-        <td class="product-table--primary">
-          Sep 28
-        </td>
-      </tr>
-      <tr>
-        <td width="80">
-          <a href="/read/manga/mission-yozakura-family-volume-4/product/6910/digital"><img class="disp-bl lazy" data-original="https://dwgkfo5b3odmw.cloudfront.net/manga/thumbs/thumb-91308-MissionYozakuraFamily_DigitalGN04_C1_Web-3-F2ovH1ggdgsofRhb32YAuQ.jpg" /></a>
-        </td>
-          <td width="100" class="type-center">
-            
-
-          </td>
-        <td>
-          <a href="javascript:void(0)" class="color-mid-gray hover-red">Manga</a>
-        </td>
-        <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/read/manga/mission-yozakura-family-volume-4/product/6910/digital">Mission: Yozakura Family, Vol. 4</a>
-        </td>
-        <td class="product-table--primary">
-          Sep 28
+          Oct 26
         </td>
       </tr>
   </tbody>
@@ -1475,14 +1301,14 @@ fbq('track', "PageView");</script>
   <figure class="ar-square">
     
 
-    <a href="/watch/tv-series/bleach-uncut-video-box-sets/product/6844/blu-ray" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Bleach, Set 12" data-original="https://dw9to29mmj727.cloudfront.net/products/782009246572.jpg" />
+    <a href="/watch/tv-series/castlevania/product/6877/blu-ray" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Castlevania: Seasons 1 and 2" data-original="https://dw9to29mmj727.cloudfront.net/products/782009247340.jpg" />
     </a>
   </figure>
   <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
     <div class="mar-b-sm"><a class="color-mid-gray hover-red">TV Series</a></div>
     <h4>
-      <a class="color-off-black hover-red" href="/watch/tv-series/bleach-uncut-video-box-sets/product/6844/blu-ray">Bleach, Set 12</a>
+      <a class="color-off-black hover-red" href="/watch/tv-series/castlevania/product/6877/blu-ray">Castlevania: Seasons 1 and 2</a>
     </h4>
   </div>
 </article>
@@ -1491,14 +1317,14 @@ fbq('track', "PageView");</script>
   <figure class="ar-square">
     
 
-    <a href="/watch/tv-series/in-spectre-season-1/product/6845/blu-ray" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="In/Spectre, Season 1" data-original="https://dw9to29mmj727.cloudfront.net/products/782009247296.jpg" />
+    <a href="/watch/tv-series/naruto-uncut-video-box-sets/product/6879/blu-ray" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Naruto, Set 5" data-original="https://dw9to29mmj727.cloudfront.net/products/782009247241.jpg" />
     </a>
   </figure>
   <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
     <div class="mar-b-sm"><a class="color-mid-gray hover-red">TV Series</a></div>
     <h4>
-      <a class="color-off-black hover-red" href="/watch/tv-series/in-spectre-season-1/product/6845/blu-ray">In/Spectre, Season 1</a>
+      <a class="color-off-black hover-red" href="/watch/tv-series/naruto-uncut-video-box-sets/product/6879/blu-ray">Naruto, Set 5</a>
     </h4>
   </div>
 </article>
@@ -1507,30 +1333,14 @@ fbq('track', "PageView");</script>
   <figure class="ar-square">
     
 
-    <a href="/watch/tv-series/mr-osomatsu-video-season-2/product/6846/blu-ray" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Mr. Osomatsu, Season 2" data-original="https://dw9to29mmj727.cloudfront.net/products/782009246732.jpg" />
+    <a href="/watch/tv-series/vampire-knight-the-complete-series-dvd-set/product/6880/blu-ray" class="product-thumb ar-inner type-center">
+      <img class="lazy " alt="Vampire Knight The Complete Collection" data-original="https://dw9to29mmj727.cloudfront.net/products/782009244868.jpg" />
     </a>
   </figure>
   <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
     <div class="mar-b-sm"><a class="color-mid-gray hover-red">TV Series</a></div>
     <h4>
-      <a class="color-off-black hover-red" href="/watch/tv-series/mr-osomatsu-video-season-2/product/6846/blu-ray">Mr. Osomatsu, Season 2</a>
-    </h4>
-  </div>
-</article>
-
-  <article class="g-3 g-3--md mar-b-lg g-omega g-omega--md bg-white color-off-black type-sm type-rg--lg">
-  <figure class="ar-square">
-    
-
-    <a href="/watch/tv-series/boruto-naruto-next-generations-video/product/6847/blu-ray" class="product-thumb ar-inner type-center">
-      <img class="lazy " alt="Boruto: Naruto Next Generations - Boruto Back in Time" data-original="https://dw9to29mmj727.cloudfront.net/products/782009247371.jpg" />
-    </a>
-  </figure>
-  <div class="pad-x-md pad-x-lg--lg pad-b-md pad-b-lg--lg">
-    <div class="mar-b-sm"><a class="color-mid-gray hover-red">TV Series</a></div>
-    <h4>
-      <a class="color-off-black hover-red" href="/watch/tv-series/boruto-naruto-next-generations-video/product/6847/blu-ray">Boruto: Naruto Next Generations - Boruto Back in Time</a>
+      <a class="color-off-black hover-red" href="/watch/tv-series/vampire-knight-the-complete-series-dvd-set/product/6880/blu-ray">Vampire Knight The Complete Collection</a>
     </h4>
   </div>
 </article>
@@ -1542,7 +1352,7 @@ fbq('track', "PageView");</script>
   <tbody>
       <tr>
         <td width="80">
-          <a href="/watch/tv-series/bleach-uncut-video-box-sets/product/6844/blu-ray"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/782009246572.jpg" /></a>
+          <a href="/watch/tv-series/castlevania/product/6877/blu-ray"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/782009247340.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1552,15 +1362,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">TV Series</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/watch/tv-series/bleach-uncut-video-box-sets/product/6844/blu-ray">Bleach, Set 12</a>
+          <a class="color-off-black hover-red" href="/watch/tv-series/castlevania/product/6877/blu-ray">Castlevania: Seasons 1 and 2</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 05
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/watch/tv-series/in-spectre-season-1/product/6845/blu-ray"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/782009247296.jpg" /></a>
+          <a href="/watch/tv-series/naruto-uncut-video-box-sets/product/6879/blu-ray"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/782009247241.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1570,15 +1380,15 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">TV Series</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/watch/tv-series/in-spectre-season-1/product/6845/blu-ray">In/Spectre, Season 1</a>
+          <a class="color-off-black hover-red" href="/watch/tv-series/naruto-uncut-video-box-sets/product/6879/blu-ray">Naruto, Set 5</a>
         </td>
         <td class="product-table--primary">
-          Sep 07
+          Oct 19
         </td>
       </tr>
       <tr>
         <td width="80">
-          <a href="/watch/tv-series/mr-osomatsu-video-season-2/product/6846/blu-ray"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/782009246732.jpg" /></a>
+          <a href="/watch/tv-series/vampire-knight-the-complete-series-dvd-set/product/6880/blu-ray"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/782009244868.jpg" /></a>
         </td>
           <td width="100" class="type-center">
             
@@ -1588,28 +1398,10 @@ fbq('track', "PageView");</script>
           <a href="javascript:void(0)" class="color-mid-gray hover-red">TV Series</a>
         </td>
         <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/watch/tv-series/mr-osomatsu-video-season-2/product/6846/blu-ray">Mr. Osomatsu, Season 2</a>
+          <a class="color-off-black hover-red" href="/watch/tv-series/vampire-knight-the-complete-series-dvd-set/product/6880/blu-ray">Vampire Knight The Complete Collection</a>
         </td>
         <td class="product-table--primary">
-          Sep 14
-        </td>
-      </tr>
-      <tr>
-        <td width="80">
-          <a href="/watch/tv-series/boruto-naruto-next-generations-video/product/6847/blu-ray"><img class="disp-bl lazy" data-original="https://dw9to29mmj727.cloudfront.net/products/782009247371.jpg" /></a>
-        </td>
-          <td width="100" class="type-center">
-            
-
-          </td>
-        <td>
-          <a href="javascript:void(0)" class="color-mid-gray hover-red">TV Series</a>
-        </td>
-        <td class="product-table--primary">
-          <a class="color-off-black hover-red" href="/watch/tv-series/boruto-naruto-next-generations-video/product/6847/blu-ray">Boruto: Naruto Next Generations - Boruto Back in Time</a>
-        </td>
-        <td class="product-table--primary">
-          Sep 21
+          Oct 19
         </td>
       </tr>
   </tbody>
@@ -2449,7 +2241,7 @@ This website uses cookies and tracking technologies to assist with your navigati
   <div class="clearfix mar-t-md mar-b-lg type-center line-solid">
     <h3 class="type-md type-lg--lg">Edit comment</h3>
   </div>
-  <form id="edit_comment_form" action="#" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="idOa-L5Jei8LVlF1eBIInrNwfktikBwLnRh50Vo5aezAjd7uNSoAHwVGoHZTF11QeAGTXqNUFFDTy_EfkZbdxw" />
+  <form id="edit_comment_form" action="#" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="33ro96PNqr9TqiyitDrLVS1lgBa2Pgt0MwPnYJL6Lzd34HU_bJ2NfMMHEDFwn8t-WUrM8gYvEpxwqseMM9ZLhQ" />
     <div class="comment_form_err color-red clearfix mar-t-md mar-b-lg" style="display:none;">
       <h3 class="type-md weight-bold line-solid"></h3>
     </div>
