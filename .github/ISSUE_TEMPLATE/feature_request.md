@@ -8,24 +8,24 @@ assignees: ''
 ---
 
 ---
-name: 💅 Feature design / RFC
-about: Submit a detailed feature request with a concrete proposal, including an exhaustive API / UI design
-labels: 'feature-request'
+name: 'Feature Request'
+about: 'Suggest new features and changes'
+labels: enhancement
 ---
 
-## 🚀 Feature
+<!--- Provide a general summary of the feature request in the Title above -->
 
-(A clear and concise description of what the feature is.)
+## Feature Suggestion
 
-### Have you read the [Contributing Guidelines on issues](https://github.com/djamaile/ourmanga.community/blob/main/CONTRIBUTING.md#reporting-new-issues)?
+<!--- If you're looking for help, please see https://backstage.io/ --->
+<!--- Tell us how we could improve your experience -->
 
-(Write your answer here.)
+## Possible Implementation
 
-## Motivation
+<!--- Not obligatory, but ideas as to the implementation of the addition or change -->
 
-(Please outline the motivation for the proposal and why it should be implemented. Has this been requested by a lot of users on our )
+## Context
 
-
-## Have you tried building it?
-
-(Please explain how you tried to build the feature by yourself, and how successful it was)
+<!--- What are you trying to accomplish? -->
+<!--- Providing context (e.g. links to configuration settings, stack trace or log data) -->
+<!--- helps us come up with a solution that is most useful in the real world -->
