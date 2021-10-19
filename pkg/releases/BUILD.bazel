@@ -1,9 +1,0 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_library")
-
-go_library(
-    name = "releases",
-    srcs = ["releases.go"],
-    importpath = "github.com/djamaile/mango/pkg/releases",
-    visibility = ["//visibility:public"],
-    deps = ["@com_github_gocolly_colly//:colly"],
-)
