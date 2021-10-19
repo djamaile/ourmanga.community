@@ -36,7 +36,7 @@ type Manga struct {
 var location, _ = time.LoadLocation("UTC")
 var year, month, day = time.Now().In(location).Date()
 
-func CollectYenPressReleases() []Manga {
+func CollectYenPressReleases(pagesPath string) []Manga {
 	var allYenReleases []Manga
 
 	collector := colly.NewCollector()
@@ -59,7 +59,8 @@ func CollectYenPressReleases() []Manga {
 	})
 
 	pwd, _ := os.Getwd()
-	s := fmt.Sprintf("pages/yenpress-%d-%d-%d.html", int(year), int(month), int(day))
+
+	s := fmt.Sprintf("%s/yenpress-%d-%d-%d.html", pagesPath, int(year), int(month), int(day))
 	collector.Visit("file://" + path.Join(pwd, s))
 
 	return allYenReleases

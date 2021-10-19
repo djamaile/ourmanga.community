@@ -29,7 +29,7 @@ func vizHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func yenHandler(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(releases.CollectYenPressReleases())
+	json.NewEncoder(w).Encode(releases.CollectYenPressReleases("pages"))
 }
 
 func sevenSeasHandler(w http.ResponseWriter, r *http.Request) {
