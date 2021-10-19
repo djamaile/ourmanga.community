@@ -2,7 +2,7 @@
 name: Feature request
 about: Suggest an idea for this project
 title: ''
-labels: ''
+labels: feature request
 assignees: ''
 
 ---
@@ -10,7 +10,7 @@ assignees: ''
 ---
 name: 💅 Feature design / RFC
 about: Submit a detailed feature request with a concrete proposal, including an exhaustive API / UI design
-labels: 'feature, needs triage'
+labels: 'feature-request'
 ---
 
 ## 🚀 Feature
