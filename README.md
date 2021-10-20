@@ -2,7 +2,7 @@
 
 ```sh
 $ go mod tidy
-$ go run server/server.go
+$ go run server/main.go
 $ cd website && yarn install
 $ yarn start
 ```
