@@ -13,9 +13,8 @@
 // limitations under the License.
 
 import create from "zustand";
-import produce from "immer";
 import { persist } from "zustand/middleware";
-import { Manga, Mangas } from "./types";
+import { Manga } from "./types";
 
 interface GlobalState {
   publisher: string;
