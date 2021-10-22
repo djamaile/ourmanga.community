@@ -2,12 +2,12 @@
 
 ```sh
 $ go mod tidy
-$ go run server/server.go
+$ go run server/main.go
 $ cd website && yarn install
 $ yarn start
 ```
 
-### Update pages
+### Provision pages that can be scraped
 
 *install zx:*
 ```sh

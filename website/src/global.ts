@@ -1,11 +1,11 @@
 // Copyright 2021 Djamaile Rahamat
-// 
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
-// 
+//
 //     http://www.apache.org/licenses/LICENSE-2.0
-// 
+//
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,9 +13,8 @@
 // limitations under the License.
 
 import create from "zustand";
-import produce from "immer";
 import { persist } from "zustand/middleware";
-import { Manga, Mangas } from "./types";
+import { Manga } from "./types";
 
 interface GlobalState {
   publisher: string;
@@ -29,7 +28,7 @@ interface GlobalState {
 
 export const useStore = create<GlobalState>(
   persist(
-    (set, get: any) => ({
+    (set, get) => ({
       publisher: "viz",
       likedMangas: [],
       mangas: [],
