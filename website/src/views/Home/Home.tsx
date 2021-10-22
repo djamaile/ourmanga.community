@@ -23,7 +23,7 @@ import { PublisherLogo } from "../../components/Home/PublisherLogo";
 import { LikedButton } from "../../components/Home/LikedButton";
 import mascot from "../../assets/images/mascot.jpg";
 
-const Home: React.FC = () => {
+const Home = () => {
   useTitle("Our Manga - Home");
   const { publisher, likedMangas, setMangas, mangas } = useStore(
     (state) => state
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
         </div>
         {/* TODO: Seperate to API to MangaBooks, so loading screen doesn't effect the whole screen}
         {/* manga-books */}
-        {isFetching ? <></> : <MangaBooks data={mangas} />}
+        {isFetching ? <></> : <MangaBooks mangas={mangas} />}
       </div>
     </>
   );

@@ -43,7 +43,7 @@ persistQueryClient({
   persistor: localStoragePersistor,
 });
 
-const IndexRouter: React.FC = () => {
+const IndexRouter = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>

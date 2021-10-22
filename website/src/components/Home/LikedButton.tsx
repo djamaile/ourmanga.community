@@ -16,7 +16,7 @@ interface Props {
   setLikedMangas: () => void;
 }
 
-export const LikedButton: React.FC<Props> = ({ ...props }) => {
+export const LikedButton = ({ ...props }: Props) => {
   return (
     <button
       type="button"

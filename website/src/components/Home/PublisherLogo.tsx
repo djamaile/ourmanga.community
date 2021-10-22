@@ -19,7 +19,7 @@ interface Props {
   name: string;
 }
 
-export const PublisherLogo: React.FC<Props> = ({ ...props }) => {
+export const PublisherLogo = ({ ...props }: Props) => {
   const changePublisher = useStore((state) => state.changePublisher);
   const publisher = useStore((state) => state.publisher);
   const styles = { divClass: "object-contain cursor-pointer m-auto block" };
