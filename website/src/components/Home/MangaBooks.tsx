@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Manga, Mangas } from "../../types";
+import { Manga } from "../../types";
 import { HeartIcon } from "./HeartIcon";
 
 interface Props {
