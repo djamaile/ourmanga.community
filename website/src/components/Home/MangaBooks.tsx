@@ -15,8 +15,12 @@
 import { Manga, Mangas } from "../../types";
 import { HeartIcon } from "./HeartIcon";
 
-export const MangaBooks: React.FC<Mangas> = ({ ...props }) => {
-  if (props.data === null || props.data === undefined) {
+interface Props {
+  mangas: Manga[];
+}
+
+export const MangaBooks = ({ ...props }: Props) => {
+  if (props.mangas === null || props.mangas === undefined) {
     return (
       <div className="grid grid-cols-1">
         <h1 className="text-center capitalize text-4xl">No Manga yet...</h1>
@@ -26,7 +30,7 @@ export const MangaBooks: React.FC<Mangas> = ({ ...props }) => {
 
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-      {props.data.map((manga: Manga, index) => {
+      {props.mangas.map((manga: Manga) => {
         return (
           <div key={manga.name}>
             <div className="flex flex-col justify-center items-center">

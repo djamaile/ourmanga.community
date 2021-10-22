@@ -20,7 +20,7 @@ interface Props {
   manga: Manga;
 }
 
-export const HeartIcon: React.FC<Props> = ({ ...props }) => {
+export const HeartIcon = ({ ...props }: Props) => {
   const { addLikedManga, removeLikedManga, likedMangas } = useStore(
     (state) => state
   );
