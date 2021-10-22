@@ -36,6 +36,7 @@ type Manga struct {
 var location, _ = time.LoadLocation("UTC")
 var year, month, day = time.Now().In(location).Date()
 
+// test
 func CollectYenPressReleases() []Manga {
 	var allYenReleases []Manga
 
