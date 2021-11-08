@@ -17,7 +17,6 @@ labels: enhancement
 
 ## Feature Suggestion
 
-<!--- If you're looking for help, please see https://backstage.io/ --->
 <!--- Tell us how we could improve your experience -->
 
 ## Possible Implementation
