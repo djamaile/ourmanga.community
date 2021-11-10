@@ -16,12 +16,13 @@ package releases
 
 import (
 	"fmt"
-	"github.com/gocolly/colly"
 	"net"
 	"net/http"
 	"os"
 	"path"
 	"time"
+
+	"github.com/gocolly/colly"
 )
 
 type elementMapper = func(element *colly.HTMLElement) Manga

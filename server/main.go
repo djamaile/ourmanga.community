@@ -19,6 +19,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/djamaile/mango/pkg/pages"
 	"github.com/djamaile/mango/pkg/releases"
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
@@ -58,6 +59,7 @@ func main() {
 	r.HandleFunc("/releases/tokyopop", tokyopopHandler)
 
 	handler := cors.Default().Handler(r)
+	pages.StartPagesJob()
 	log.Println("Listening on :8080")
 	log.Fatal(http.ListenAndServe(":8080", handler))
 }
