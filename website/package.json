@@ -29,7 +29,7 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@latest",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1",
-    "zustand": "^3.5.10"
+    "zustand": "^3.6.5"
   },
   "scripts": {
     "start": "craco start",
@@ -42,8 +42,6 @@
     "test:ci": "jest --ci",
     "test:watch": "jest --watch",
     "eject": "react-scripts eject",
-    "lint": "eslint 'src/*.{js,ts,tsx}'",
-    "lint:fix": "yarn run lint --fix",
     "pretty": "pretty-quick --staged",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
@@ -57,15 +55,10 @@
       "react-app/jest"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn run test --watchAll=false --silent && lint-staged"
-    }
-  },
   "lint-staged": {
-    "**/*.{js,ts,tsx}": [
+    "**/*.{js,jsx,ts,tsx}": [
       "prettier --write",
-      "yarn run lint:fix"
+      "eslint --fix"
     ]
   },
   "browserslist": {

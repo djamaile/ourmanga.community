@@ -28,7 +28,7 @@ interface GlobalState {
 
 export const useStore = create<GlobalState>(
   persist(
-    (set, get: any) => ({
+    (set, get) => ({
       publisher: "viz",
       likedMangas: [],
       mangas: [],
@@ -37,21 +37,6 @@ export const useStore = create<GlobalState>(
           mangas: m,
         }));
       },
-      // TODO: use this function when DB is setup
-      // likeManga: (index: number) =>
-      //   set(
-      //     produce((state) => {
-      //       // const manga: Manga = state.mangas.find(
-      //       //   (m: Manga) => m.name === name
-      //       // );
-      //       // manga.liked = !manga.liked;
-      //       console.log(state.mangas);
-      //       const v = !state.mangas[index].liked;
-      //       /* eslint-disable no-param-reassign */
-      //       state.mangas[index].liked = v;
-      //       /* eslint-enable no-param-reassign */
-      //     })
-      //   ),
       changePublisher: (name: string) => {
         set(() => ({
           publisher: name,
