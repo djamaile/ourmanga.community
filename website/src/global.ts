@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import create from "zustand";
-import { persist } from "zustand/middleware";
-import { Manga } from "./types";
+import create from 'zustand';
+import { persist } from 'zustand/middleware';
+import { Manga } from './types';
 
 interface GlobalState {
   publisher: string;
@@ -29,7 +29,7 @@ interface GlobalState {
 export const useStore = create<GlobalState>(
   persist(
     (set, get) => ({
-      publisher: "viz",
+      publisher: 'viz',
       likedMangas: [],
       mangas: [],
       setMangas: (m: Manga[]) => {
@@ -47,12 +47,12 @@ export const useStore = create<GlobalState>(
       removeLikedManga: (manga: Manga) =>
         set(() => ({
           likedMangas: get().likedMangas.filter(
-            (m: Manga) => m.name !== manga.name
+            (m: Manga) => m.name !== manga.name,
           ),
         })),
     }),
     {
-      name: "mangas", // unique name
-    }
-  )
+      name: 'mangas', // unique name
+    },
+  ),
 );

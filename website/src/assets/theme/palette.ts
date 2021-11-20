@@ -12,17 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export default {
+const pallete = {
   primary: {
-    main: "#7fdbda",
-    light: "#ade498",
-    dark: "#251f44",
-    contrastText: "#fff",
+    main: '#7fdbda',
+    light: '#ade498',
+    dark: '#251f44',
+    contrastText: '#fff',
   },
   secondary: {
-    main: "#ffe0f7",
-    light: "#fe91ca",
-    dark: "#d3dbff",
-    contrastText: "#fff",
+    main: '#ffe0f7',
+    light: '#fe91ca',
+    dark: '#d3dbff',
+    contrastText: '#fff',
   },
 };
+
+export default pallete;

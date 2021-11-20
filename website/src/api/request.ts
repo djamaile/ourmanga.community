@@ -12,26 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import axios, { Method, AxiosResponse } from "axios";
+import axios, { Method, AxiosResponse } from 'axios';
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_HOST_BACKEND,
 });
 
-const request = <T>(
+const request = <Type>(
   method: Method,
   url: string,
-  params: any
-): Promise<AxiosResponse<T>> => {
-  return api.request<T>({
+  params: Type,
+): Promise<AxiosResponse<Type>> =>
+  api.request<Type>({
     method,
     url,
     params,
   });
-};
 
 // Define a default query function that will receive the query key
-export const defaultQueryFn = async ({ queryKey }: any): Promise<any> => {
+// TODO(drahamat): figure out how to get rid of any type
+export const defaultQueryFn = async <Type>({
+  queryKey,
+}: any): Promise<AxiosResponse<Type>> => {
   const data = await request(queryKey[0], queryKey[1], queryKey[2]);
-  return data;
+  return data as AxiosResponse<Type>;
 };

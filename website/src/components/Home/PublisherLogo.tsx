@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { useStore } from "../../global";
+import { useStore } from '../../global';
 
 interface Props {
   image: string;
@@ -20,21 +20,22 @@ interface Props {
 }
 
 export const PublisherLogo = ({ ...props }: Props) => {
-  const changePublisher = useStore((state) => state.changePublisher);
-  const publisher = useStore((state) => state.publisher);
-  const styles = { divClass: "object-contain cursor-pointer m-auto block" };
+  const changePublisher = useStore(state => state.changePublisher);
+  const publisher = useStore(state => state.publisher);
+  const styles = { divClass: 'object-contain cursor-pointer m-auto block' };
 
   return (
     <section
       className="flex justify-center"
-      onClick={() => changePublisher(props.name)}>
+      onClick={() => changePublisher(props.name)}
+    >
       <img
         src={props.image}
         alt={props.name}
         width="100"
         height="100"
         className={`${styles.divClass} 
-          ${publisher !== props.name ? "filter grayscale" : ""}`}
+          ${publisher !== props.name ? 'filter grayscale' : ''}`}
       />
     </section>
   );
