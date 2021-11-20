@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { createTheme } from "@material-ui/core";
-import palette from "./palette";
+import { createTheme } from '@material-ui/core';
+import palette from './palette';
 
 // overrides and typography will eventually also be here
 const theme = createTheme({

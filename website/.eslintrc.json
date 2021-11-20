@@ -1,7 +1,6 @@
 {
   "extends": [
     "airbnb",
-    "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
   "env": {
@@ -14,32 +13,63 @@
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "no-console": "off",
+    "implicit-arrow-linebreak": "off",
+    "arrow-parens": "off",
+    "operator-linebreak": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "indent": "off",
+    "no-tabs": "off",
     "import/prefer-default-export": "off",
-    "@typescript-eslint/camelcase": ["off"],
-    "camelcase": ["off"],
-    "react/jsx-props-no-spreading": ["off"],
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/camelcase": [
+      "off"
+    ],
+    "camelcase": [
+      "off"
+    ],
+    "object-curly-newline": "off",
+    "react/jsx-props-no-spreading": [
+      "off"
+    ],
     "jsx-a11y/no-static-element-interactions": "off",
-    "react/prop-types": ["off"],
-    "jsx-a11y/href-no-hash": ["off"],
-    "jsx-a11y/click-events-have-key-events": ["off"],
-    "import/no-unresolved": ["off"],
+    "react/prop-types": [
+      "off"
+    ],
+    "jsx-a11y/href-no-hash": [
+      "off"
+    ],
+    "jsx-a11y/click-events-have-key-events": [
+      "off"
+    ],
+    "import/no-unresolved": [
+      "off"
+    ],
+    "no-var-requires": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "global-require": "off",
     "import/extensions": 0,
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/no-use-before-define": [
+      "error"
+    ],
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
     "react/jsx-filename-extension": [
       "warn",
       {
-        "extensions": [".js", ".jsx", ".tsx", ".ts"]
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".tsx",
+          ".ts"
+        ]
       }
     ],
     "max-len": [
       "warn",
       {
         "code": 100,
-        "tabWidth": 2,
         "comments": 80,
         "ignoreComments": false,
         "ignoreTrailingComments": true,

@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import create from "zustand";
-import { persist } from "zustand/middleware";
-import { Manga } from "./types";
+import create from 'zustand';
+import { persist } from 'zustand/middleware';
+import { Manga } from './types';
 
 interface GlobalState {
   publisher: string;
@@ -28,8 +28,8 @@ interface GlobalState {
 
 export const useStore = create<GlobalState>(
   persist(
-    (set, get: any) => ({
-      publisher: "viz",
+    (set, get) => ({
+      publisher: 'viz',
       likedMangas: [],
       mangas: [],
       setMangas: (m: Manga[]) => {
@@ -37,21 +37,6 @@ export const useStore = create<GlobalState>(
           mangas: m,
         }));
       },
-      // TODO: use this function when DB is setup
-      // likeManga: (index: number) =>
-      //   set(
-      //     produce((state) => {
-      //       // const manga: Manga = state.mangas.find(
-      //       //   (m: Manga) => m.name === name
-      //       // );
-      //       // manga.liked = !manga.liked;
-      //       console.log(state.mangas);
-      //       const v = !state.mangas[index].liked;
-      //       /* eslint-disable no-param-reassign */
-      //       state.mangas[index].liked = v;
-      //       /* eslint-enable no-param-reassign */
-      //     })
-      //   ),
       changePublisher: (name: string) => {
         set(() => ({
           publisher: name,
@@ -62,12 +47,12 @@ export const useStore = create<GlobalState>(
       removeLikedManga: (manga: Manga) =>
         set(() => ({
           likedMangas: get().likedMangas.filter(
-            (m: Manga) => m.name !== manga.name
+            (m: Manga) => m.name !== manga.name,
           ),
         })),
     }),
     {
-      name: "mangas", // unique name
-    }
-  )
+      name: 'mangas', // unique name
+    },
+  ),
 );

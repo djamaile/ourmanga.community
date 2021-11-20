@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import React from "react";
-import { useStore } from "../../global";
-import { Manga } from "../../types";
+import React from 'react';
+import { useStore } from '../../global';
+import { Manga } from '../../types';
 
 interface Props {
   manga: Manga;
@@ -22,7 +22,7 @@ interface Props {
 
 export const HeartIcon = ({ ...props }: Props) => {
   const { addLikedManga, removeLikedManga, likedMangas } = useStore(
-    (state) => state
+    state => state,
   );
 
   const isLikedHelper = () =>
@@ -30,9 +30,9 @@ export const HeartIcon = ({ ...props }: Props) => {
 
   const isLiked = (type: string) => {
     if (isLikedHelper()) {
-      return "red";
+      return 'red';
     }
-    return type === "stroke" ? "currentColor" : "none";
+    return type === 'stroke' ? 'currentColor' : 'none';
   };
 
   const likeManga = () => {
@@ -48,9 +48,10 @@ export const HeartIcon = ({ ...props }: Props) => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6 cursor-pointer"
-        fill={isLiked("fill")}
+        fill={isLiked('fill')}
         viewBox="0 0 24 24"
-        stroke={isLiked("stroke")}>
+        stroke={isLiked('stroke')}
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"

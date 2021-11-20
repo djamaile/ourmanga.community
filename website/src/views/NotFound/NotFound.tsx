@@ -12,17 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-const NotFound = () => {
-  return (
-    <div>
-      <p>
-        Sorry, we could not find this page <br />
-        <Link to={`${process.env.PUBLIC_URL}/`}>Return to Home</Link>
-      </p>
-    </div>
-  );
-};
+const NotFound = () => (
+  <div>
+    <p>
+      Sorry, we could not find this page <br />
+      <Link to={`${process.env.PUBLIC_URL}/`}>Return to Home</Link>
+    </p>
+  </div>
+);
 
 export default NotFound;

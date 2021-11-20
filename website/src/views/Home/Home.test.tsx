@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { render, screen } from "@testing-library/react";
-import { QueryClient, QueryClientProvider } from "react-query";
-import Home from "./Home";
+import { render, screen } from '@testing-library/react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import Home from './Home';
 
 /**
  * @jest-environment jsdom
@@ -22,11 +22,11 @@ import Home from "./Home";
 
 const queryClient = new QueryClient();
 
-test("renders learn react link", () => {
+test('renders learn react link', () => {
   render(
     <QueryClientProvider client={queryClient}>
       <Home />
-    </QueryClientProvider>
+    </QueryClientProvider>,
   );
   const linkElement = screen.getByText(/loading/i);
   expect(linkElement).toBeInTheDocument();

@@ -29,7 +29,7 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@latest",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1",
-    "zustand": "^3.5.10"
+    "zustand": "^3.6.5"
   },
   "scripts": {
     "start": "craco start",
@@ -37,13 +37,12 @@
     "dev": "concurrently \"yarn run backend\" \"yarn run start\"",
     "build": "GENERATE_SOURCEMAP=false craco build",
     "compile": "tsc",
+    "craco-swc": "^0.1.3",
     "format": "prettier --write src",
     "test": "jest",
     "test:ci": "jest --ci",
     "test:watch": "jest --watch",
     "eject": "react-scripts eject",
-    "lint": "eslint 'src/*.{js,ts,tsx}'",
-    "lint:fix": "yarn run lint --fix",
     "pretty": "pretty-quick --staged",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
@@ -51,23 +50,13 @@
     "cy:open": "cypress open --browser chrome",
     "start:prod": "serve -s build -l 4000"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn run test --watchAll=false --silent && lint-staged"
-    }
-  },
   "lint-staged": {
-    "**/*.{js,ts,tsx}": [
+    "**/*.{js,jsx,ts,tsx}": [
       "prettier --write",
-      "yarn run lint:fix"
+      "eslint --fix"
     ]
   },
+  "prettier": "@spotify/prettier-config",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -85,6 +74,8 @@
     "@commitlint/config-conventional": "^13.1.0",
     "@cypress/react": "^5.9.2",
     "@cypress/webpack-dev-server": "^1.4.0",
+    "@spotify/prettier-config": "^12.0.0",
+    "@swc/jest": "^0.2.5",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
     "concurrently": "^6.2.1",

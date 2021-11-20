@@ -1,5 +1,5 @@
-describe('My First Test', function() {
-    it('Should pass!', function() {
-        expect(true).to.equal(true);
-    });
+describe('My First Test', () => {
+  it('Should pass!', () => {
+    expect(true).to.equal(true);
+  });
 });
