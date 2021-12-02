@@ -29,12 +29,17 @@ type Site struct {
 	Name string
 }
 
-type Downloader struct {
-	sites []Site
+type Date struct {
+	location *time.Location
+	year     int
+	month    time.Month
+	day      int
 }
 
-var location, _ = time.LoadLocation("UTC")
-var year, month, day = time.Now().In(location).Date()
+type Downloader struct {
+	sites []Site
+	date  Date
+}
 
 func (d *Downloader) removePages() {
 	os.RemoveAll("pages/*")
@@ -54,7 +59,7 @@ func (d *Downloader) fetchPage(s Site) ([]byte, error) {
 }
 
 func (d *Downloader) writePage(html []byte, s Site) error {
-	fileName := fmt.Sprintf("pages/%v-%v-%v-%v.html", s.Name, year, int(month), day)
+	fileName := fmt.Sprintf("pages/%v-%v-%v-%v.html", s.Name, d.date.year, int(d.date.month), d.date.day)
 	f, err := os.Create(fileName)
 	if err != nil {
 		return err
@@ -82,16 +87,30 @@ func (d *Downloader) refreshPages() error {
 	return nil
 }
 
+func newDate() Date {
+	location, _ := time.LoadLocation("UTC")
+	year, month, day := time.Now().In(location).Date()
+
+	return Date{
+		location: location,
+		year:     year,
+		month:    month,
+		day:      day,
+	}
+}
+
 func StartPagesJob() {
-	viz := Site{Name: "viz", Url: fmt.Sprintf("https://www.viz.com/calendar/%v/%v", year, int(month))}
+	date := newDate()
+
+	viz := Site{Name: "viz", Url: fmt.Sprintf("https://www.viz.com/calendar/%v/%v", date.year, int(date.month))}
 	yenpress := Site{Name: "yenpress", Url: "https://yenpress.com/new-releases/"}
 	sevenseas := Site{Name: "sevenseas", Url: "https://sevenseasentertainment.com/release-dates/"}
-	darkhorse := Site{Name: "darkhorse", Url: fmt.Sprintf("https://www.darkhorse.com/Books/Browse/Manga---%v+%v-%v+%v/P9wdwkt8", month, year, month, year)}
+	darkhorse := Site{Name: "darkhorse", Url: fmt.Sprintf("https://www.darkhorse.com/Books/Browse/Manga---%v+%v-%v+%v/P9wdwkt8", date.month, date.year, date.month, date.year)}
 	kodansha := Site{Name: "kodansha", Url: "https://kodansha.us/manga/calendar"}
 	tokyopop := Site{Name: "tokyopop", Url: "https://www.tokyopop.com/upcoming"}
 
 	sites := []Site{viz, yenpress, sevenseas, darkhorse, kodansha, tokyopop}
-	downloader := &Downloader{sites: sites}
+	downloader := &Downloader{sites: sites, date: date}
 
 	// initial downloading action on startup
 	err := downloader.refreshPages()
