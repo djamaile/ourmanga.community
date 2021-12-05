@@ -12,7 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export const PUBLISHERS = [
+type Publishers = {
+  image: string;
+  name: string;
+};
+
+export const PUBLISHERS: Array<Publishers> = [
   {
     image:
       'https://media-exp1.licdn.com/dms/image/C4D0BAQEeo_kogsXllw/company-logo_200_200/0/1519856560642?e=2159024400&v=beta&t=7MOhLsBxLaptYbSWMo9lgqUlHHPTTgyJ3ZgKZIiQw4g',
@@ -33,5 +38,10 @@ export const PUBLISHERS = [
     image:
       'https://pbs.twimg.com/profile_images/875779221414699008/r6prXoN2_400x400.jpg',
     name: 'sevenseas',
+  },
+  {
+    image:
+      'https://images.squarespace-cdn.com/content/v1/557a0fd3e4b064e7f04db74f/1585866121129-B8Y4XU3ZTMAN6FSNA7Y0/TP-logo_Original_R_BG.png',
+    name: 'tokyopop',
   },
 ];
