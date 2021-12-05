@@ -15,7 +15,10 @@
 package releases
 
 import (
+	"encoding/json"
 	"fmt"
+	"strconv"
+	"strings"
 	"time"
 
 	"github.com/gocolly/colly"
@@ -27,11 +30,13 @@ type Manga struct {
 	Link  string `json:"link"`
 	Liked bool   `json:"liked"`
 }
+type TokyoPopManga struct{
+	ReleaseDate string `json:"releaseDate"`
+}
 
 var location, _ = time.LoadLocation("UTC")
 var year, month, day = time.Now().In(location).Date()
 
-// test
 func CollectYenPressReleases() []Manga {
 	url := toLocalPagesPath("yenpress")
 	releases, err := NewReleaseFetcher(".book-shelf-title-grid", url, func(element *colly.HTMLElement) Manga {
@@ -123,20 +128,33 @@ func CollectVizReleases() []Manga {
 	return releases
 }
 
+// CollectTokyoPopReleases Tokyo pop release date is hiding in a json object within an attribute
+// We need that date to check if it is only release for the wanted date
+// We could give the Fetcher functionality a variable to know when it should stop
+// TODO: clean this up
 func CollectTokyoPopReleases() []Manga {
+	neededManga := 0
 	url := toLocalPagesPath("tokyopop")
-	releases, err := NewReleaseFetcher(".release-month", url, func(element *colly.HTMLElement) Manga {
-		monthOfRelease := element.ChildText(".release-month-label")
-		fmt.Println(monthOfRelease, month.String())
-		if monthOfRelease != month.String() {
-			return Manga{}
+	releases, err := NewReleaseFetcher(".release-cal-item", url, func(element *colly.HTMLElement) Manga {
+		var tokyoPopManga TokyoPopManga
+		json.Unmarshal([]byte(element.ChildAttr(".rs-item-custom-fields","data-custom-content")), &tokyoPopManga)
+		releaseDate := fmt.Sprint(tokyoPopManga.ReleaseDate)
+		convertedMonthToInt, err := strconv.Atoi(strings.Split(releaseDate, "/")[0])
+		if err != nil {
+			fmt.Println(err)
 		}
-
-		temp := Manga{}
-		temp.Name = element.ChildText(".rs-item-title")
-		temp.Image = element.ChildAttr(".rs-item-image", "data-src")
-		temp.Link = "bed"
-		return temp
+		monthOfRelease :=  time.Month(convertedMonthToInt)
+		if monthOfRelease == month {
+			neededManga += 1
+			manga := Manga{
+				Name:  element.ChildAttr(".rs-item-thumbnail a", "data-title"),
+				Image: element.ChildAttr(".rs-item-image-wrapper img", "data-src"),
+				Link:  fmt.Sprintf("https://www.tokyopop.com%s", element.ChildAttr(".rs-item-details a", "href")),
+				Liked: false,
+			}
+			return manga
+		}
+       return Manga{}
 	}).Fetch()
 
 	if err != nil {
@@ -144,7 +162,7 @@ func CollectTokyoPopReleases() []Manga {
 		return nil
 	}
 
-	return releases
+	return releases[:neededManga]
 }
 
 func toLocalPagesPath(name string) string {
