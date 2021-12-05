@@ -28,30 +28,33 @@ export const MangaBooks = ({ ...props }: Props) => {
     );
   }
 
+  // TODO: Remove duplicated values in the backand and not frontend
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-      {props.mangas.map((manga: Manga) => (
-        <div key={manga.name}>
-          <div className="flex flex-col justify-center items-center">
-            <div className="bg-yellow-300 w-56 h-72 flex justify-center	items-center rounded-md">
-              <img
-                src={manga.image}
-                alt={manga.name}
-                className="w-36 h-56 m-auto block"
-              />
+      {[...new Map(props.mangas.map(v => [JSON.stringify(v), v])).values()].map(
+        (manga: Manga) => (
+          <div key={manga.name}>
+            <div className="flex flex-col justify-center items-center">
+              <div className="bg-yellow-300 w-56 h-72 flex justify-center	items-center rounded-md">
+                <img
+                  src={manga.image}
+                  alt={manga.name}
+                  className="w-36 h-56 m-auto block"
+                />
+              </div>
+              <HeartIcon manga={manga} />
+              <a
+                className="font-bold text-md hover:text-red-500 m-auto block"
+                href={manga.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {manga.name}
+              </a>
             </div>
-            <HeartIcon manga={manga} />
-            <a
-              className="font-bold text-md hover:text-red-500 m-auto block"
-              href={manga.link}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {manga.name}
-            </a>
           </div>
-        </div>
-      ))}
+        ),
+      )}
     </div>
   );
 };

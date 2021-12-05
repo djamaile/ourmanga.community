@@ -73,6 +73,8 @@ func (d *Downloader) writePage(html []byte, s Site) error {
 }
 
 func (d *Downloader) refreshPages() error {
+	d.date = newDate()
+	d.sites = getSites(d.date)
 	d.removePages()
 	for _, s := range d.sites {
 		html, err := d.fetchPage(s)
@@ -99,9 +101,7 @@ func newDate() Date {
 	}
 }
 
-func StartPagesJob() {
-	date := newDate()
-
+func getSites(date Date) []Site {
 	viz := Site{Name: "viz", Url: fmt.Sprintf("https://www.viz.com/calendar/%v/%v", date.year, int(date.month))}
 	yenpress := Site{Name: "yenpress", Url: "https://yenpress.com/new-releases/"}
 	sevenseas := Site{Name: "sevenseas", Url: "https://sevenseasentertainment.com/release-dates/"}
@@ -109,8 +109,11 @@ func StartPagesJob() {
 	kodansha := Site{Name: "kodansha", Url: "https://kodansha.us/manga/calendar"}
 	tokyopop := Site{Name: "tokyopop", Url: "https://www.tokyopop.com/upcoming"}
 
-	sites := []Site{viz, yenpress, sevenseas, darkhorse, kodansha, tokyopop}
-	downloader := &Downloader{sites: sites, date: date}
+	return []Site{viz, yenpress, sevenseas, darkhorse, kodansha, tokyopop}
+}
+
+func StartPagesJob() {
+	downloader := &Downloader{}
 
 	// initial downloading action on startup
 	err := downloader.refreshPages()
