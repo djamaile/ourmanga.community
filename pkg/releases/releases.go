@@ -30,12 +30,9 @@ type Manga struct {
 	Link  string `json:"link"`
 	Liked bool   `json:"liked"`
 }
-type TokyoPopManga struct{
+type TokyoPopManga struct {
 	ReleaseDate string `json:"releaseDate"`
 }
-
-var location, _ = time.LoadLocation("UTC")
-var year, month, day = time.Now().In(location).Date()
 
 func CollectYenPressReleases() []Manga {
 	url := toLocalPagesPath("yenpress")
@@ -134,16 +131,18 @@ func CollectVizReleases() []Manga {
 // TODO: clean this up
 func CollectTokyoPopReleases() []Manga {
 	neededManga := 0
+	var location, _ = time.LoadLocation("UTC")
+	var _, month, _ = time.Now().In(location).Date()
 	url := toLocalPagesPath("tokyopop")
 	releases, err := NewReleaseFetcher(".release-cal-item", url, func(element *colly.HTMLElement) Manga {
 		var tokyoPopManga TokyoPopManga
-		json.Unmarshal([]byte(element.ChildAttr(".rs-item-custom-fields","data-custom-content")), &tokyoPopManga)
+		json.Unmarshal([]byte(element.ChildAttr(".rs-item-custom-fields", "data-custom-content")), &tokyoPopManga)
 		releaseDate := fmt.Sprint(tokyoPopManga.ReleaseDate)
 		convertedMonthToInt, err := strconv.Atoi(strings.Split(releaseDate, "/")[0])
 		if err != nil {
 			fmt.Println(err)
 		}
-		monthOfRelease :=  time.Month(convertedMonthToInt)
+		monthOfRelease := time.Month(convertedMonthToInt)
 		if monthOfRelease == month {
 			neededManga += 1
 			manga := Manga{
@@ -154,7 +153,7 @@ func CollectTokyoPopReleases() []Manga {
 			}
 			return manga
 		}
-       return Manga{}
+		return Manga{}
 	}).Fetch()
 
 	if err != nil {
@@ -170,5 +169,7 @@ func toLocalPagesPath(name string) string {
 }
 
 func toPagesPath(rootDir string, name string) string {
+	var location, _ = time.LoadLocation("UTC")
+	var year, month, day = time.Now().In(location).Date()
 	return fmt.Sprintf("%s/%s-%d-%d-%d.html", rootDir, name, int(year), int(month), int(day))
 }
