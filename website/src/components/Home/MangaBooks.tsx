@@ -19,11 +19,21 @@ interface Props {
   mangas: Manga[];
 }
 
+//  eslint-disable-next-line
+const isEmpty = <Type,>(arr: Array<Type>): boolean => {
+  if (arr === null || arr === undefined || arr.length === 0) {
+    return true;
+  }
+  return false;
+};
+
 export const MangaBooks = ({ ...props }: Props) => {
-  if (props.mangas === null || props.mangas === undefined) {
+  if (isEmpty(props.mangas)) {
     return (
       <div className="grid grid-cols-1">
-        <h1 className="text-center capitalize text-4xl">No Manga yet...</h1>
+        <h1 className="text-center capitalize text-4xl">
+          No Manga releases...
+        </h1>
       </div>
     );
   }
