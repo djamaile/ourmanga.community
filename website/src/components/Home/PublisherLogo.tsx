@@ -26,8 +26,8 @@ export const PublisherLogo = ({ ...props }: Props) => {
 
   return (
     <section
-      className="flex justify-center"
       onClick={() => changePublisher(props.name)}
+      className="flex justify-center"
     >
       <img
         src={props.image}
