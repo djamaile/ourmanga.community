@@ -49,7 +49,7 @@ const IndexRouter = () => (
       <Router>
         <Suspense fallback={<p>Loading...</p>}>
           <Switch>
-            <Route exact path={`${process.env.PUBLIC_URL}/`} component={Home} />
+            <Route exact path={`${process.env.PUBLIC_URL}`} component={Home} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>

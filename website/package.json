@@ -35,17 +35,17 @@
     "zustand": "^3.6.5"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "yarn craco start",
     "backend": "go run ../server/main.go",
     "dev": "concurrently \"yarn run backend\" \"yarn run start\"",
     "build": "GENERATE_SOURCEMAP=false craco build",
-    "compile": "tsc",
-    "format": "prettier --write src",
-    "test": "jest",
-    "test:ci": "jest --ci",
-    "test:watch": "jest --watch",
-    "eject": "react-scripts eject",
-    "pretty": "pretty-quick --staged",
+    "compile": "yarn tsc",
+    "format": "yarn prettier --write src",
+    "test": "yarn jest",
+    "test:ci": "yarn jest --ci",
+    "test:watch": "yarn jest --watch",
+    "eject": "yarn react-scripts eject",
+    "pretty": "yarn pretty-quick --staged",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
     "cy:run": "cypress run --headless --browser chrome",
@@ -93,5 +93,6 @@
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.1",
     "ts-jest": "^26.5.5"
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }

@@ -25,9 +25,8 @@ import mascot from '../../assets/images/mascot.jpg';
 
 const Home = () => {
   useTitle('Home - Our Manga Community');
-  const { publisher, likedMangas, setMangas, mangas } = useStore(
-    state => state,
-  );
+  const { publisher, likedMangas, setMangas, mangas, changePublisher } =
+    useStore(state => state);
 
   const date = new Date(Date.now());
   const backend: string =
@@ -88,7 +87,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* TODO: Seperate to API to MangaBooks, so loading screen doesn't effect the whole screen}
         {/* manga-books */}
         {isFetching ? <></> : <MangaBooks mangas={mangas} />}
       </div>
