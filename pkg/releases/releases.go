@@ -108,7 +108,7 @@ func CollectKodanshaReleases() []Manga {
 
 func CollectVizReleases() []Manga {
 	url := toLocalPagesPath("viz")
-	releases, err := NewReleaseFetcher(".manga-books article", url, func(element *colly.HTMLElement) Manga {
+	releases, err := NewReleaseFetcher("#manga-books article", url, func(element *colly.HTMLElement) Manga {
 		temp := Manga{}
 		temp.Name = element.ChildText(".color-off-black")
 		temp.Image = element.ChildAttr("a.product-thumb img", "data-original")
