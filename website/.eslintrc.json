@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "airbnb",
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "extends": ["airbnb", "plugin:@typescript-eslint/recommended"],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -21,49 +18,28 @@
     "no-tabs": "off",
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
-    "@typescript-eslint/camelcase": [
-      "off"
-    ],
-    "camelcase": [
-      "off"
-    ],
+    "@typescript-eslint/camelcase": ["off"],
+    "camelcase": ["off"],
     "object-curly-newline": "off",
-    "react/jsx-props-no-spreading": [
-      "off"
-    ],
+    "react/jsx-props-no-spreading": ["off"],
     "jsx-a11y/no-static-element-interactions": "off",
-    "react/prop-types": [
-      "off"
-    ],
-    "jsx-a11y/href-no-hash": [
-      "off"
-    ],
-    "jsx-a11y/click-events-have-key-events": [
-      "off"
-    ],
-    "import/no-unresolved": [
-      "off"
-    ],
+    "react/prop-types": ["off"],
+    "jsx-a11y/href-no-hash": ["off"],
+    "jsx-a11y/click-events-have-key-events": ["off"],
+    "import/no-unresolved": ["off"],
     "no-var-requires": "off",
     "@typescript-eslint/no-var-requires": "off",
     "global-require": "off",
     "import/extensions": 0,
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": [
-      "error"
-    ],
+    "@typescript-eslint/no-use-before-define": ["error"],
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
     "react/jsx-filename-extension": [
       "warn",
       {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".tsx",
-          ".ts"
-        ]
+        "extensions": [".js", ".jsx", ".tsx", ".ts"]
       }
     ],
     "max-len": [

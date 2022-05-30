@@ -33,3 +33,12 @@ pages/**
 
 .vercel
 .nvimlog
+website/.yarn/**
+website/.yarn/*
+website/!.yarn/patches
+website/!.yarn/releases
+website/!.yarn/plugins
+website/!.yarn/sdks
+website/!.yarn/versions
+website/.pnp.*
+
