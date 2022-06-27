@@ -30,7 +30,7 @@ const request = <Type>(
   });
 
 // Define a default query function that will receive the query key
-// TODO(drahamat): figure out how to get rid of any type
+// TODO(drahamat): figure out how to get rid of any type (2021)
 export const defaultQueryFn = async <Type>({
   queryKey,
 }: any): Promise<AxiosResponse<Type>> => {
