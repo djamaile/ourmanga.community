@@ -46,7 +46,10 @@ func (d *Downloader) removePages() {
 }
 
 func (d *Downloader) fetchPage(s Site) ([]byte, error) {
-	resp, err := http.Get(s.Url)
+	client := http.Client{
+		Timeout: 3 * time.Second,
+	}
+	resp, err := client.Get(s.Url)
 	if err != nil {
 		return nil, err
 	}
@@ -79,7 +82,8 @@ func (d *Downloader) refreshPages() error {
 	for _, s := range d.sites {
 		html, err := d.fetchPage(s)
 		if err != nil {
-			return err
+			fmt.Println(err)
+			continue
 		}
 		err = d.writePage(html, s)
 		if err != nil {
