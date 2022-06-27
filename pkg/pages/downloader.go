@@ -17,7 +17,6 @@ package pages
 import (
 	"fmt"
 	"io/ioutil"
-	"net"
 	"net/http"
 	"os"
 	"time"
@@ -46,22 +45,11 @@ func (d *Downloader) removePages() {
 	os.RemoveAll("pages/*")
 }
 
-func isReachable(s Site) bool {
-	timeout := 1 * time.Second
-	_, err := net.DialTimeout("tcp", fmt.Sprintf("%s:443", s.Url), timeout)
-	if err != nil {
-		return false
-	} else {
-		return true
-	}
-}
-
 func (d *Downloader) fetchPage(s Site) ([]byte, error) {
-	canReachSite := isReachable(s)
-	if !canReachSite {
-		return nil, fmt.Errorf("error: site %s is not reachable", s.Url)
+	client := http.Client{
+		Timeout: 3 * time.Second,
 	}
-	resp, err := http.Get(s.Url)
+	resp, err := client.Get(s.Url)
 	if err != nil {
 		return nil, err
 	}
@@ -94,7 +82,8 @@ func (d *Downloader) refreshPages() error {
 	for _, s := range d.sites {
 		html, err := d.fetchPage(s)
 		if err != nil {
-			return err
+			fmt.Println(err)
+			continue
 		}
 		err = d.writePage(html, s)
 		if err != nil {
