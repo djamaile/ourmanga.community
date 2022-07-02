@@ -53,11 +53,11 @@ func CollectYenPressReleases() []Manga {
 }
 
 func CollectSevenSeasReleases() []Manga {
-	url := toLocalPagesPath("sevenseas")
+	url := "pages/static/sevenseas.html"
 	releases, err := NewReleaseFetcher("div[style='float: left; margin: 0 3px 10px 6px; width: 134px; height: 189px; background: #CECECE;']", url, func(element *colly.HTMLElement) Manga {
 		temp := Manga{}
 		temp.Name = element.ChildAttr("a", "title")
-		temp.Image = element.ChildAttr("img", "src")
+		temp.Image = strings.Split(element.ChildAttr("img", "srcset"), " ")[0]
 		temp.Link = element.ChildAttr("a", "href")
 		return temp
 	}).Fetch()
