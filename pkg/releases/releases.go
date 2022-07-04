@@ -167,7 +167,6 @@ func CollectTokyoPopReleases() []Manga {
 func CollectSquareReleases() []Manga {
 	url := "static/square.html"
 	releases, err := NewReleaseFetcher(".SeriesWrapper-cLJjJY a", url, func(element *colly.HTMLElement) Manga {
-		fmt.Println(element)
 		temp := Manga{}
 		temp.Image = element.ChildAttr("img", "src")
 		temp.Name = element.ChildAttr("img", "alt")
