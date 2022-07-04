@@ -49,6 +49,10 @@ func tokyopopHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(releases.CollectTokyoPopReleases())
 }
 
+func squareHandler(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(releases.CollectSquareReleases())
+}
+
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/releases/viz", vizHandler)
@@ -57,6 +61,7 @@ func main() {
 	r.HandleFunc("/releases/darkhorse", darkHorseHandler)
 	r.HandleFunc("/releases/kodansha", kodanshaHandler)
 	r.HandleFunc("/releases/tokyopop", tokyopopHandler)
+	r.HandleFunc("/releases/square-enix", squareHandler)
 
 	handler := cors.Default().Handler(r)
 	pages.StartPagesJob()

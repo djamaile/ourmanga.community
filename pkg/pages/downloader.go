@@ -112,8 +112,9 @@ func getSites(date Date) []Site {
 	darkhorse := Site{Name: "darkhorse", Url: fmt.Sprintf("https://www.darkhorse.com/Books/Browse/Manga---%v+%v-%v+%v/P9wdwkt8", date.month, date.year, date.month, date.year)}
 	kodansha := Site{Name: "kodansha", Url: "https://kodansha.us/manga/calendar"}
 	tokyopop := Site{Name: "tokyopop", Url: "https://www.tokyopop.com/upcoming"}
+	square := Site{Name: "square", Url: "https://squareenixmangaandbooks.square-enix-games.com/en-us/release-calendar"}
 
-	return []Site{viz, yenpress, sevenseas, darkhorse, kodansha, tokyopop}
+	return []Site{viz, yenpress, sevenseas, darkhorse, kodansha, tokyopop, square}
 }
 
 func StartPagesJob() {

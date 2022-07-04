@@ -164,6 +164,26 @@ func CollectTokyoPopReleases() []Manga {
 	return releases[len(releases)-neededManga:]
 }
 
+func CollectSquareReleases() []Manga {
+	url := "static/square.html"
+	releases, err := NewReleaseFetcher(".SeriesWrapper-cLJjJY a", url, func(element *colly.HTMLElement) Manga {
+		fmt.Println(element)
+		temp := Manga{}
+		temp.Image = element.ChildAttr("img", "src")
+		temp.Name = element.ChildAttr("img", "alt")
+		temp.Liked = false
+		temp.Link = "https://squareenixmangaandbooks.square-enix-games.com" + element.Attr("href")
+		return temp
+	}).Fetch()
+
+	if err != nil {
+		fmt.Println(err)
+		return nil
+	}
+
+	return releases
+}
+
 func toLocalPagesPath(name string) string {
 	return toPagesPath("pages", name)
 }
