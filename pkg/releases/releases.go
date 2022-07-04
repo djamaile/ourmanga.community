@@ -161,7 +161,7 @@ func CollectTokyoPopReleases() []Manga {
 		return nil
 	}
 
-	return releases[:neededManga]
+	return releases[len(releases)-neededManga:]
 }
 
 func toLocalPagesPath(name string) string {
