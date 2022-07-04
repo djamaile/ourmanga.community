@@ -44,4 +44,9 @@ export const PUBLISHERS: Array<Publishers> = [
       'https://images.squarespace-cdn.com/content/v1/557a0fd3e4b064e7f04db74f/1585866121129-B8Y4XU3ZTMAN6FSNA7Y0/TP-logo_Original_R_BG.png',
     name: 'tokyopop',
   },
+  {
+    image:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Square_Enix_logo.svg/2560px-Square_Enix_logo.svg.png',
+    name: 'square-enix',
+  },
 ];
